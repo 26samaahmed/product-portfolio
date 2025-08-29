@@ -12,12 +12,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&family=Ephesis&display=swap" rel="stylesheet">
 </svelte:head>
 
-<body>
-  <h1 class="text-5xl text-[#3E35EE]">Welcome</h1>
-</body>
+<script>
+  import NavBar from '../components/NavBar.svelte';
+</script>
 
-<style>
-  body {
-    background-color: #FFF6D1;
-  }
-</style>
+<div class="text-[#3E35EE] bg-[#FFF6D1] min-h-screen p-8">
+  <h1 class="text-8xl mb-4 font-heading pt-24">Welcome!</h1>
+  <p class="text-4xl font-sans w-2/3">
+    I am Sama Ahmed, an aspiring product manager passionate about building intuitive, user-centered products. 
+    With experience in tech, design, and research, I love turning ideas into meaningful user experiences.
+  </p>
+
+  <div class="w-64 h-80 border-2 ">
+  </div>
+</div>

@@ -1,10 +1,13 @@
-// tailwind.config.cjs
+/** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    './src/**/*.{html,js,svelte,ts}'
-  ],
+  content: ["./src/**/*.{html,js,svelte,ts}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        ephesis: ['Ephesis', 'cursive'],
+        alumni: ['Alumni Sans', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
