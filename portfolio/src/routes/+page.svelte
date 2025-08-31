@@ -14,15 +14,23 @@
 
 <script>
   import NavBar from '../components/NavBar.svelte';
+  let buttons = [
+    { name: 'About', link: '#about' },
+    { name: 'Work', link: '#work' },
+    { name: 'Extras', link: '#extras' },
+    { name: 'Contact', link: '#contact' },
+  ];
 </script>
 
 <div class="text-[#3E35EE] bg-[#FFF6D1] min-h-screen p-8">
-  <h1 class="text-8xl mb-4 font-heading pt-24">Welcome!</h1>
+  <NavBar {buttons} />
+  <div class="flex flex-col items-center text-center space-y-8">
+  <h1 class="text-8xl mb-4 font-heading pt-36">Welcome!</h1>
   <p class="text-4xl font-sans w-2/3">
     I am Sama Ahmed, an aspiring product manager passionate about building intuitive, user-centered products. 
     With experience in tech, design, and research, I love turning ideas into meaningful user experiences.
   </p>
 
-  <div class="w-64 h-80 border-2 ">
+  <!--<div class="w-64 h-80 border-2 "></div>-->
   </div>
 </div>
