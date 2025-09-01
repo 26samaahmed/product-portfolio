@@ -15,7 +15,7 @@
 <script>
   import NavBar from '../components/NavBar.svelte';
   let buttons = [
-    { name: 'About', link: '#about' },
+    { name: 'Home', link: '#home' },
     { name: 'Work', link: '#work' },
     { name: 'Extras', link: '#extras' },
     { name: 'Contact', link: '#contact' },
@@ -24,13 +24,23 @@
 
 <div class="text-[#3E35EE] bg-[#FFF6D1] min-h-screen p-8">
   <NavBar {buttons} />
-  <div class="flex flex-col items-center text-center space-y-8">
-  <h1 class="text-8xl mb-4 font-heading pt-36">Welcome!</h1>
-  <p class="text-4xl font-sans w-2/3">
-    I am Sama Ahmed, an aspiring product manager passionate about building intuitive, user-centered products. 
-    With experience in tech, design, and research, I love turning ideas into meaningful user experiences.
-  </p>
 
-  <!--<div class="w-64 h-80 border-2 "></div>-->
+  <div class="flex flex-col md:flex-row items-center md:items-start justify-between pt-24 m-10">
+
+    <div class="text-left space-y-8">
+      <h1 class="text-8xl mb-4 font-heading">Welcome!</h1>
+      <p class="text-4xl font-sans w-5/6">
+        I’m Sama Ahmed — an aspiring product manager driven by a passion for creating intuitive, user-centered products. My background in tech, design, and research allows me to bridge the gap between ideas and execution. I enjoy leading teams, solving complex problems, and building products that make a real impact.
+      </p>
+    </div>
+
+
+    <div class="relative md:w-1/2 flex justify-center pt-12 md:pt-0">
+      <div class="w-64 h-80 border-2 shadow-lg"></div>
+      <div class="w-64 h-80 border-2 shadow-lg -ml-20 mt-16"></div>
+    </div>
   </div>
+
+
 </div>
+
