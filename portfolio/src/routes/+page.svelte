@@ -22,7 +22,7 @@
   ];
 </script>
 
-<div class="text-[#3E35EE] bg-[#FFF6D1] min-h-screen p-8">
+<div class="text-[#000000] bg-[#FFFFFF] min-h-screen p-8">
   <NavBar {buttons} />
 
   <div class="flex flex-col md:flex-row items-center md:items-start justify-between pt-24 m-10">
