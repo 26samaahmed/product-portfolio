@@ -30,7 +30,8 @@
     <div class="text-left space-y-8">
       <h1 class="text-8xl mb-4 font-heading">Welcome!</h1>
       <p class="text-4xl font-sans w-5/6">
-        I’m Sama Ahmed — an aspiring product manager driven by a passion for creating intuitive, user-centered products. My background in tech, design, and research allows me to bridge the gap between ideas and execution. I enjoy leading teams, solving complex problems, and building products that make a real impact.
+        ─── ⋆⋅☆⋅⋆ ───  I’m Sama Ahmed, an <em>aspiring product manager</em> passionate about building intuitive, user-centered products.
+        With experience across tech, design, and user research, I bring both creativity and <em>analytical thinking</em> to product development .☘︎ ݁˖
       </p>
     </div>
 
@@ -39,6 +40,15 @@
       <div class="w-64 h-80 border-2 shadow-lg"></div>
       <div class="w-64 h-80 border-2 shadow-lg -ml-20 mt-16"></div>
     </div>
+  </div>
+
+  <div id="work" class="mt-44 m-10">
+    <p class="text-5xl font-sans">Case Studies</p>
+    <div class="w-full h-96 border-2 shadow-lg mt-6"></div>
+  </div>
+
+  <div id="extras" class="mt-44 m-10">
+    <p class="text-5xl font-sans">About Me</p>
   </div>
 
 
