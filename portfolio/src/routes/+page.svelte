@@ -14,6 +14,7 @@
 
 <script>
   import NavBar from '../components/NavBar.svelte';
+  import ProjectPreview from '../components/ProjectPreview.svelte';
   let buttons = [
     { name: 'Home', link: '#home' },
     { name: 'Work', link: '#work' },
@@ -44,7 +45,7 @@
 
   <div id="work" class="mt-44 m-10">
     <p class="text-5xl font-sans">Case Studies</p>
-    <div class="w-full h-96 border-2 shadow-lg mt-6"></div>
+    <ProjectPreview />
   </div>
 
   <div id="extras" class="mt-44 m-10">
