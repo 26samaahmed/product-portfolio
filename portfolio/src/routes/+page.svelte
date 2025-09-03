@@ -31,7 +31,7 @@
     <div class="text-left space-y-8">
       <h1 class="text-8xl mb-4 font-heading">Welcome!</h1>
       <p class="text-4xl font-sans w-5/6">
-        ─── ⋆⋅☆⋅⋆ ───  I’m Sama Ahmed, an <em>aspiring product manager</em> passionate about building intuitive, user-centered products.
+        I’m Sama Ahmed, an <em>aspiring product manager</em> passionate about building intuitive, user-centered products.
         With experience across tech, design, and user research, I bring both creativity and <em>analytical thinking</em> to product development .☘︎ ݁˖
       </p>
     </div>
@@ -46,6 +46,9 @@
   <div id="work" class="mt-44 m-10">
     <p class="text-5xl font-sans">Case Studies</p>
     <ProjectPreview />
+    <!--  Have a previous and next button for projects transition  `-->
+    <p class="text-2xl mt-6 inline-block relative"> ← Previous Project </p>
+    <p class="text-2xl mt-6 inline-block relative float-right"> Next Project → </p>
   </div>
 
   <div id="extras" class="mt-44 m-10">
