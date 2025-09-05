@@ -46,9 +46,28 @@
   <div id="work" class="mt-44 m-10">
     <p class="text-5xl font-sans">Case Studies</p>
     <ProjectPreview />
-    <!--  Have a previous and next button for projects transition  `-->
-    <p class="text-2xl mt-6 inline-block relative"> ← Previous Project </p>
-    <p class="text-2xl mt-6 inline-block relative float-right"> Next Project → </p>
+    <a href="/previous" class="text-2xl mt-6 inline-block relative">
+      ← <span
+        class="relative after:content-[''] after:absolute after:w-full after:h-0.5 
+          after:bottom-0 after:left-0 after:scale-x-0 after:origin-bottom-right 
+          after:transition-transform after:duration-[250ms] after:ease-out after:bg-[#000000]
+          hover:after:scale-x-100 hover:after:origin-bottom-left"
+      >
+        Previous Project
+      </span>
+    </a>
+    
+    <a href="/next" class="text-2xl mt-6 inline-block relative float-right">
+      <span
+        class="relative after:content-[''] after:absolute after:w-full after:h-0.5 
+          after:bottom-0 after:left-0 after:scale-x-0 after:origin-bottom-right 
+          after:transition-transform after:duration-[250ms] after:ease-out after:bg-[#000000]
+          hover:after:scale-x-100 hover:after:origin-bottom-left"
+      >
+        Next Project
+      </span> →
+    </a>
+    
   </div>
 
   <div id="extras" class="mt-44 m-10">
@@ -61,7 +80,11 @@
       What excites me most about product management is being part of the <em>entire journey</em> — from defining a problem to seeing a solution make a difference for users. I love collaborating with diverse teams, <em>asking the right questions</em>, and turning ideas into products that people actually enjoy using.
     </p>
     </div>
-    <p class="text-2xl mt-6 inline-block relative float-right">Discover Technical & Creative Portfolio →</p>
+    <a href="https://samahmed.info" target="_blank" class="text-2xl mt-10 inline-block relative float-right"><span class="inline-block relative 
+      after:content-[''] after:absolute after:w-full after:h-0.5 
+      after:bottom-0 after:left-0 after:scale-x-0 after:origin-bottom-right 
+      after:transition-transform after:duration-[250ms] after:ease-out after:bg-[#000000]
+      hover:after:scale-x-100 hover:after:origin-bottom-left">Discover Technical & Creative Portfolio</span> →</a>
     
   </div>
 
