@@ -15,7 +15,7 @@
 <script lang="ts">
   import NavBar from '../components/NavBar.svelte';
   import ProjectList from '../components/ProjectList.svelte';
-  import type { Project } from '$lib/types'
+  import type { Project, Button } from '$lib/types'
   import AboutMe from '../components/AboutMe.svelte';
   import placeholder from '$lib/assets/project1.png';
   import image1 from '$lib/assets/image1.jpg';
@@ -23,7 +23,7 @@
 
 
 
-  let buttons = [
+  let buttons: Button[] = [
     { name: 'Home', link: '#home' },
     { name: 'Work', link: '#work' },
     { name: 'Extras', link: '#extras' },
@@ -59,43 +59,45 @@
 
 </script>
 
-<div class="text-[#000000] bg-[#FFFFFF] min-h-screen p-8">
-  <NavBar {buttons} />
+<main>
+  <div class="text-[#FFFFFF] bg-[#000000] min-h-screen p-8">
+    <NavBar {buttons} />
 
-  <div class="flex flex-col md:flex-row items-center md:items-start justify-between pt-24 m-10">
+    <div class="flex flex-col md:flex-row items-center md:items-start justify-between pt-24 m-10">
 
-    <div class="text-left space-y-8">
-      <h1 class="text-8xl mb-4 font-heading">Welcome!</h1>
-      <p class="text-4xl font-sans w-5/6">
-        I’m Sama Ahmed, an <em>aspiring product manager</em> passionate about building intuitive, user-centered products.
-        With experience across tech, design, and user research, I bring both creativity and <em>analytical thinking</em> to product development .☘︎ ݁˖
-      </p>
+      <div class="text-left space-y-8">
+        <h1 class="text-8xl mb-4 font-heading">Welcome!</h1>
+        <p class="text-4xl font-sans w-5/6">
+          I’m Sama Ahmed, an <em class="text-[#4696fd]">aspiring product manager</em> passionate about building intuitive, user-centered products.
+          With experience across tech, design, and user research, I bring both creativity and <em class="text-[#e775f8]">analytical thinking</em> to product development <span class="text-[#92fe8c]">☘︎ ݁˖</span>.
+        </p>
+      </div>
+
+
+      <div class="relative md:w-1/2 flex justify-center pt-12 md:pt-0">
+        <div class="w-64 h-80 border-2 shadow-lg flex items-center justify-center">
+          <img src={image1} alt="Profile 1" class="w-48 h-64 object-cover" />
+        </div>
+
+        <div class="w-64 h-80 border-2 shadow-lg -ml-20 mt-16 flex items-center justify-center">
+          <img src={image2} alt="Profile 2" class="w-48 h-64 object-cover" />
+        </div>
+      </div>
+    </div>
+
+    <div id="work" class="mt-44 m-10">
+      <ProjectList {projects} />
+    </div>
+
+    <div id="extras" class="mt-44 m-10">
+      <AboutMe />
+    </div>
+
+    <div id="extras" class="mt-44 m-10">
+      <p class="text-5xl font-sans">[thinking of title for this]</p>
     </div>
 
 
-    <div class="relative md:w-1/2 flex justify-center pt-12 md:pt-0">
-      <div class="w-64 h-80 border-2 shadow-lg flex items-center justify-center">
-        <img src={image1} alt="Profile 1" class="w-48 h-64 object-cover" />
-      </div>
-
-      <div class="w-64 h-80 border-2 shadow-lg -ml-20 mt-16 flex items-center justify-center">
-        <img src={image2} alt="Profile 2" class="w-48 h-64 object-cover" />
-      </div>
-    </div>
   </div>
-
-  <div id="work" class="mt-44 m-10">
-    <ProjectList {projects} />
-  </div>
-
-  <div id="extras" class="mt-44 m-10">
-    <AboutMe />
-  </div>
-
-  <div id="extras" class="mt-44 m-10">
-    <p class="text-5xl font-sans">[thinking of title for this]</p>
-  </div>
-
-
-</div>
+</main>
 

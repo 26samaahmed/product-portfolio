@@ -5,3 +5,8 @@ export type Project = {
   problem_statement: string;
   imageUrl: string;
 };
+
+export type Button = {
+  link: string;
+  name: string;
+}
