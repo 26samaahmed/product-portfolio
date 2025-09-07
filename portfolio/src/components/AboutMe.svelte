@@ -1,5 +1,5 @@
 <script>
-  import AboutMeImage from '$lib/assets/about-me.jpg';
+  import AboutMeImage from '$lib/assets/about-me.png';
 </script>
 
 <main>
