@@ -17,7 +17,9 @@
   import ProjectList from '../components/ProjectList.svelte';
   import type { Project, Button } from '$lib/types'
   import AboutMe from '../components/AboutMe.svelte';
-  import placeholder from '$lib/assets/project1.png';
+  import project1 from '$lib/assets/project1.png';
+  import project2 from '$lib/assets/project2.png';
+  import project3 from '$lib/assets/project3.png';
   import image1 from '$lib/assets/image1.jpg';
   import image2 from '$lib/assets/image2.jpg';
 
@@ -31,31 +33,33 @@
   ];
 
   const projects: Project[] = [
-    {
-      title: 'FullyHacks 2025',
-      project_duration: '9 Months',
-      role: 'Co-Director',
-      problem_statement:
-        'How might we create an engaging and educational hackathon experience for students of all skill levels?',
-      imageUrl: placeholder
-    },
-    {
-      title: 'MyRepChat',
-      project_duration: '10 Weeks',
-      role: 'UX Researcher Intern',
-      problem_statement:
-        'How might we improve the user experience of financial advisors using our platform?',
-      imageUrl: placeholder
-    },
-    {
-      title: 'FullyBeyond 2024',
-      project_duration: '7 Months',
-      role: 'Web Lead & Co-Host',
-      problem_statement:
-        'How might we design a user-friendly website to showcase our designathon event and attract participants?',
-      imageUrl: placeholder
-    },
-  ];
+  {
+    title: 'FullyHacks 2025',
+    project_duration: '9 Months',
+    role: 'Co-Director',
+    problem_statement:
+      'How might we design a hackathon that feels welcoming to beginners while still offering advanced challenges, workshops, and mentorship for experienced participants?',
+    imageUrl: project1
+  },
+  {
+    title: 'MyRepChat',
+    project_duration: '10 Weeks',
+    role: 'UX Researcher Intern',
+    problem_statement:
+      'How might we improve the usability of a communication platform for financial advisors by identifying pain points and streamlining client interactions?',
+    imageUrl: project2
+  },
+  {
+    title: 'FullyBeyond 2024',
+    project_duration: '7 Months',
+    role: 'Web Lead & Co-Host',
+    problem_statement:
+      'How might we build a responsive, user-friendly website that communicates event details clearly while attracting participants and sponsors to our designathon?',
+    imageUrl: project3
+  },
+];
+
+
 
 </script>
 
