@@ -79,11 +79,11 @@
 
 
       <div class="relative md:w-1/2 flex justify-center pt-12 md:pt-0">
-        <div class="w-64 h-80 border-2 shadow-lg flex items-center justify-center">
+        <div class="w-64 h-80 border-2 shadow-lg flex items-center justify-center hover:scale-[1.06] duration-500 z-10">
           <img src={image1} alt="Profile 1" class="w-48 h-64 object-cover" />
         </div>
 
-        <div class="w-64 h-80 border-2 shadow-lg -ml-20 mt-16 flex items-center justify-center">
+        <div class="w-64 h-80 border-2 shadow-lg -ml-20 mt-16 flex items-center justify-center hover:scale-[1.06] duration-500 z-20">
           <img src={image2} alt="Profile 2" class="w-48 h-64 object-cover" />
         </div>
       </div>

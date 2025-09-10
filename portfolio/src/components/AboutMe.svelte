@@ -7,7 +7,7 @@
 
   <div class="flex flex-col md:flex-row items-center md:items-start justify-between pt-12">
 
-    <div class="w-80 h-96 border-2 shadow-lg -rotate-5 flex items-center justify-center">
+    <div class="w-80 h-96 border-2 shadow-lg -rotate-5 flex items-center justify-center hover:scale-[1.06] duration-500">
       <img src={AboutMeImage} alt="About Me" class="w-72 h-80 object-cover" />
     </div>
 
