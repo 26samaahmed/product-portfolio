@@ -22,6 +22,7 @@
   import project3 from '$lib/assets/project3.png';
   import image1 from '$lib/assets/image1.jpg';
   import image2 from '$lib/assets/image2.jpg';
+  import placeholder from '$lib/assets/placeholder.png';
 
 
 
@@ -34,12 +35,13 @@
 
   const projects: Project[] = [
   {
-    title: 'FullyHacks 2025',
-    project_duration: '9 Months',
-    role: 'Co-Director',
+    title: "Spotify Caraoke on Park",
+    project_duration: 'work in progress',
+    role: 'Product Manager',
     problem_statement:
-      'How might we design a hackathon that feels welcoming to beginners while still offering advanced challenges, workshops, and mentorship for experienced participants?',
-    imageUrl: project1
+      'How can we improve the experience of listening to music in the car with friends by creating a fun and interactive karaoke feature that allows passengers to sing along to their favorite songs while on park',
+    imageUrl: placeholder,
+    tags: ['Product Management', 'UX Research', 'UI/UX Design']
   },
   {
     title: 'MyRepChat',
@@ -47,7 +49,17 @@
     role: 'UX Researcher Intern',
     problem_statement:
       'How might we improve the usability of a communication platform for financial advisors by identifying pain points and streamlining client interactions?',
-    imageUrl: project2
+    imageUrl: placeholder,
+    tags: ['User Research', 'Data Analysis', 'Usability Testing']
+  },
+  {
+    title: 'FullyHacks 2025',
+    project_duration: '9 Months',
+    role: 'Co-Director',
+    problem_statement:
+      'How might we design a hackathon that feels welcoming to beginners while still offering advanced challenges, workshops, and mentorship for experienced participants?',
+    imageUrl: placeholder,
+    tags: ['Event Planning', 'Team Leadership', 'Community Building']
   },
   {
     title: 'FullyBeyond 2024',
@@ -55,8 +67,9 @@
     role: 'Web Lead & Co-Host',
     problem_statement:
       'How might we build a responsive, user-friendly website that communicates event details clearly while attracting participants and sponsors to our designathon?',
-    imageUrl: project3
-  },
+    imageUrl: placeholder,
+    tags: ['Web Development', 'UI/UX Design', 'Collaboration']
+  }
 ];
 
 
@@ -72,8 +85,8 @@
       <div class="text-left space-y-8">
         <h1 class="text-8xl mb-4 font-heading">Welcome!</h1>
         <p class="text-4xl font-sans w-5/6">
-          I’m Sama Ahmed, an <em class="text-[#4696fd]">aspiring product manager</em> passionate about building intuitive, user-centered products.
-          With experience across tech, design, and user research, I bring both creativity and <em class="text-[#e775f8]">analytical thinking</em> to product development <span class="text-[#92fe8c]">☘︎ ݁˖</span>.
+          I’m Sama Ahmed, an <em class="text-2xl bg-[#4696fd] text-black rounded-full px-3 py-1 text-center whitespace-nowrap">aspiring product manager</em> passionate about building intuitive, user-centered products.
+          With experience across tech, design, and user research, I bring both creativity and <em class="bg-[#e775f8] text-2xl text-black rounded-full px-3 py-1 text-center whitespace-nowrap">analytical thinking</em> to product development <span class="text-[#92fe8c]">☘︎ ݁˖</span>.
         </p>
       </div>
 
@@ -98,7 +111,7 @@
     </div>
 
     <div id="extras" class="mt-44 m-10">
-      <p class="text-5xl font-sans">[thinking of title for this]</p>
+      <p class="text-5xl font-sans">Life beyond College</p>
     </div>
 
 

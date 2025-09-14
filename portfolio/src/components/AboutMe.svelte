@@ -12,8 +12,8 @@
     </div>
 
     <p class="text-3xl leading-relaxed font-sans w-2/3">
-      I’m a senior at Cal State Fullerton majoring in Computer Science, where I’ve had the opportunity to lead teams, co-direct FullyHacks 2025, and serve as web lead for FullyBeyond 2024, our first student-run designathon. Beyond school, I spent the summer as a User Experience Researcher at LPL Financial, where I discovered how much I enjoy <em class="text-[#4696fd]">shaping products by connecting user insights to real design and engineering decisions</em>.
-      What excites me most about product management is being part of the <em class="text-[#eef066]">entire journey</em> — from defining a problem to seeing a solution make a difference for users. I love collaborating with diverse teams, <em class="text-[#eef066]">asking the right questions</em>, and turning ideas into products that people actually enjoy using.
+      I’m a senior at Cal State Fullerton majoring in Computer Science, where I’ve had the opportunity to lead teams, co-direct FullyHacks 2025, and serve as web lead for FullyBeyond 2024, our first student-run designathon. Beyond school, I spent the summer as a User Experience Researcher at LPL Financial, where I discovered how much I enjoy shaping products <em class="text-2xl bg-[#4696fd] text-black rounded-full px-3 py-1 text-center whitespace-nowrap">by connecting user insights to real design and engineering decisions.</em>
+      What excites me most about product management is being part of the <em class="text-2xl bg-[#eef066] text-black rounded-full px-3 py-1 text-center whitespace-nowrap">entire journey</em> — from defining a problem to seeing a solution make a difference for users. I love collaborating with diverse teams, <em class="text-2xl bg-[#eef066] text-black rounded-full px-3 py-1 text-center whitespace-nowrap">asking the right questions</em>, and turning ideas into products that people actually enjoy using.
     </p>
   </div>
   <a href="https://samahmed.info" target="_blank" class="text-2xl mt-12 inline-block relative float-right border p-3 rounded hover:bg-white hover:text-black duration-500">Discover Technical & Creative Portfolios →</a>
