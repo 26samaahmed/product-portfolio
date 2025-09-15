@@ -8,6 +8,6 @@ export type Project = {
 };
 
 export type Button = {
-  link: string;
   name: string;
+  link: string;
 }

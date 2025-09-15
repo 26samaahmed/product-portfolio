@@ -23,14 +23,15 @@
   import image1 from '$lib/assets/image1.jpg';
   import image2 from '$lib/assets/image2.jpg';
   import placeholder from '$lib/assets/placeholder.png';
+  import Resume from '$lib/assets/Sama_Ahmed_Resume.pdf';
 
 
 
   let buttons: Button[] = [
-    { name: 'Home', link: '#home' },
     { name: 'Work', link: '#work' },
     { name: 'Extras', link: '#extras' },
-    { name: 'Contact', link: '#contact' },
+    { name: 'Contact', link: 'ssama5336@gmail.com' },
+    { name: 'Resume', link: Resume }
   ];
 
   const projects: Project[] = [
@@ -39,7 +40,7 @@
     project_duration: 'work in progress',
     role: 'Product Manager',
     problem_statement:
-      'How can we improve the experience of listening to music in the car with friends by creating a fun and interactive karaoke feature that allows passengers to sing along to their favorite songs while on park',
+      'How can we improve the experience of listening to music in the car with friends by creating a fun and interactive karaoke feature that allows passengers to sing along to their favorite songs while on park?',
     imageUrl: placeholder,
     tags: ['Product Management', 'UX Research', 'UI/UX Design']
   },
