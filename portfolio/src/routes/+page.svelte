@@ -81,31 +81,34 @@
   <div class="text-[#FFFFFF] bg-[#000000] min-h-screen p-8">
     <NavBar {buttons} />
 
-    <div class="flex flex-col md:flex-row items-center md:items-start justify-between pt-24 m-10">
+    <div class="flex flex-col md:flex-row items-center md:items-start justify-between pt-16 m-2 md:pt-24 md:m-10">
 
-      <div class="text-left space-y-8">
-        <h1 class="text-8xl mb-4 font-heading">Welcome!</h1>
-        <p class="text-4xl font-sans w-5/6">
-          I’m Sama Ahmed, an <em class="text-2xl bg-[#4696fd] text-black rounded-full px-3 py-1 text-center whitespace-nowrap">aspiring product manager</em> passionate about building intuitive, user-centered products.
-          With experience across tech, design, and user research, I bring both creativity and <em class="bg-[#e775f8] text-2xl text-black rounded-full px-3 py-1 text-center whitespace-nowrap">analytical thinking</em> to product development <span class="text-[#92fe8c]">☘︎ ݁˖</span>.
+      <div class="text-left md:space-y-8">
+        <h1 class="text-5xl md:text-8xl mb-4 font-heading">Welcome!</h1>
+        <p class="text-2xl md:text-4xl font-sans w-full sm:w-5/6">
+          I’m Sama Ahmed, an <em class="text-lg md:text-2xl bg-[#4696fd] text-black rounded-full px-3 py-1 text-center whitespace-nowrap">aspiring product manager</em> passionate about building intuitive, user-centered products.
+          With experience across tech, design, and user research, I bring both creativity and <em class="bg-[#e775f8] text-lg md:text-2xl text-black rounded-full px-3 py-1 text-center whitespace-nowrap">analytical thinking</em> to product development <span class="text-[#92fe8c]">☘︎ ݁˖</span>.
         </p>
       </div>
 
 
       <div class="relative md:w-1/2 flex justify-center pt-12 md:pt-0">
-        <div class="w-64 h-80 border-2 shadow-lg flex items-center justify-center hover:scale-[1.06] duration-500 z-10">
-          <img src={image1} alt="Profile 1" class="w-48 h-64 object-cover" />
+        <div class="w-48 h-60 md:w-64 md:h-80 border-2 shadow-lg flex items-center justify-center hover:scale-[1.06] duration-500 z-10">
+          <img src={image1} alt="Profile 1" class="w-40 h-48 md:w-48 md:h-64 object-cover" />
         </div>
 
-        <div class="w-64 h-80 border-2 shadow-lg -ml-20 mt-16 flex items-center justify-center hover:scale-[1.06] duration-500 z-20">
-          <img src={image2} alt="Profile 2" class="w-48 h-64 object-cover" />
+        <div class="w-48 h-60 md:w-64 md:h-80 border-2 shadow-lg -ml-20 mt-16 flex items-center justify-center hover:scale-[1.06] duration-500 z-20">
+          <img src={image2} alt="Profile 2" class="w-40 h-48 md:w-48 md:h-64  object-cover" />
         </div>
       </div>
     </div>
 
+    
     <div id="work" class="mt-44 m-10">
       <ProjectList {projects} />
     </div>
+    
+    <!--
 
     <div id="extras" class="mt-44 m-10">
       <AboutMe />
@@ -114,6 +117,7 @@
     <div id="extras" class="mt-44 m-10">
       <p class="text-5xl font-sans">Life beyond College</p>
     </div>
+    -->
 
 
   </div>
