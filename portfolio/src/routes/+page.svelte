@@ -36,7 +36,7 @@
 
   const projects: Project[] = [
   {
-    title: "Spotify Caraoke on Park",
+    title: "Carplay Karaoke",
     project_duration: 'work in progress',
     role: 'Product Manager',
     problem_statement:
@@ -71,6 +71,16 @@
     imageUrl: placeholder,
     tags: ['Web Development', 'UI/UX Design', 'Collaboration']
   }
+];
+
+const bucket_list = [
+  { text: "Go on a run during sunset at least once a week", done: false },
+  { text: "Try rock climbing", done: true },
+  { text: "Go to a pottery class", done: false },
+  { text: "Yoga Class", done: true },
+  { text: "Learn how to play the guitar", done: false },
+  { text: "Start reading books again", done: false },
+  { text: "Learn how to edit videos", done: false }
 ];
 
 
@@ -112,10 +122,36 @@
     </div>
 
     <div id="extras" class="mt-44 m-10">
-      <p class="text-5xl font-sans">Life beyond College</p>
+      <p class="text-5xl font-sans">Senior Year Bucket List</p>
+      <p class="mt-2 text-xl text-gray-600">
+        {bucket_list.filter(i => i.done).length} / {bucket_list.length} completed
+      </p>
+      
+      <div class="w-1/3 bg-gray-200 rounded-full h-4 mt-4 overflow-hidden">
+        <div 
+          class="bg-green-300 h-4" 
+          style="width: {100 * bucket_list.filter(i => i.done).length / bucket_list.length}%"
+        ></div>
+      </div>
+      
+      
+      <ul class="mt-6 space-y-4 text-2xl border w-1/3 p-3 rounded-xl shadow">
+        {#each bucket_list as item}
+          <li class="flex items-center justify-between">
+            <span>{item.text}</span>
+            <span
+              class="ml-4 px-3 py-1 text-sm rounded-full 
+                     {item.done 
+                       ? 'bg-green-200 text-green-700' 
+                       : 'bg-gray-200 text-gray-700'}"
+            >
+              {item.done ? "✓ Done" : "Not Yet"}
+            </span>
+          </li>
+        {/each}
+      </ul>
     </div>
-
-
+    
   </div>
 </main>
 

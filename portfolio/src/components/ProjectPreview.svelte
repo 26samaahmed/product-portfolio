@@ -19,11 +19,6 @@ import placeholder from '$lib/assets/project1.png';
     {/each}
       
       <!--
-      <a href="/casestudies" target="_blank" 
-            class="inline-block border px-3 py-1 bg-[#4696fd] text-lg text-white rounded-full 
-                    hover:opacity-75 duration-500">
-            Check Case Study
-      </a>
       <p class="text-xl mb-1">Duration: {project_duration}</p>
     -->
     </div>
@@ -34,7 +29,14 @@ import placeholder from '$lib/assets/project1.png';
 
     <p class="text-2xl mb-4"><em>Problem Statement:</em> {problem_statement}</p>
     <img src={imageUrl} alt="Project" 
-         class="w-2/3 h-auto object-cover rounded-sm border border-white" />
+         class="w-2/3 h-auto object-cover rounded-sm border border-white mb-5" />
+
+    <div class="flex justify-end">
+      <a href="/casestudies" target="_blank" 
+          class="text-xl text-white relative after:block after:h-[2px] after:bg-white after:scale-x-0 after:origin-left after:transition-transform after:duration-300 after:mt-1 hover:after:scale-x-100">
+            Check Case Study
+      </a>
+    </div>        
     
   </div>  
 </main>
