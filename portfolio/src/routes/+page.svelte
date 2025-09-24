@@ -74,13 +74,14 @@
 ];
 
 const bucket_list = [
-  { text: "Go on a run during sunset at least once a week", done: false },
   { text: "Try rock climbing", done: true },
   { text: "Go to a pottery class", done: false },
   { text: "Yoga Class", done: true },
   { text: "Learn how to play the guitar", done: false },
   { text: "Start reading books again", done: false },
-  { text: "Learn how to edit videos", done: false }
+  { text: "Learn how to edit videos", done: false },
+  { text: "Learn Korean", done: false },
+  { text: "Travel to Asia in the winter", done: false }
 ];
 
 
