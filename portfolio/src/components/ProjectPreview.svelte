@@ -11,7 +11,7 @@ import placeholder from '$lib/assets/project1.png';
 </script>
 
 <main>
-  <div class="w-2/3 h-full mt-6 m-auto pb-5">
+  <div class="w-2/3 h-full mt-6 m-auto p-8 border rounded border-white">
     <div class="flex flex-col md:flex-row space-x-4 items-center mb-4">
       <h1 class="text-4xl">{title}</h1>
       {#each tags as tag}

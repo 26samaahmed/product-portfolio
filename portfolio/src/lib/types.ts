@@ -11,3 +11,8 @@ export type Button = {
   name: string;
   link: string;
 }
+
+export type BucketListItem = {
+  text: string;
+  done: boolean;
+}

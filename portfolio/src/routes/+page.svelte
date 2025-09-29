@@ -15,8 +15,11 @@
 <script lang="ts">
   import NavBar from '../components/NavBar.svelte';
   import ProjectList from '../components/ProjectList.svelte';
-  import type { Project, Button } from '$lib/types'
+  import type { Project, Button, BucketListItem } from '$lib/types'
   import AboutMe from '../components/AboutMe.svelte';
+  import Extras from '../components/Extras.svelte';
+
+
   import project1 from '$lib/assets/project1.png';
   import project2 from '$lib/assets/project2.png';
   import project3 from '$lib/assets/project3.png';
@@ -27,7 +30,7 @@
 
 
 
-  let buttons: Button[] = [
+  const buttons: Button[] = [
     { name: 'Work', link: '#work' },
     { name: 'Extras', link: '#extras' },
     { name: 'Contact', link: 'ssama5336@gmail.com' },
@@ -73,10 +76,11 @@
   }
 ];
 
-const bucket_list = [
+const bucket_list: BucketListItem[] = [
+  { text: "Go on a run during sunset at least once a week", done: false },
   { text: "Try rock climbing", done: true },
   { text: "Go to a pottery class", done: false },
-  { text: "Yoga Class", done: true },
+  { text: "Go to yoga Classes", done: true },
   { text: "Learn how to play the guitar", done: false },
   { text: "Start reading books again", done: false },
   { text: "Learn how to edit videos", done: false },
@@ -120,38 +124,9 @@ const bucket_list = [
 
     <div id="extras" class="mt-44 m-10">
       <AboutMe />
+      <Extras {bucket_list} />
     </div>
 
-    <div id="extras" class="mt-44 m-10">
-      <p class="text-5xl font-sans">Senior Year Bucket List</p>
-      <p class="mt-2 text-xl text-gray-600">
-        {bucket_list.filter(i => i.done).length} / {bucket_list.length} completed
-      </p>
-      
-      <div class="w-1/3 bg-gray-200 rounded-full h-4 mt-4 overflow-hidden">
-        <div 
-          class="bg-green-300 h-4" 
-          style="width: {100 * bucket_list.filter(i => i.done).length / bucket_list.length}%"
-        ></div>
-      </div>
-      
-      
-      <ul class="mt-6 space-y-4 text-2xl border w-1/3 p-3 rounded-xl shadow">
-        {#each bucket_list as item}
-          <li class="flex items-center justify-between">
-            <span>{item.text}</span>
-            <span
-              class="ml-4 px-3 py-1 text-sm rounded-full 
-                     {item.done 
-                       ? 'bg-green-200 text-green-700' 
-                       : 'bg-gray-200 text-gray-700'}"
-            >
-              {item.done ? "✓ Done" : "Not Yet"}
-            </span>
-          </li>
-        {/each}
-      </ul>
-    </div>
     
   </div>
 </main>
