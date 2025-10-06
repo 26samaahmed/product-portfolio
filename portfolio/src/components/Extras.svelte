@@ -6,7 +6,7 @@
 
 <main>
   <div id="extras" class="mt-44">
-    <p class="text-5xl font-sans">Senior Year Bucket List</p>
+    <p class="text-5xl font-sans">10 things to do before graduation</p>
 
     <div>
       <p class="mt-2 text-xl text-gray-600">
@@ -21,12 +21,12 @@
       </div>
       
       
-      <ul class="mt-6 space-y-4 text-2xl border w-2/4 p-3 rounded-xl shadow">
+      <ul class="mt-6 space-y-4 text-2xl border w-2/4 p-3 rounded-md shadow">
         {#each bucket_list as item}
           <li class="flex items-center justify-between">
             <span>{item.text}</span>
             <span
-              class="ml-4 px-3 py-1 text-sm rounded-full 
+              class="ml-4 px-5 py-1 text-sm rounded-md 
                     {item.done 
                       ? 'bg-green-200 text-green-700' 
                       : 'bg-gray-200 text-gray-700'}"

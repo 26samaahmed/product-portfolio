@@ -77,16 +77,18 @@
 ];
 
 const bucket_list: BucketListItem[] = [
-  { text: "Go on a run during sunset at least once a week", done: false },
+  { text: "Run during sunset weekly", done: false },
   { text: "Try rock climbing", done: true },
-  { text: "Go to a pottery class", done: false },
-  { text: "Go to yoga Classes", done: true },
-  { text: "Learn how to play the guitar", done: false },
-  { text: "Start reading books again", done: false },
-  { text: "Learn how to edit videos", done: false },
+  { text: "Take a pottery class", done: false },
+  { text: "Attend yoga classes", done: true },
+  { text: "Learn badminton", done: true },
+  { text: "Play the guitar", done: false },
+  { text: "Read more books", done: true },
+  { text: "Edit videos", done: false },
   { text: "Learn Korean", done: false },
-  { text: "Travel to Asia in the winter", done: false }
+  { text: "Travel to Asia in winter", done: false }
 ];
+
 
 
 
