@@ -3,12 +3,12 @@
   import type { Project } from '$lib/types';
   import {slide} from 'svelte/transition';
 
-  export let projects: Project[]; 
+  export let project_list: Project[]; 
 
   let currentIndex = 0;
 
   function nextProject() {
-    if (currentIndex < projects.length - 1) {
+    if (currentIndex < project_list.length - 1) {
       currentIndex += 1;
     }
   }
@@ -26,7 +26,7 @@
 
   {#key currentIndex}
     <div transition:slide={{ duration: 600 }}>
-      <ProjectPreview {...projects[currentIndex]} />
+      <ProjectPreview projects={project_list[currentIndex]} />
     </div>
   {/key}
 
@@ -46,7 +46,7 @@
     {/if}
 
     <div class="flex gap-4">
-      {#each projects as _, index}
+      {#each project_list as _, index}
         <div class="w-4 h-4 rounded-full border"
           class:bg-white={index === currentIndex}
           class:bg-black={index !== currentIndex}>
@@ -54,7 +54,7 @@
       {/each}
     </div>
 
-    {#if currentIndex < projects.length - 1}
+    {#if currentIndex < project_list.length - 1}
       <button on:click={nextProject} class="text-2xl inline-block relative float-right">
         <span
           class="relative after:content-[''] after:absolute after:w-full after:h-0.5 

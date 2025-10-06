@@ -13,11 +13,11 @@
 </svelte:head>
 
 <script lang="ts">
-  import NavBar from '../components/NavBar.svelte';
-  import ProjectList from '../components/ProjectList.svelte';
+  import NavBar from '$lib/components/NavBar.svelte';
+  import ProjectList from '$lib/components/ProjectList.svelte';
+  import AboutMe from '$lib/components/AboutMe.svelte';
+  import Extras from '$lib/components/Extras.svelte';
   import type { Project, Button, BucketListItem } from '$lib/types'
-  import AboutMe from '../components/AboutMe.svelte';
-  import Extras from '../components/Extras.svelte';
 
 
   import project1 from '$lib/assets/project1.png';
@@ -37,15 +37,16 @@
     { name: 'Resume', link: Resume }
   ];
 
-  const projects: Project[] = [
+  const project_list: Project[] = [
   {
-    title: "Carplay Karaoke",
+    title: 'Carplay Karaoke',
     project_duration: 'work in progress',
     role: 'Product Manager',
     problem_statement:
       'How can we improve the experience of listening to music in the car with friends by creating a fun and interactive karaoke feature that allows passengers to sing along to their favorite songs while on park?',
     imageUrl: placeholder,
-    tags: ['Product Management', 'UX Research', 'UI/UX Design']
+    tags: ['Product Management', 'UX Research', 'UI/UX Design'],
+    casestudyUrl: "/casestudy/carplay-karaoke"
   },
   {
     title: 'MyRepChat',
@@ -54,7 +55,8 @@
     problem_statement:
       'How might we improve the usability of a communication platform for financial advisors by identifying pain points and streamlining client interactions?',
     imageUrl: placeholder,
-    tags: ['User Research', 'Data Analysis', 'Usability Testing']
+    tags: ['User Research', 'Data Analysis', 'Usability Testing'],
+    casestudyUrl: "/casestudy/myrepchat"
   },
   {
     title: 'FullyHacks 2025',
@@ -63,7 +65,8 @@
     problem_statement:
       'How might we design a hackathon that feels welcoming to beginners while still offering advanced challenges, workshops, and mentorship for experienced participants?',
     imageUrl: placeholder,
-    tags: ['Event Planning', 'Team Leadership', 'Community Building']
+    tags: ['Event Planning', 'Team Leadership', 'Community Building'],
+    casestudyUrl: "/casestudy/fullyhacks2025"
   },
   {
     title: 'FullyBeyond 2024',
@@ -72,7 +75,8 @@
     problem_statement:
       'How might we build a responsive, user-friendly website that communicates event details clearly while attracting participants and sponsors to our designathon?',
     imageUrl: placeholder,
-    tags: ['Web Development', 'UI/UX Design', 'Collaboration']
+    tags: ['Web Development', 'UI/UX Design', 'Collaboration'],
+    casestudyUrl: "/casestudy/fullybeyond2024"
   }
 ];
 
@@ -119,7 +123,7 @@ const bucket_list: BucketListItem[] = [
     </div>
 
     <div id="work" class="mt-44 m-10">
-      <ProjectList {projects} />
+      <ProjectList {project_list} />
     </div>
 
     <div id="extras" class="mt-44 m-10">

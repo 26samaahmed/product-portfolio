@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{html,js,svelte,ts}"],
+  content: ['./src/**/*.{svelte,ts,js}'],
   theme: {
     extend: {
       fontFamily: {
-        ephesis: ['Ephesis', 'cursive'],
-        alumni: ['Alumni Sans', 'sans-serif'],
+        sans: ['Alumni Sans', 'sans-serif'],
+        heading: ['Ephesis', 'cursive'],
       },
     },
   },
   plugins: [],
-}
+};
