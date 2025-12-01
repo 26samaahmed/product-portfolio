@@ -15,7 +15,7 @@ import placeholder from '$lib/assets/project1.png';
     <div class="flex flex-col md:flex-row space-x-4 items-center mb-4">
       <h1 class="text-4xl">{title}</h1>
       {#each tags as tag}
-      <p class="bg-[#eef066] text-lg text-black rounded-full px-3 py-1 text-center whitespace-nowrap">{tag}</p>
+      <p class="bg-[#6AA8DE] text-lg text-black rounded-full px-3 py-1 text-center whitespace-nowrap">{tag}</p>
     {/each}
       
       <!--
