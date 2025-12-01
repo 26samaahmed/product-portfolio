@@ -95,7 +95,7 @@ const bucket_list: BucketListItem[] = [
 </script>
 
 <main>
-  <div class="text-[#FFFFFF] bg-[#000000] min-h-screen p-8">
+  <div class="text-[#C0D9ED] bg-[#092943] min-h-screen p-8">
     <NavBar {buttons} />
 
     <div class="flex flex-col md:flex-row items-center md:items-start justify-between pt-24 m-10">
