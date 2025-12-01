@@ -2,6 +2,6 @@
 
 /* Define font tokens Tailwind will generate classes for */
 @theme {
-  --font-sans: "Alumni Sans", sans-serif;
+  --font-sans: "BenchNine", sans-serif;
   --font-heading: "Ephesis", cursive;
 }

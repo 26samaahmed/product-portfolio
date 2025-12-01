@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&family=Ephesis&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&family=Ephesis&display=swap" rel="stylesheet">
 </svelte:head>
 
 <script lang="ts">
@@ -23,8 +23,6 @@
   import project1 from '$lib/assets/project1.png';
   import project2 from '$lib/assets/project2.png';
   import project3 from '$lib/assets/project3.png';
-  import image1 from '$lib/assets/image1.jpg';
-  import image2 from '$lib/assets/image2.jpg';
   import placeholder from '$lib/assets/placeholder.png';
   import Resume from '$lib/assets/Sama_Ahmed_Resume.pdf';
 
@@ -98,27 +96,19 @@ const bucket_list: BucketListItem[] = [
   <div class="text-[#C0D9ED] bg-[#092943] min-h-screen p-8">
     <NavBar {buttons} />
 
-    <div class="flex flex-col md:flex-row items-center md:items-start justify-between pt-24 m-10">
-
-      <div class="text-left space-y-8">
+    <div class="w-full flex justify-center pt-36 pb-36">
+      <div class="text-center w-3/4">
         <h1 class="text-8xl mb-4 font-heading">Welcome!</h1>
-        <p class="text-4xl font-sans w-5/6">
-          I’m Sama Ahmed, an <em class="text-2xl bg-[#4696fd] text-black rounded-full px-3 py-1 text-center whitespace-nowrap">aspiring product manager</em> passionate about building intuitive, user-centered products.
-          With experience across tech, design, and user research, I bring both creativity and <em class="bg-[#e775f8] text-2xl text-black rounded-full px-3 py-1 text-center whitespace-nowrap">analytical thinking</em> to product development ⟡
+        <p class="text-4xl/12 font-sans">
+          I’m Sama Ahmed, an
+          <span class="text-2xl bg-[#4696fd] text-black rounded-full px-3 py-1 text-center whitespace-nowrap">aspiring product manager</span>
+          passionate about building intuitive, user-centered products.
+          With experience across tech, design, and user research, I bring both creativity and
+          analytical thinking to product development ⟡
         </p>
       </div>
-
-
-      <div class="relative md:w-1/2 flex justify-center pt-12 md:pt-0">
-        <div class="w-64 h-80 border-2 shadow-lg flex items-center justify-center hover:scale-[1.06] duration-500 z-10">
-          <img src={image1} alt="Profile 1" class="w-48 h-64 object-cover" />
-        </div>
-
-        <div class="w-64 h-80 border-2 shadow-lg -ml-20 mt-16 flex items-center justify-center hover:scale-[1.06] duration-500 z-20">
-          <img src={image2} alt="Profile 2" class="w-48 h-64 object-cover" />
-        </div>
-      </div>
     </div>
+    
 
     <div id="work" class="mt-44 m-10">
       <ProjectList {projects} />

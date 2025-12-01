@@ -24,7 +24,7 @@ import placeholder from '$lib/assets/project1.png';
     </div>
 
 
-    <p class="text-2xl mb-4"><em>Problem Statement:</em> {problem_statement}</p>
+    <p class="text-2xl mb-4">Problem Statement: {problem_statement}</p>
     <img src={imageUrl} alt="Project" 
          class="w-2/3 h-auto object-cover rounded-sm border border-white mb-5" />
 
