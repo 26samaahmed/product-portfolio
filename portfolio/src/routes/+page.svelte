@@ -104,7 +104,7 @@ const bucket_list: BucketListItem[] = [
         <h1 class="text-8xl mb-4 font-heading">Welcome!</h1>
         <p class="text-4xl font-sans w-5/6">
           I’m Sama Ahmed, an <em class="text-2xl bg-[#4696fd] text-black rounded-full px-3 py-1 text-center whitespace-nowrap">aspiring product manager</em> passionate about building intuitive, user-centered products.
-          With experience across tech, design, and user research, I bring both creativity and <em class="bg-[#e775f8] text-2xl text-black rounded-full px-3 py-1 text-center whitespace-nowrap">analytical thinking</em> to product development ⟡</span>.
+          With experience across tech, design, and user research, I bring both creativity and <em class="bg-[#e775f8] text-2xl text-black rounded-full px-3 py-1 text-center whitespace-nowrap">analytical thinking</em> to product development ⟡
         </p>
       </div>
 
