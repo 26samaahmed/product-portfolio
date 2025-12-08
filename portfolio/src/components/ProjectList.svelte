@@ -1,7 +1,8 @@
 <script lang="ts">
   import ProjectPreview from './ProjectPreview.svelte';
   import type { Project } from '$lib/types';
-  import {slide} from 'svelte/transition';
+  import { slide } from 'svelte/transition';
+  import { cubicOut } from 'svelte/easing';
 
   export let projects: Project[]; 
 
@@ -18,53 +19,54 @@
       currentIndex -= 1;
     }
   }
+
+  // keyboard navigation
+  function handleKey(e: KeyboardEvent) {
+    if (e.key === 'ArrowLeft') previousProject();
+    if (e.key === 'ArrowRight') nextProject();
+  }
 </script>
 
-<main>
+<main class="w-full flex flex-col items-center mt-12 px-6 md:px-12" on:keydown={handleKey} tabindex="0">
 
-  <p class="text-5xl font-sans">Case Studies</p>
 
   {#key currentIndex}
-    <div transition:slide={{ duration: 600 }}>
+    <div transition:slide={{ duration: 600, easing: cubicOut }}>
       <ProjectPreview {...projects[currentIndex]} />
     </div>
   {/key}
 
 
-  <div class="flex justify-between items-center mt-6 m-auto w-2/3">
+  <div class="flex justify-between items-center mt-8 w-full max-w-3xl">
+    
+
     {#if currentIndex > 0}
-      <button on:click={previousProject} class="text-2xl inline-block relative">
-        ← <span
-          class="relative after:content-[''] after:absolute after:w-full after:h-0.5 
-            after:bottom-0 after:left-0 after:scale-x-0 after:origin-bottom-right 
-            after:transition-transform after:duration-[250ms] after:ease-out after:bg-[#FFFFFF]
-            hover:after:scale-x-100 hover:after:origin-bottom-left"
-        >
-          Previous
-        </span>
+      <button 
+        on:click={previousProject} 
+        class="px-5 py-2 rounded-full border border-[#105C42] hover:bg-[#EAFAE3] transition duration-300 text-lg">
+        ← Previous
       </button>
     {/if}
 
-    <div class="flex gap-4">
+
+    <div class="flex gap-3">
       {#each projects as _, index}
-        <div class="w-4 h-4 rounded-full border"
-          class:bg-white={index === currentIndex}
-          class:bg-black={index !== currentIndex}>
+        <div 
+          class="w-4 h-4 rounded-full border border-[#105C42] transition-colors duration-300"
+          class:bg-[#105C42]={index === currentIndex}
+          class:bg-[#EAFAE3]={index !== currentIndex}>
         </div>
       {/each}
     </div>
 
+
     {#if currentIndex < projects.length - 1}
-      <button on:click={nextProject} class="text-2xl inline-block relative float-right">
-        <span
-          class="relative after:content-[''] after:absolute after:w-full after:h-0.5 
-            after:bottom-0 after:left-0 after:scale-x-0 after:origin-bottom-right 
-            after:transition-transform after:duration-[250ms] after:ease-out after:bg-[#FFFFFF]
-            hover:after:scale-x-100 hover:after:origin-bottom-left"
-        >
-          Next
-        </span> →
+      <button 
+        on:click={nextProject} 
+        class="px-5 py-2 rounded-full border border-[#105C42] hover:bg-[#EAFAE3] transition duration-300 text-lg">
+        Next →
       </button>
     {/if}
+
   </div>
 </main>

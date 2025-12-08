@@ -11,31 +11,34 @@ import placeholder from '$lib/assets/project1.png';
 </script>
 
 <main>
-  <div class="w-2/3 h-full mt-6 m-auto p-8 border rounded border-white">
-    <div class="flex flex-col md:flex-row space-x-4 items-center mb-4">
-      <h1 class="text-4xl">{title}</h1>
-      {#each tags as tag}
-      <p class="bg-[#6AA8DE] text-lg text-black rounded-full px-3 py-1 text-center whitespace-nowrap">{tag}</p>
-    {/each}
-      
-      <!--
-      <p class="text-xl mb-1">Duration: {project_duration}</p>
-    -->
+  <div class="w-2/3 mt-12 m-auto relative">
+
+
+    <div class="absolute -top-5 left-8 bg-[#105C42] text-white px-5 py-2 rounded-t-xl shadow-md z-10 text-lg font-semibold">
+      {title}
     </div>
 
 
-    <p class="text-2xl mb-4">Problem Statement: {problem_statement}</p>
-    <img src={imageUrl} alt="Project" 
-         class="w-2/3 h-auto object-cover rounded-sm border border-white mb-5" />
+    <div class="bg-[#EAFAE3] border border-[#105C42] rounded-2xl shadow-xl pt-10 pb-6 px-8 hover:scale-[1.03] transition-transform duration-300">
+      
 
-    <!--
-    <div class="flex justify-end">
-      <a href="/casestudies" target="_blank" 
-          class="text-xl text-white relative after:block after:h-[2px] after:bg-white after:scale-x-0 after:origin-left after:transition-transform after:duration-300 after:mt-1 hover:after:scale-x-100">
-            Check Case Study
-      </a>
-    </div>  
-    -->      
-    
-  </div>  
+      <div class="flex flex-wrap gap-2 mb-4">
+        {#each tags as tag}
+          <span class="bg-white border border-[#105C42] text-[#105C42] px-4 py-1 rounded-full text-sm shadow-sm">
+            {tag}
+          </span>
+        {/each}
+      </div>
+
+ 
+      <p class="text-2xl mb-6 leading-relaxed">
+        Problem Statement: {problem_statement}
+      </p>
+
+
+      <img src={imageUrl} alt="Project" 
+           class="w-full h-auto object-cover rounded-xl border border-white shadow-md" />
+
+    </div>
+  </div>
 </main>

@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&family=Ephesis&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Ephesis&display=swap" rel="stylesheet">
 </svelte:head>
 
 <script lang="ts">
@@ -30,21 +30,13 @@
 
   const buttons: Button[] = [
     { name: 'Work', link: '#work' },
+    { name: 'About', link: '#about' },
     { name: 'Extras', link: '#extras' },
     { name: 'Contact', link: 'ssama5336@gmail.com' },
     { name: 'Resume', link: Resume }
   ];
 
   const projects: Project[] = [
-  {
-    title: "Carplay Karaoke",
-    project_duration: 'work in progress',
-    role: 'Product Manager',
-    problem_statement:
-      'How can we improve the experience of listening to music in the car with friends by creating a fun and interactive karaoke feature that allows passengers to sing along to their favorite songs while on park?',
-    imageUrl: placeholder,
-    tags: ['Product Management', 'UX Research', 'UI/UX Design']
-  },
   {
     title: 'MyRepChat',
     project_duration: '10 Weeks',
@@ -93,30 +85,43 @@ const bucket_list: BucketListItem[] = [
 </script>
 
 <main>
-  <div class="text-[#C0D9ED] bg-[#092943] min-h-screen p-8">
+  <div class="text-[#105C42] bg-[#CDD9C9] min-h-screen p-12">
     <NavBar {buttons} />
 
-    <div class="w-full flex justify-center pt-36 pb-36">
-      <div class="text-center w-3/4">
-        <h1 class="text-8xl mb-4 font-heading">Welcome!</h1>
-        <p class="text-4xl/12 font-sans">
+    <div class="w-full flex flex-col items-center pt-36 pb-36 text-center">
+      <div class="w-full max-w-5xl">
+        <h1 class="text-8xl mb-6 font-sans">Welcome!</h1>
+    
+        <p class="text-4xl/12 font-sans mb-8">
           I’m Sama Ahmed, an
-          <span class="text-2xl bg-[#4696fd] text-black rounded-full px-3 py-1 text-center whitespace-nowrap">aspiring product manager</span>
+          <span class="text-2xl bg-[#EAFAE3] rounded-full px-3 py-1 whitespace-nowrap">
+            aspiring product manager
+          </span>
           passionate about building intuitive, user-centered products.
           With experience across tech, design, and user research, I bring both creativity and
           analytical thinking to product development ⟡
         </p>
+    
+
+        <a href={Resume} target="_blank" 
+           class="px-8 py-4 text-2xl rounded-full border border-[#105C42] hover:bg-[#EAFAE3] duration-500">
+          View Resume
+        </a>
       </div>
     </div>
+    
+    
     
 
     <div id="work" class="mt-44 m-10">
       <ProjectList {projects} />
     </div>
 
-    <div id="extras" class="mt-44 m-10">
+    <div id="about" class="m-36">
       <AboutMe />
+      <!--
       <Extras {bucket_list} />
+      -->
     </div>
 
     
