@@ -18,6 +18,7 @@
   import type { Project, Button, BucketListItem } from '$lib/types'
   import AboutMe from '../components/AboutMe.svelte';
   import Extras from '../components/Extras.svelte';
+  import Photos from '../components/Photos.svelte';
 
 
   import project1 from '$lib/assets/project1.png';
@@ -113,7 +114,7 @@ const bucket_list: BucketListItem[] = [
     
     
 
-    <div id="work" class="mt-44 m-10">
+    <div id="work" class="m-36">
       <ProjectList {projects} />
     </div>
 
@@ -122,6 +123,10 @@ const bucket_list: BucketListItem[] = [
       <!--
       <Extras {bucket_list} />
       -->
+    </div>
+
+    <div id="extras" class="m-36">
+      <Photos />
     </div>
 
     
