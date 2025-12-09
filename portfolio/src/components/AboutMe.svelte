@@ -5,18 +5,18 @@
 <main class="px-4 md:px-16">
   <p class="text-4xl font-sans">About Me</p>
 
-  <div class="relative flex flex-col md:flex-row items-start justify-center pt-12 gap-12">
+  <div class="relative flex flex-col md:flex-row items-start justify-center pt-12 gap-16">
 
 
     <div class="relative w-80 h-96 flex-shrink-0">
-      <div class="absolute top-2 left-2 w-full h-full bg-[#EAFAE3] rounded-sm rotate-3 z-0"></div>
-      <div class="relative w-80 h-96 border-2 shadow-lg rounded-sm -rotate-3 flex items-center justify-center transition-transform duration-500 hover:scale-105 z-10">
+      <div class="absolute top-2 left-2 w-full h-full bg-[#105C42] rounded-sm rotate-3 z-0"></div>
+      <div class="relative w-80 h-96 border-2 border-[#105C42] shadow-lg rounded-sm -rotate-3 flex items-center justify-center transition-transform duration-500 hover:scale-105 z-10">
         <img src={AboutMeImage} alt="About Me" class="w-full h-full object-cover rounded-sm" />
       </div>
     </div>
 
  
-    <div class="flex flex-col flex-1 max-w-6xl">
+    <div class="flex flex-col flex-1 max-w-2xl">
       <p class="font-sans text-xl leading-10">
         I’m a senior at Cal State Fullerton majoring in Computer Science, where I’ve had the opportunity to 
         <span class="bg-[#EAFAE3] rounded-full px-3 py-1">lead teams</span>, 

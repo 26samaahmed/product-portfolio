@@ -95,10 +95,11 @@
     </div>
     
   
-
+    <!--
     <div id="work" class="m-36">
       <ProjectList {projects} />
     </div>
+    -->
 
     <div id="about" class="m-36">
       <AboutMe />
