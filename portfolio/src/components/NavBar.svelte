@@ -20,10 +20,9 @@
 </script>
 
 
-<div class="w-full flex justify-center pb-10">
-  <div class="flex space-x-6 md:space-x-24">
+<div class="w-full flex justify-center mb-10">
+  <div class="flex space-x-6 md:space-x-20">
     {#each buttons as button}
-      {#if button.name !== 'Resume'}
         {#if button.name === 'Contact'}
           <a href="mailto:{button.link}" class={linkClasses}>
             {button.name}
@@ -36,7 +35,6 @@
           >
             {button.name}
           </a>
-        {/if}
       {/if}
     {/each}
   </div>

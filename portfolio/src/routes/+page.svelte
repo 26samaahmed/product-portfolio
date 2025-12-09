@@ -33,8 +33,7 @@
     { name: 'Work', link: '#work' },
     { name: 'About', link: '#about' },
     { name: 'Extras', link: '#extras' },
-    { name: 'Contact', link: 'ssama5336@gmail.com' },
-    { name: 'Resume', link: Resume }
+    { name: 'Contact', link: 'ssama5336@gmail.com' }
   ];
 
   const projects: Project[] = [
@@ -67,6 +66,7 @@
   }
 ];
 
+/*
 const bucket_list: BucketListItem[] = [
   { text: "Run during sunset weekly", done: false },
   { text: "Try rock climbing", done: true },
@@ -79,6 +79,7 @@ const bucket_list: BucketListItem[] = [
   { text: "Learn Korean", done: false },
   { text: "Travel to Asia in winter", done: false }
 ];
+*/
 
 
 
@@ -86,16 +87,16 @@ const bucket_list: BucketListItem[] = [
 </script>
 
 <main>
-  <div class="text-[#105C42] bg-[#CDD9C9] min-h-screen p-12">
+  <div class="text-[#105C42] bg-[#CDD9C9] min-h-screen p-10">
     <NavBar {buttons} />
 
     <div class="w-full flex flex-col items-center pt-36 pb-36 text-center">
-      <div class="w-full max-w-5xl">
-        <h1 class="text-8xl mb-6 font-sans">Welcome!</h1>
+      <div class="w-full max-w-3xl">
+        <h1 class="text-5xl mb-6 font-sans">Welcome!</h1>
     
-        <p class="text-4xl/12 font-sans mb-8">
+        <p class="text-2xl font-sans mb-8">
           I’m Sama Ahmed, an
-          <span class="text-2xl bg-[#EAFAE3] rounded-full px-3 py-1 whitespace-nowrap">
+          <span class="text-xl bg-[#EAFAE3] rounded-full px-3 py-1 whitespace-nowrap">
             aspiring product manager
           </span>
           passionate about building intuitive, user-centered products.
@@ -105,7 +106,7 @@ const bucket_list: BucketListItem[] = [
     
 
         <a href={Resume} target="_blank" 
-           class="px-8 py-4 text-2xl rounded-full border border-[#105C42] hover:bg-[#EAFAE3] duration-500">
+           class="px-6 py-2 text-xl rounded-md border border-[#105C42] hover:bg-[#EAFAE3] duration-500">
           View Resume
         </a>
       </div>

@@ -3,7 +3,7 @@
 </script>
 
 <main>
-  <p class="text-5xl font-sans">About Me</p>
+  <p class="text-3xl font-sans">About Me</p>
 
   <div class="relative flex flex-col md:flex-row items-center md:items-start justify-between pt-12">
 
@@ -19,10 +19,11 @@
     </div>
   
 
-    <p class="text-2xl/12 font-sans w-full md:w-2/3 mt-8 md:mt-0 md:ml-12">
-      I’m a senior at Cal State Fullerton majoring in Computer Science, where I’ve had the opportunity to lead teams, co-direct FullyHacks 2025, and serve as web lead for FullyBeyond 2024, our first student-run designathon. Beyond school, I spent the summer as a User Experience Researcher at LPL Financial, where I discovered how much I enjoy shaping products by <span class="text-2xl bg-[#EAFAE3] rounded-full px-3 py-1 text-center whitespace-nowrap">connecting user insights to real design and engineering decisions.</span>
-      What excites me most about product management is being part of the <span class="text-2xl bg-[#EAFAE3] rounded-full px-3 py-1 text-center whitespace-nowrap">entire journey</span> — from defining a problem to seeing a solution make a difference for users. I love collaborating with diverse teams, <span class="text-2xl bg-[#EAFAE3] rounded-full px-3 py-1 text-center whitespace-nowrap">asking the right questions</span>, and turning ideas into products that people actually enjoy using.
+    <p class="text-xl/10 font-sans w-full md:w-2/3 mt-8 md:mt-0 md:ml-12">
+      I’m a senior at Cal State Fullerton majoring in Computer Science, where I’ve had the opportunity to lead teams, co-direct FullyHacks 2025, and serve as web lead for FullyBeyond 2024, our first student-run designathon. Beyond school, I spent the summer as a User Experience Researcher at LPL Financial, where I discovered how much I enjoy shaping products by <span class="bg-[#EAFAE3] rounded-full px-3 py-1 text-center whitespace-nowrap">connecting user insights to real design and engineering decisions.</span>
+      What excites me most about product management is being part of the <span class="bg-[#EAFAE3] rounded-full px-3 py-1 text-center whitespace-nowrap">entire journey</span> — from defining a problem to seeing a solution make a difference for users. I love collaborating with diverse teams, <span class="bg-[#EAFAE3] rounded-full px-3 py-1 text-center whitespace-nowrap">asking the right questions</span>, and turning ideas into products that people actually enjoy using.
     </p>
+    
   </div>
 
   <div class="flex justify-center">

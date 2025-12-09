@@ -10,9 +10,9 @@
 </script>
 
 <main class="max-w-6xl mx-auto px-6">
-  <p class="text-5xl font-sans">College Through My Eyes</p>
+  <p class="text-3xl font-sans">College Through My Eyes</p>
 
-  <p class="text-2xl/12 font-sans mt-8">
+  <p class="text-xl font-sans mt-8">
     ⟢ A visual diary of my journey through software engineering, design, and product—capturing the small moments that made my college experience meaningful.
   </p>
 
