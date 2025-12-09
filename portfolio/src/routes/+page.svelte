@@ -17,7 +17,6 @@
   import ProjectList from '../components/ProjectList.svelte';
   import type { Project, Button, BucketListItem } from '$lib/types'
   import AboutMe from '../components/AboutMe.svelte';
-  import Extras from '../components/Extras.svelte';
   import Photos from '../components/Photos.svelte';
 
 
@@ -66,23 +65,6 @@
   }
 ];
 
-/*
-const bucket_list: BucketListItem[] = [
-  { text: "Run during sunset weekly", done: false },
-  { text: "Try rock climbing", done: true },
-  { text: "Take a pottery class", done: false },
-  { text: "Attend yoga classes", done: true },
-  { text: "Learn badminton", done: true },
-  { text: "Play the guitar", done: false },
-  { text: "Read more books", done: true },
-  { text: "Edit videos", done: false },
-  { text: "Learn Korean", done: false },
-  { text: "Travel to Asia in winter", done: false }
-];
-*/
-
-
-
 
 </script>
 
@@ -91,10 +73,10 @@ const bucket_list: BucketListItem[] = [
     <NavBar {buttons} />
 
     <div class="w-full flex flex-col items-center pt-36 pb-36 text-center">
-      <div class="w-full max-w-3xl">
+      <div class="w-full max-w-4xl">
         <h1 class="text-5xl mb-6 font-sans">Welcome!</h1>
     
-        <p class="text-2xl font-sans mb-8">
+        <p class="text-3xl font-sans mb-8">
           I’m Sama Ahmed, an
           <span class="text-xl bg-[#EAFAE3] rounded-full px-3 py-1 whitespace-nowrap">
             aspiring product manager
@@ -112,8 +94,7 @@ const bucket_list: BucketListItem[] = [
       </div>
     </div>
     
-    
-    
+  
 
     <div id="work" class="m-36">
       <ProjectList {projects} />
@@ -121,9 +102,6 @@ const bucket_list: BucketListItem[] = [
 
     <div id="about" class="m-36">
       <AboutMe />
-      <!--
-      <Extras {bucket_list} />
-      -->
     </div>
 
     <div id="extras" class="m-36">
