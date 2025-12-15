@@ -5,7 +5,7 @@ import placeholder from '$lib/assets/project1.png';
   export let project_duration = "[] Weeks";
   export let role = "Example Role";
   export let problem_statement = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
-  //export let casestudyUrl = "/casestudies";
+  export let casestudyUrl = "/casestudies";
   export let tags = ["Tag1", "Tag2", "Tag3"];
 </script>
 
@@ -35,6 +35,13 @@ import placeholder from '$lib/assets/project1.png';
       <p class="text-xl mb-6 leading-relaxed">
         {problem_statement}
       </p>
+
+      <div class="flex justify-end">
+        <a class="text-lg hover:text-gray-300 duration-600" href={casestudyUrl}>
+          Read Case Study →
+        </a>
+      </div>
+        
 
     </div>
   </div>

@@ -12,7 +12,7 @@
   };
 </script>
 
-<div class="text-center">
+<div class="text-center -mb-6">
   <p class="text-lg mb-2">
     Thank you for making it this far, here is a song recommendation for you!
   </p>
@@ -31,7 +31,7 @@
 </div>
 
 <div
-  class="grid grid-cols-1 md:grid-cols-3 items-center mt-4 md:mt-12 mx-5 sm:mx-16 text-center"
+  class="grid grid-cols-1 md:grid-cols-3 items-center mt-4 md:mt-12 mx-5 sm:mx-16 text-center -mb-6"
 >
   <!-- Left webring link (hidden on mobile) -->
   <div class="hidden md:flex items-center justify-start space-x-3">

@@ -44,7 +44,7 @@
     {#if currentIndex > 0}
       <button 
         on:click={previousProject} 
-        class="hover:text-white transition duration-600 text-lg">
+        class="hover:text-[#9FA6A4] transition duration-600 text-lg">
         ← Previous
       </button>
     {/if}
@@ -64,7 +64,7 @@
     {#if currentIndex < projects.length - 1}
       <button 
         on:click={nextProject} 
-        class="hover:text-white transition duration-600 text-lg">
+        class="hover:text-[#9FA6A4] transition duration-600 text-lg">
         Next →
       </button>
     {/if}
