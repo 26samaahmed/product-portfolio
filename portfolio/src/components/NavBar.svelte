@@ -21,7 +21,7 @@
 
 
 <div class="w-full flex justify-center mb-10">
-  <div class="flex space-x-6 md:space-x-20">
+  <div class="flex space-x-6 md:space-x-16">
     {#each buttons as button}
         {#if button.name === 'Contact'}
           <a href="mailto:{button.link}" class={linkClasses}>

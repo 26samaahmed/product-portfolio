@@ -28,6 +28,7 @@
 </script>
 
 <main class="w-full flex flex-col items-center mt-12 px-6 md:px-12" on:keydown={handleKey} tabindex="0">
+  <p class="text-4xl font-sans">Case Studies</p>
 
 
   {#key currentIndex}
@@ -43,7 +44,7 @@
     {#if currentIndex > 0}
       <button 
         on:click={previousProject} 
-        class="px-5 py-2 rounded-full border border-[#105C42] hover:bg-[#EAFAE3] transition duration-300 text-lg">
+        class="hover:text-white transition duration-600 text-lg">
         ← Previous
       </button>
     {/if}
@@ -63,7 +64,7 @@
     {#if currentIndex < projects.length - 1}
       <button 
         on:click={nextProject} 
-        class="px-5 py-2 rounded-full border border-[#105C42] hover:bg-[#EAFAE3] transition duration-300 text-lg">
+        class="hover:text-white transition duration-600 text-lg">
         Next →
       </button>
     {/if}

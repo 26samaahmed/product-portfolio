@@ -3,9 +3,9 @@
 </script>
 
 <main class="px-4 md:px-16">
-  <p class="text-4xl font-sans">About Me</p>
+  <p class="text-4xl font-sans">More About Me</p>
 
-  <div class="relative flex flex-col md:flex-row items-start justify-center pt-12 gap-16">
+  <div class="relative flex flex-col md:flex-row items-start justify-center pt-12 gap-11">
 
 
     <div class="relative w-80 h-96 flex-shrink-0">
@@ -23,7 +23,7 @@
         co-direct <span class="bg-[#EAFAE3] rounded-full px-3 py-1">FullyHacks 2025</span>, and serve as web lead for 
         <span class="bg-[#EAFAE3] rounded-full px-3 py-1">FullyBeyond 2024</span>, our first student-run designathon. Beyond school, I spent the summer as a User Experience Researcher at LPL Financial, where I discovered how much I enjoy shaping products by 
         <span class="bg-[#EAFAE3] rounded-full px-3 py-1">connecting user insights</span> to design and engineering decisions.
-      <br>
+     
         What excites me most about product management is being part of the 
         <span class="bg-[#EAFAE3] rounded-full px-3 py-1">entire journey</span> — from defining a problem to seeing a solution make a difference for users. I love collaborating with diverse teams, 
         <span class="bg-[#EAFAE3] rounded-full px-3 py-1">asking the right questions</span>, and turning ideas into products that people actually enjoy using.

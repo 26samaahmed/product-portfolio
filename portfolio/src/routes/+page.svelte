@@ -18,6 +18,7 @@
   import type { Project, Button, BucketListItem } from '$lib/types'
   import AboutMe from '../components/AboutMe.svelte';
   import Photos from '../components/Photos.svelte';
+  import Footer from '../components/Footer.svelte';
 
 
   import project1 from '$lib/assets/project1.png';
@@ -95,11 +96,10 @@
     </div>
     
   
-    <!--
     <div id="work" class="m-36">
       <ProjectList {projects} />
     </div>
-    -->
+   
 
     <div id="about" class="m-36">
       <AboutMe />
@@ -109,6 +109,13 @@
       <Photos />
     </div>
 
+    <div class="ml-36 mr-36">
+      <Footer 
+        song_url="https://open.spotify.com/embed/track/7wWw7hBmErNg9u5w6Xx0vy?utm_source=generator" 
+        color="#105C42"
+        path1={{ href: "https://www.samahmed.info/technical-portfolio", text: "Technical Portfolio" }} 
+        path2={{ href: "https://www.samahmed.info/creative-portfolio", text: "Creative Portfolio" }} 
+      />
     
   </div>
 </main>
