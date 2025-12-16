@@ -1,12 +1,7 @@
-<script>
-import placeholder from '$lib/assets/project1.png';
-
-  export let title = "Project Title";
-  export let project_duration = "[] Weeks";
-  export let role = "Example Role";
-  export let problem_statement = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
-  export let casestudyUrl = "/casestudies";
-  export let tags = ["Tag1", "Tag2", "Tag3"];
+<script lang="ts">
+  import placeholder from '$lib/assets/project1.png';
+  import type { Project } from '$lib/types';
+  export let project: Project;
 </script>
 
 <main>
@@ -16,15 +11,15 @@ import placeholder from '$lib/assets/project1.png';
       
       <div class="flex justify-between mb-4 align-center">
       <p class="text-2xl">
-        {title}
+        {project.title}
       </p>
       <p class="text-xl">
-        {project_duration} ⟡ {role}
+        {project.duration} ⟡ {project.role}
       </p>
       </div>
 
       <div class="flex flex-wrap gap-2 mb-4">
-        {#each tags as tag}
+        {#each project.tags as tag}
           <span class="bg-white border border-[#105C42] text-[#105C42] px-4 py-1 rounded-full text-sm shadow-sm">
             {tag}
           </span>
@@ -33,11 +28,11 @@ import placeholder from '$lib/assets/project1.png';
 
  
       <p class="text-xl mb-6 leading-relaxed">
-        {problem_statement}
+        {project.problem_statement}
       </p>
 
       <div class="flex justify-end">
-        <a class="text-lg hover:text-gray-300 duration-600" href={casestudyUrl}>
+        <a class="text-lg hover:text-gray-300 duration-600" href={project.casestudyUrl}>
           Read Case Study →
         </a>
       </div>

@@ -13,18 +13,17 @@
 </svelte:head>
 
 <script lang="ts">
-  import NavBar from '../components/NavBar.svelte';
-  import ProjectList from '../components/ProjectList.svelte';
   import type { Project, Button, BucketListItem } from '$lib/types'
-  import AboutMe from '../components/AboutMe.svelte';
-  import Photos from '../components/Photos.svelte';
-  import Footer from '../components/Footer.svelte';
+  import NavBar from '$lib/components/NavBar.svelte';
+  import ProjectList from '$lib/components/ProjectList.svelte';
+  import AboutMe from '$lib/components/AboutMe.svelte';
+  import Photos from '$lib/components/Photos.svelte';
+  import Footer from '$lib/components/Footer.svelte';
 
 
   import project1 from '$lib/assets/project1.png';
   import project2 from '$lib/assets/project2.png';
   import project3 from '$lib/assets/project3.png';
-  import placeholder from '$lib/assets/placeholder.png';
   import Resume from '$lib/assets/Sama_Ahmed_Resume.pdf';
 
 
@@ -39,30 +38,30 @@
   const projects: Project[] = [
   {
     title: 'MyRepChat',
-    project_duration: '10 Weeks',
+    duration: '10 Weeks',
     role: 'UX Researcher Intern',
     problem_statement:
       'How might we improve the usability of a communication platform for financial advisors by identifying pain points and streamlining client interactions?',
-    imageUrl: placeholder,
-    tags: ['User Research', 'Data Analysis', 'Usability Testing']
+    tags: ['User Research', 'Data Analysis', 'Usability Testing'],
+    casestudyUrl: "/casestudy/myrepchat"
   },
   {
     title: 'FullyHacks 2025',
-    project_duration: '9 Months',
+    duration: '9 Months',
     role: 'Co-Director',
     problem_statement:
       'How might we design a hackathon that feels welcoming to beginners while still offering advanced challenges, workshops, and mentorship for experienced participants?',
-    imageUrl: placeholder,
-    tags: ['Event Planning', 'Team Leadership', 'Community Building']
+    tags: ['Event Planning', 'Team Leadership', 'Community Building'],
+    casestudyUrl: "/casestudy/fullyhacks2025"
   },
   {
     title: 'FullyBeyond 2024',
-    project_duration: '7 Months',
+    duration: '7 Months',
     role: 'Web Lead & Co-Host',
     problem_statement:
       'How might we build a responsive, user-friendly website that communicates event details clearly while attracting participants and sponsors to our designathon?',
-    imageUrl: placeholder,
-    tags: ['Web Development', 'UI/UX Design', 'Collaboration']
+    tags: ['Web Development', 'UI/UX Design', 'Collaboration'],
+    casestudyUrl: "/casestudy/fullybeyond2024"
   }
 ];
 

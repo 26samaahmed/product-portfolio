@@ -4,7 +4,7 @@
   import { slide } from 'svelte/transition';
   import { cubicOut } from 'svelte/easing';
 
-  export let projects: Project[]; 
+  export let projects: Project[] = [];
 
   let currentIndex = 0;
 
@@ -31,11 +31,13 @@
   <p class="text-4xl font-sans">Case Studies</p>
 
 
-  {#key currentIndex}
-    <div transition:slide={{ duration: 600, easing: cubicOut }}>
-      <ProjectPreview {...projects[currentIndex]} />
-    </div>
-  {/key}
+  {#if projects.length}
+    {#key currentIndex}
+      <div transition:slide={{ duration: 600, easing: cubicOut }}>
+        <ProjectPreview project={projects[currentIndex]} />
+      </div>
+    {/key}
+  {/if}
 
 
   <div class="flex justify-between items-center mt-8 w-full max-w-3xl">

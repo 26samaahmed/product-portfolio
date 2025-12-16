@@ -1,10 +1,10 @@
 export type Project = {
   title: string;
-  project_duration: string;
+  duration: string;
   role: string;
   problem_statement: string;
-  imageUrl: string;
   tags: string[];
+  casestudyUrl: string;
 };
 
 export type Button = {
@@ -12,7 +12,11 @@ export type Button = {
   link: string;
 }
 
-export type BucketListItem = {
-  text: string;
-  done: boolean;
+export type CaseStudy = {
+  duration: string;
+  role: string;
+  title: string;
+  tags: string[];
+  introduction: string;
+  problem_statement: string;
 }
