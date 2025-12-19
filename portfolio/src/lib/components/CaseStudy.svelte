@@ -9,6 +9,8 @@
   export let caseStudy: CaseStudy;
 </script>
 
+<p>🚧 Main component for displaying a case study. Currently under development. 🚧</p>
+  <!--
 <main class="bg-[#CDD9C9] min-h-screen w-full">
   <div class="p-10 max-w-6xl mx-auto font-sans text-[#105C42]">
   <p class="text-3xl ml-0 mb-2">Timeline: {caseStudy.duration}</p>
@@ -23,10 +25,11 @@
   <hr class="border-2 border-[#105C42] my-8">
 
   <p class="mt-10 text-3xl">{caseStudy.introduction}</p>
-  <!--
+
   <p>{caseStudy.roles.join(', ')}</p>
   
   <p>{caseStudy.problem_statement}</p>
-  -->
+
   </div>
 </main>
+  -->
