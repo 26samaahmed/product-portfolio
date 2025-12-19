@@ -69,16 +69,16 @@
 </script>
 
 <main>
-  <div class="text-[#105C42] bg-[#CDD9C9] min-h-screen p-10">
+  <div class="text-[#105C42] bg-[#CDD9C9] min-h-screen p-8 md:p-10">
     <NavBar {buttons} />
 
-    <div class="w-full flex flex-col items-center pt-36 pb-36 text-center">
+    <div class="w-full flex flex-col items-center pt-24 pb-24 md:pt-36 md:pb-36 text-center">
       <div class="w-full max-w-4xl">
-        <h1 class="text-5xl mb-6 font-sans">Welcome!</h1>
+        <h1 class="text-3xl md:text-5xl md:mb-6 font-sans">Welcome!</h1>
     
-        <p class="text-3xl font-sans mb-8">
+        <p class="text-xl/8 md:text-3xl md:font-sans mb-8">
           I’m Sama Ahmed, an
-          <span class="text-xl bg-[#EAFAE3] rounded-full px-3 py-1 whitespace-nowrap">
+          <span class="text-md md:text-xl bg-[#EAFAE3] rounded-full px-3 py-1 whitespace-nowrap">
             aspiring product manager
           </span>
           passionate about building intuitive, user-centered products.
@@ -94,21 +94,22 @@
       </div>
     </div>
     
-  
-    <div id="work" class="m-36">
+
+    <div id="work" class="pt-20 md:pt-36">
       <ProjectList {projects} />
     </div>
-   
+    
 
-    <div id="about" class="m-36">
+    <div id="about" class="pt-20 md:pt-36">
       <AboutMe />
     </div>
 
-    <div id="extras" class="m-36">
+    <div id="extras" class="pt-20 md:pt-36">
       <Photos />
     </div>
 
-    <div class="ml-36 mr-36">
+
+    <div class="pt-20 md:pt-36">
       <Footer 
         song_url="https://open.spotify.com/embed/track/7wWw7hBmErNg9u5w6Xx0vy?utm_source=generator" 
         color="#105C42"
@@ -117,5 +118,6 @@
       />
     
   </div>
+
 </main>
 

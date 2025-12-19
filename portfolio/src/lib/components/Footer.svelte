@@ -58,7 +58,7 @@
   </div>
 
   <!-- Center footer: always centered -->
-  <div class="flex justify-center text-md md:text-lg lg:text-xl">
+  <div class="flex justify-center text-sm md:text-lg lg:text-xl">
     <div>
       Made with <span class="text-md">💚</span> by Sama Ahmed
       <br class="hidden sm:block" />

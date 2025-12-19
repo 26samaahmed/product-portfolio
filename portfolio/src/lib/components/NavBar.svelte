@@ -3,7 +3,7 @@
   export let buttons: Button[] = [];
 
   const linkClasses = `
-    text-md sm:text-3xl inline-block relative 
+    text-xl sm:text-3xl inline-block relative 
     after:content-[''] after:absolute after:w-full after:h-0.5 
     after:bottom-0 after:left-0 after:scale-x-0 after:origin-bottom-right 
     after:transition-transform after:duration-[250ms] after:ease-out after:bg-[#105C42]
@@ -21,7 +21,7 @@
 
 
 <div class="w-full flex justify-center mb-10">
-  <div class="flex space-x-6 md:space-x-16">
+  <div class="flex space-x-10 md:space-x-16">
     {#each buttons as button}
         {#if button.name === 'Contact'}
           <a href="mailto:{button.link}" class={linkClasses}>
