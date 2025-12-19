@@ -29,7 +29,7 @@
         <span class="bg-[#EAFAE3] rounded-full px-2 md:px-3 py-1">asking the right questions</span>, and turning ideas into products that people actually enjoy using.
       </p>
 
-      <a href="https://samahmed.info"
+      <a href="/old"
          target="_blank"
          class="mt-8 md:mt-12 text-md md:text-xl md:text-2xl px-4 py-2 md:px-8 md:py-3 border border-gray-300 rounded-lg text-center hover:bg-[#EAFAE3] transition-colors duration-500 w-full md:w-auto shadow-sm hover:shadow-md">
         Discover Technical & Creative Portfolios →

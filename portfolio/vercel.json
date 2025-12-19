@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/old",
+      "destination": "https://sama-portfolio-26samaahmeds-projects.vercel.app",
+      "permanent": true
+    },
+    {
+      "source": "/old/:path*",
+      "destination": "https://sama-portfolio-26samaahmeds-projects.vercel.app/:path*",
+      "permanent": true
+    }
+  ]
+}
