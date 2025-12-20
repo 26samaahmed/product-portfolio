@@ -13,11 +13,11 @@
   const highlights = [highlight1, highlight2, highlight3, highlight4, highlight5, highlight6, highlight7, highlight8, highlight9, highlight10];
 </script>
 
-<main class="max-w-6xl mx-auto px-6">
-  <p class="text-3xl md:text-4xl font-sans text-center">College Through My Eyes</p>
+<main class="max-w-6xl mx-auto px-6 text-center">
+  <p class="text-3xl md:text-4xl font-sans">College Through My Eyes</p>
 
   <p class="text-xl md:text-2xl font-sans mt-8">
-    ⟢ A visual diary of my journey through software engineering, design, and product—capturing the small moments that made my college experience meaningful.
+    ⟢ A visual reflection on the friendships, memories, and everyday moments that made my college journey feel like home ⟢ 
   </p>
 
   <div class="columns-1 sm:columns-2 md:columns-4 mt-10">

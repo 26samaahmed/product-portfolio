@@ -52,7 +52,7 @@
         style="--color: {color};"
         class="inline-block relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[var(--color)] after:bottom-0 after:left-0 after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-[250ms] after:ease-out hover:after:scale-x-100 hover:after:origin-bottom-left"
       >
-        {path1.text}
+        Explore {path1.text}
       </a>
     </h3>
   </div>
@@ -75,7 +75,7 @@
         style="--color: {color};"
         class="inline-block relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[var(--color)] after:bottom-0 after:left-0 after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-[250ms] after:ease-out hover:after:scale-x-100 hover:after:origin-bottom-left"
       >
-        {path2.text}
+       Explore {path2.text}
       </a>
     </h3>
     <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none">

@@ -5,7 +5,7 @@
 </script>
 
 <main>
-  <div class="w-full md:w-2/3 md:mt-12 m-auto relative">
+  <div class="w-full md:w-2/3 max-w-5xl md:mt-12 m-auto relative">
 
     <div class="bg-[#547E6F] text-[#F8F8F8] rounded-xl shadow-xl pt-10 pb-6 px-8 hover:scale-[1.03] transition-transform duration-300">
       
