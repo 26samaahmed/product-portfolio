@@ -1,6 +1,6 @@
 <svelte:head>
   <title>Sama Ahmed's Portfolio</title>
-  <meta name="description" content="Sama Ahmed's Portfolio, 2025" />
+  <meta name="description" content="Sama Ahmed's Portfolio, 2026" />
   <meta
     name="keywords"
     content="Sama Ahmed, Computer Science, Cal State Fullerton"
