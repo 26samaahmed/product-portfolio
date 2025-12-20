@@ -113,8 +113,8 @@
       <Footer 
         song_url="https://open.spotify.com/embed/track/7wWw7hBmErNg9u5w6Xx0vy?utm_source=generator" 
         color="#105C42"
-        path1={{ href: "https://www.samahmed.info/technical-portfolio", text: "Technical Portfolio" }} 
-        path2={{ href: "https://www.samahmed.info/creative-portfolio", text: "Creative Portfolio" }} 
+        path1={{ href: "https://www.old.samahmed.info/technical-portfolio", text: "Technical Portfolio" }} 
+        path2={{ href: "https://www.old.samahmed.info/creative-portfolio", text: "Creative Portfolio" }} 
       />
     
   </div>
