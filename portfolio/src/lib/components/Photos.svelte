@@ -9,8 +9,11 @@
   import highlight8 from '$lib/assets/highlight8.jpg';
   import highlight9 from '$lib/assets/highlight9.jpg';
   import highlight10 from '$lib/assets/highlight10.jpg';
+  import highlight11 from '$lib/assets/highlight11.png';
+  import highlight12 from '$lib/assets/highlight12.png';
+  import highlight13 from '$lib/assets/highlight13.png';
 
-  const highlights = [highlight1, highlight2, highlight3, highlight4, highlight5, highlight6, highlight7, highlight8, highlight9, highlight10];
+  const highlights = [highlight1, highlight2, highlight3, highlight4, highlight5, highlight6, highlight7, highlight8, highlight9, highlight10, highlight11, highlight12, highlight13];
 </script>
 
 <main class="max-w-6xl mx-auto px-6 text-center">
