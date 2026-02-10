@@ -69,7 +69,7 @@
 </script>
 
 <main>
-  <div class="text-[#105C42] bg-[#CDD9C9] min-h-screen p-8 md:p-10">
+  <div class="text-[#041B13] bg-[#E7E7E7] min-h-screen p-8 md:p-10">
     <NavBar {buttons} />
 
     <div class="w-full flex flex-col items-center pt-24 pb-24 md:pt-36 md:pb-36 text-center">
