@@ -7,14 +7,10 @@
   />
   <meta name="author" content="sama ahmed" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Ephesis&display=swap" rel="stylesheet">
 </svelte:head>
 
 <script lang="ts">
   import type { Project, Button, BucketListItem } from '$lib/types'
-  import NavBar from '$lib/components/NavBar.svelte';
   import ProjectList from '$lib/components/ProjectList.svelte';
   import AboutMe from '$lib/components/AboutMe.svelte';
   import Photos from '$lib/components/Photos.svelte';
@@ -28,11 +24,12 @@
 
 
 
-  const buttons: Button[] = [
-    { name: 'Work', link: '#work' },
-    { name: 'About', link: '#about' },
-    { name: 'Extras', link: '#extras' },
-    { name: 'Contact', link: 'ssama5336@gmail.com' }
+  const paths: Button[] = [
+    { name: 'Resume', link: 'Resume' },
+    { name: 'Email', link: 'ssama5336@gmail.com' },
+    { name: 'Linkedin', link: 'https://www.linkedin.com/in/sama-ahmedd/' },
+    { name: 'Github', link: 'https://github.com/26samaahmed' },
+    { name: 'Gallery', link: '/design-gallery'}
   ];
 
   const projects: Project[] = [
@@ -65,58 +62,31 @@
   }
 ];
 
-
 </script>
 
 <main>
-  <div class="text-[#041B13] bg-[#E7E7E7] min-h-screen p-8 md:p-10">
-    <NavBar {buttons} />
+  <div class="text-[#000000] bg-[#FFFFFF] min-h-screen p-8 md:p-10 font-anaheim">
 
-    <div class="w-full flex flex-col items-center pt-24 pb-24 md:pt-36 md:pb-36 text-center">
-      <div class="w-full max-w-4xl">
-        <h1 class="text-3xl md:text-5xl md:mb-6 font-sans">Welcome!</h1>
-    
-        <p class="text-xl/8 md:text-3xl md:font-sans mb-8">
-          I’m Sama Ahmed, an
-          <span class="text-md md:text-xl bg-[#EAFAE3] rounded-full px-3 py-1 whitespace-nowrap">
-            aspiring product manager
-          </span>
-          passionate about building intuitive, user-centered products.
-          With experience across tech, design, and user research, I bring both creativity and
-          analytical thinking to product development ⟡
-        </p>
-    
+    <div class="w-full flex flex-col">
 
-        <a href={Resume} target="_blank" 
-           class="px-6 py-2 text-xl rounded-md border border-[#105C42] hover:bg-[#EAFAE3] duration-500">
-          View Resume
+      <div class="pb-5">
+        <!-- About me button-->
+        <a href="#about-me" class="text-md md:text-lg px-3 py-1 border border-black-400 rounded-sm text-center hover:bg-[#EAFAE3] transition-colors duration-500 shadow-sm hover:shadow-md">
+          About Me →
         </a>
+      </div>
+
+      <div class="w-full max-w-4xl">
+        <h1 class="text-3xl md:text-3xl md:mb-2">Welcome, I'm Sama Ahmed</h1>
+    
+        <p class="text-xl/8 md:text-2xl mb-8">
+          I build user-centered products by aligning engineering, design, and strategy
+        </p>
       </div>
     </div>
     
-
-    <div id="work" class="pt-20 md:pt-36">
-      <ProjectList {projects} />
-    </div>
-    
-
-    <div id="about" class="pt-20 md:pt-36">
-      <AboutMe />
-    </div>
-
-    <div id="extras" class="pt-20 md:pt-36">
-      <Photos />
-    </div>
-
-
-    <div class="pt-20 md:pt-36">
-      <Footer 
-        song_url="https://open.spotify.com/embed/track/7wWw7hBmErNg9u5w6Xx0vy?utm_source=generator" 
-        color="#105C42"
-        path1={{ href: "https://old.samahmed.info/technical-portfolio", text: "Technical Portfolio" }} 
-        path2={{ href: "https://old.samahmed.info/creative-portfolio", text: "Creative Portfolio" }} 
-      />
-    
+  <div class="pt-20 md:pt-36">
+    <Footer paths={paths} />
   </div>
 
 </main>

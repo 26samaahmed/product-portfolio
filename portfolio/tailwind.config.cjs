@@ -4,8 +4,6 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        ephesis: ['Ephesis', 'cursive'],
-        alumni: ['Alumni Sans', 'sans-serif'],
       },
     },
   },

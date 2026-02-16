@@ -1,7 +1,9 @@
+/* 1. Load your Google Fonts FIRST */
+@import url("https://fonts.googleapis.com/css2?family=Anaheim:wght@400..800&display=swap");
+
+/* 2. Then load Tailwind */
 @import "tailwindcss";
 
-/* Define font tokens Tailwind will generate classes for */
-@theme {
-  --font-sans: "Big Shoulders Stencil", sans-serif;
-  --font-heading: "Ephesis", cursive;
+.font-anaheim {
+  font-family: 'Anaheim', sans-serif;
 }
