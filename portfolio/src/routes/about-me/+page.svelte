@@ -24,8 +24,6 @@
         <span class="font-semibold">Web Design Intern at Titan Radio</span> and a 
         <span class="font-semibold">Figma Campus Leader</span>, where I host workshops and create resources to help students build confidence in design.
       </p>
-      
-      
   </div>
 
   <Footer />

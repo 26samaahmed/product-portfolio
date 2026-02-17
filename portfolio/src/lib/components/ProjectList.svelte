@@ -9,10 +9,17 @@
       
       <div class="flex gap-6 items-center mb-2">
         <a
-          href={project.caseStudyUrl} target="_blank"
-          class="text-2xl flex"
+          href={project.caseStudyUrl}
+          target="_blank"
+          class="text-2xl inline-flex items-center gap-2 group"
         >
-          {project.title}
+          <span class="transition-transform duration-200 group-hover:translate-x-1">
+            {project.title}
+          </span>
+
+          <span class="text-lg opacity-0 group-hover:opacity-100 transition-all duration-200">
+            ↗
+          </span>
         </a>
 
         <div>
@@ -23,9 +30,10 @@
 
       </div>
 
-      <div class="flex justify-between mt-2 text-md text-gray-600">
-        <span>{project.role}</span>
-        <span>{project.duration}</span>
+      <div class="mt-2 text-md text-gray-600 flex gap-4">
+          <span>{project.role}</span>
+          <span>•</span>
+          <span>{project.duration}</span>
       </div>
 
       <p class="text-gray-700 mt-2"><i>{project.preview}</i></p>
