@@ -13,7 +13,7 @@
   import { onMount } from "svelte";
   import Footer from '$lib/components/Footer.svelte';
 
-  const fullText = "I build user-centered products by aligning engineering, design, and strategy";
+  const fullText = "I build user-centered products by aligning engineering, design, and strategy 𐔌՞ ܸ.ˬ.ܸ՞𐦯";
 
   let displayedText = "";
   let index = 0;
