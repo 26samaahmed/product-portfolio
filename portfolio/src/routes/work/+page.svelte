@@ -10,8 +10,8 @@
     title: 'MyRepChat',
     duration: '10 Weeks',
     role: 'User Experience Research Intern',
-    impact: 'insert impact here',
-    preview: 'insert desc here',
+    impact: 'Impact 1',
+    preview: 'How might we improve the usability of a communication platform for financial advisors by identifying pain points and streamlining client interactions?',
     tags: ['User Research', 'Data Analysis', 'Usability Testing'],
     caseStudyUrl: "/casestudy/myrepchat"
   },
@@ -20,7 +20,7 @@
     duration: '9 months',
     role: 'Director',
     impact: 'Impact 2',
-    preview: 'Preview 2',
+    preview: 'How might we design a hackathon that feels welcoming to beginners while still offering advanced challenges, workshops, and mentorship for experienced participants?',
     tags: ['Event Planning', 'Team Leadership', 'Community Building'],
     caseStudyUrl: "/casestudy/project2"
   },
@@ -29,7 +29,7 @@
     duration: '7 months',
     role: 'Web Development Lead',
     impact: 'Impact 3',
-    preview: 'Preview 3',
+    preview: 'How might we build a responsive, user-friendly website that communicates event details clearly while attracting participants and sponsors to our designathon?',
     tags: ['Web Development', 'UI/UX Design', 'Collaboration'],
     caseStudyUrl: "/casestudy/project3"
   }
