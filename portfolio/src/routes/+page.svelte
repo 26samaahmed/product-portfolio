@@ -5,119 +5,80 @@
     name="keywords"
     content="Sama Ahmed, Computer Science, Cal State Fullerton"
   />
-  <meta name="author" content="sama ahmed" />
+  <meta name="author" content="Sama Ahmed" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Ephesis&display=swap" rel="stylesheet">
 </svelte:head>
 
 <script lang="ts">
-  import type { Project, Button, BucketListItem } from '$lib/types'
-  import NavBar from '$lib/components/NavBar.svelte';
-  import ProjectList from '$lib/components/ProjectList.svelte';
-  import AboutMe from '$lib/components/AboutMe.svelte';
-  import Photos from '$lib/components/Photos.svelte';
+  import { onMount } from "svelte";
+  import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
 
+  const fullText = "I build user-centered products by aligning engineering, design, and strategy 𐔌՞ ܸ.ˬ.ܸ՞𐦯";
 
-  import project1 from '$lib/assets/project1.png';
-  import project2 from '$lib/assets/project2.png';
-  import project3 from '$lib/assets/project3.png';
-  import Resume from '$lib/assets/Sama_Ahmed_Resume.pdf';
+  let displayedText = "";
+  let index = 0;
 
+  onMount(() => {
+    const interval = setInterval(() => {
+      displayedText += fullText[index];
+      index++;
 
+      if (index >= fullText.length) {
+        clearInterval(interval);
+      }
+    }, 35); // typing speed (lower = faster)
 
-  const buttons: Button[] = [
-    { name: 'Work', link: '#work' },
-    { name: 'About', link: '#about' },
-    { name: 'Extras', link: '#extras' },
-    { name: 'Contact', link: 'ssama5336@gmail.com' }
-  ];
-
-  const projects: Project[] = [
-  {
-    title: 'MyRepChat',
-    duration: '10 Weeks',
-    role: 'UX Researcher Intern',
-    problem_statement:
-      'How might we improve the usability of a communication platform for financial advisors by identifying pain points and streamlining client interactions?',
-    tags: ['User Research', 'Data Analysis', 'Usability Testing'],
-    casestudyUrl: "/casestudy/myrepchat"
-  },
-  {
-    title: 'FullyHacks 2025',
-    duration: '9 Months',
-    role: 'Co-Director',
-    problem_statement:
-      'How might we design a hackathon that feels welcoming to beginners while still offering advanced challenges, workshops, and mentorship for experienced participants?',
-    tags: ['Event Planning', 'Team Leadership', 'Community Building'],
-    casestudyUrl: "/casestudy/fullyhacks2025"
-  },
-  {
-    title: 'FullyBeyond 2024',
-    duration: '7 Months',
-    role: 'Web Lead & Co-Host',
-    problem_statement:
-      'How might we build a responsive, user-friendly website that communicates event details clearly while attracting participants and sponsors to our designathon?',
-    tags: ['Web Development', 'UI/UX Design', 'Collaboration'],
-    casestudyUrl: "/casestudy/fullybeyond2024"
-  }
-];
-
-
+    return () => clearInterval(interval);
+  });
 </script>
 
-<main>
-  <div class="text-[#041B13] bg-[#E7E7E7] min-h-screen p-8 md:p-10">
-    <NavBar {buttons} />
+<main class="min-h-screen flex flex-col text-[#000000] bg-[#FFFFFF] p-4 font-anaheim">
 
-    <div class="w-full flex flex-col items-center pt-24 pb-24 md:pt-36 md:pb-36 text-center">
-      <div class="w-full max-w-4xl">
-        <h1 class="text-3xl md:text-5xl md:mb-6 font-sans">Welcome!</h1>
-    
-        <p class="text-xl/8 md:text-3xl md:font-sans mb-8">
-          I’m Sama Ahmed, an
-          <span class="text-md md:text-xl bg-[#EAFAE3] rounded-full px-3 py-1 whitespace-nowrap">
-            aspiring product manager
-          </span>
-          passionate about building intuitive, user-centered products.
-          With experience across tech, design, and user research, I bring both creativity and
-          analytical thinking to product development ⟡
-        </p>
-    
+  <Header/>
+  <div class="flex-1 w-full flex flex-col">
 
-        <a href={Resume} target="_blank" 
-           class="px-6 py-2 text-xl rounded-md border border-[#105C42] hover:bg-[#EAFAE3] duration-500">
-          View Resume
+    <div class="w-full max-w-4xl m-auto text-center">
+      <h1 class="text-3xl md:text-4xl md:mb-2">
+        Welcome, I'm
+        <span class="relative inline-block px-2">
+          <span class="relative z-10">Sama Ahmed</span>
+        
+          <span
+            class="absolute -left-4 -right-4 top-1/2 -translate-y-1/2
+                   h-8 bg-[#CDE8DF]/80 -z-0
+                   rotate-[-2deg]
+                   rounded-[60%_40%_55%_45%/50%_60%_40%_60%]"
+          ></span>
+        </span>
+      </h1>
+      
+
+      <p class="text-xl/8 md:text-3xl mb-8 min-h-[3rem]">
+        {displayedText}
+        <span class="animate-pulse">|</span>
+      </p>
+      
+      <div class="flex justify-center gap-6 mt-6">
+        <a
+          href="/about-me"
+          class="group flex items-center gap-2 px-4 py-2 border border-black rounded-sm hover:bg-black hover:text-white transition-all duration-300"
+        >
+          <span class="transition-transform group-hover:-translate-x-1">←</span>
+          About Me
+        </a>
+      
+        <a
+          href="/work"
+          class="group flex items-center gap-2 px-4 py-2 border border-black rounded-sm hover:bg-black hover:text-white transition-all duration-300"
+        >
+          View My Work
+          <span class="transition-transform group-hover:translate-x-1">→</span>
         </a>
       </div>
     </div>
-    
-
-    <div id="work" class="pt-20 md:pt-36">
-      <ProjectList {projects} />
-    </div>
-    
-
-    <div id="about" class="pt-20 md:pt-36">
-      <AboutMe />
-    </div>
-
-    <div id="extras" class="pt-20 md:pt-36">
-      <Photos />
-    </div>
-
-
-    <div class="pt-20 md:pt-36">
-      <Footer 
-        song_url="https://open.spotify.com/embed/track/7wWw7hBmErNg9u5w6Xx0vy?utm_source=generator" 
-        color="#105C42"
-        path1={{ href: "https://old.samahmed.info/technical-portfolio", text: "Technical Portfolio" }} 
-        path2={{ href: "https://old.samahmed.info/creative-portfolio", text: "Creative Portfolio" }} 
-      />
-    
   </div>
+  
+  <Footer/>
 
 </main>
-

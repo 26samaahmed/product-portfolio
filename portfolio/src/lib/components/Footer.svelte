@@ -1,93 +1,45 @@
-<script>
-  export let song_url = "";
-  export let color = "";
-  export let path1 = {
-    href: "/",
-    text: "",
-  };
+<script lang="ts">
+  import Resume from '$lib/assets/Sama_Ahmed_Resume.pdf';
+  import type { Button} from '$lib/types';
 
-  export let path2 = {
-    href: "/",
-    text: "",
-  };
+  const paths: Button[] = [
+    { name: 'Resume', link: Resume },
+    { name: 'Email', link: 'ssama5336@gmail.com' },
+    { name: 'Linkedin', link: 'https://www.linkedin.com/in/sama-ahmedd/' },
+    { name: 'Github', link: 'https://github.com/26samaahmed' },
+    { name: 'Gallery', link: 'https://design-gallery.samahmed.info/'}
+  ];
+
+  const linkClasses = `
+    tracking-wide text-base sm:text-sm inline-block relative 
+    text-black/60 hover:text-black transition-colors
+    after:content-[''] after:absolute after:w-full after:h-0.5 
+    after:bottom-0 after:left-0 after:scale-x-0 after:origin-bottom-right 
+    after:transition-transform after:duration-[350ms] after:ease-out after:bg-[#105C42]
+    hover:after:scale-x-100 hover:after:origin-bottom-left
+  `;
 </script>
 
-<div class="text-center -mb-6">
-  <p class="text-lg mb-2">
-    Thank you for making it this far, here is a song recommendation for you!
-  </p>
-  <iframe
-    style="border-radius:12px; display:block; margin:auto;"
-    class="w-full sm:w-96"
-    src={song_url}
-    height="100"
-    frameBorder="0"
-    allowfullscreen
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy"
-    title="Spotify Song Player"
-  >
-  </iframe>
+<p class="text-sm text-black/60 text-center mb-6">
+  Designed and built by Sama Ahmed
+</p>
+
+<div class="w-full max-w-5xl mx-auto mb-1">
+  <div class="h-px bg-black/10"></div>
 </div>
 
-<div
-  class="grid grid-cols-1 md:grid-cols-3 items-center mt-4 md:mt-12 mx-5 sm:mx-16 text-center -mb-6"
->
-  <!-- Left webring link (hidden on mobile) -->
-  <div class="hidden md:flex items-center justify-start space-x-3">
-    <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none">
-      <line x1="6" y1="12" x2="22" y2="12" stroke={color} stroke-width="2" />
-      <polyline
-        points="12,6 6,12 12,18"
-        fill="none"
-        stroke={color}
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-    </svg>
-    <h3 class="text-md md:text-lg lg:text-xl">
-      <a
-        href={path1.href}
-        style="--color: {color};"
-        class="inline-block relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[var(--color)] after:bottom-0 after:left-0 after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-[250ms] after:ease-out hover:after:scale-x-100 hover:after:origin-bottom-left"
-      >
-        Explore {path1.text}
-      </a>
-    </h3>
-  </div>
-
-  <!-- Center footer: always centered -->
-  <div class="flex justify-center text-sm md:text-lg lg:text-xl">
-    <div>
-      Made with <span class="text-md">💚</span> by Sama Ahmed
-      <br class="hidden sm:block" />
-      <span class="block text-sm md:text-base">All Rights Reserved © 2026</span
-      >
-    </div>
-  </div>
-
-  <!-- Right webring link (hidden on mobile) -->
-  <div class="hidden md:flex items-center justify-end space-x-3">
-    <h3 class="text-md md:text-lg lg:text-xl">
-      <a
-        href={path2.href}
-        style="--color: {color};"
-        class="inline-block relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[var(--color)] after:bottom-0 after:left-0 after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-[250ms] after:ease-out hover:after:scale-x-100 hover:after:origin-bottom-left"
-      >
-       Explore {path2.text}
-      </a>
-    </h3>
-    <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none">
-      <line x1="2" y1="12" x2="18" y2="12" stroke={color} stroke-width="2" />
-      <polyline
-        points="12,6 18,12 12,18"
-        fill="none"
-        stroke={color}
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-    </svg>
+<div class="w-full flex justify-center py-6">
+  <div class="flex space-x-10 md:space-x-36">
+    {#each paths as path}
+      {#if path.name === 'Email'}
+        <a href="mailto:{path.link}" class={linkClasses} target="_blank">
+          {path.name}
+        </a>
+      {:else}
+        <a href={path.link} class={linkClasses} target="_blank">
+          {path.name}
+        </a>
+      {/if}
+    {/each}
   </div>
 </div>
