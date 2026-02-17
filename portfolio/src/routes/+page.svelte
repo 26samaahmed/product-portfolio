@@ -11,17 +11,7 @@
 
 <script lang="ts">
   import { onMount } from "svelte";
-  import type { Button} from '$lib/types'
-  import Resume from '$lib/assets/Sama_Ahmed_Resume.pdf';
   import Footer from '$lib/components/Footer.svelte';
-
-  const paths: Button[] = [
-    { name: 'Resume', link: 'Resume' },
-    { name: 'Email', link: 'ssama5336@gmail.com' },
-    { name: 'Linkedin', link: 'https://www.linkedin.com/in/sama-ahmedd/' },
-    { name: 'Github', link: 'https://github.com/26samaahmed' },
-    { name: 'Gallery', link: '/design-gallery'}
-  ];
 
   const fullText = "I build user-centered products by aligning engineering, design, and strategy";
 
@@ -59,9 +49,6 @@
                    rounded-[60%_40%_55%_45%/50%_60%_40%_60%]"
           ></span>
         </span>
-        
-        
-        
       </h1>
       
 
@@ -72,7 +59,7 @@
       
       <div class="flex justify-center gap-6 mt-6">
         <a
-          href="#about-me"
+          href="/about-me"
           class="group flex items-center gap-2 px-4 py-2 border border-black rounded-sm hover:bg-black hover:text-white transition-all duration-300"
         >
           <span class="transition-transform group-hover:-translate-x-1">←</span>
@@ -80,26 +67,16 @@
         </a>
       
         <a
-          href="#work"
+          href="/work"
           class="group flex items-center gap-2 px-4 py-2 border border-black rounded-sm hover:bg-black hover:text-white transition-all duration-300"
         >
           View My Work
           <span class="transition-transform group-hover:translate-x-1">→</span>
         </a>
       </div>
-      
     </div>
-
-  </div>
-
-  <p class="text-sm text-black/60 text-center mb-6">
-    Designed and built by Sama Ahmed.
-  </p>
-  
-  <div class="w-full max-w-5xl mx-auto mb-1">
-    <div class="h-px bg-black/10"></div>
   </div>
   
-  <Footer paths={paths} />
+  <Footer/>
 
 </main>
