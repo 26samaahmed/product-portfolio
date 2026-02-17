@@ -8,8 +8,8 @@
 
   <Header />
   <div class="w-full max-w-4xl m-auto items-center text-center">
-    <p class="text-3xl font-anaheim font-semibold">Case Studies Are Under Development (˶˃ ᵕ ˂˶)</p>
-    <p class="text-3xl font-anaheim font-semibold">Please Check Back Soon!</p>
+    <p class="text-2xl md:text-3xl font-anaheim font-semibold">Case Studies Are Under Development (˶˃ ᵕ ˂˶)</p>
+    <p class="text-2xl md:text-3xl font-anaheim font-semibold">Please Check Back Soon!</p>
   </div>
   <Footer />
 </main>

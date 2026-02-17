@@ -11,7 +11,7 @@
   ];
 
   const linkClasses = `
-    tracking-wide text-base sm:text-sm inline-block relative 
+    tracking-wide text-xs sm:text-sm inline-block relative 
     text-black/60 hover:text-black transition-colors
     after:content-[''] after:absolute after:w-full after:h-0.5 
     after:bottom-0 after:left-0 after:scale-x-0 after:origin-bottom-right 
@@ -24,12 +24,11 @@
   Designed and built by Sama Ahmed
 </p>
 
-<div class="w-full max-w-5xl mx-auto mb-1">
+<div class="w-full max-w-4xl md:max-w-5xl mx-auto mb-1">
   <div class="h-px bg-black/10"></div>
 </div>
 
-<div class="w-full flex justify-center py-6">
-  <div class="flex space-x-10 md:space-x-36">
+<div class="w-full flex justify-center py-6 space-x-8 md:space-x-36">
     {#each paths as path}
       {#if path.name === 'Email'}
         <a href="mailto:{path.link}" class={linkClasses} target="_blank">
@@ -41,5 +40,4 @@
         </a>
       {/if}
     {/each}
-  </div>
 </div>
