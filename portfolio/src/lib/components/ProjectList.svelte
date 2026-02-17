@@ -24,7 +24,7 @@
 
         <div>
           {#each project.tags as tag}
-            <span class="text-xs md:text-sm text-gray-500 mr-2 border border-[#105C42] px-2 md:px-4 py-1 rounded-full shadow-sm">{tag}</span>
+            <span class="text-xs md:text-sm text-gray-500 mr-2 border border-[#black] px-2 md:px-4 py-1 rounded-full shadow-sm">{tag}</span>
           {/each}
         </div>
 
