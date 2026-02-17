@@ -33,7 +33,7 @@
   });
 </script>
 
-<main class="min-h-screen flex flex-col text-[#000000] bg-[#FFFFFF] p-4 font-anaheim">
+<main class="min-h-screen flex flex-col text-[#000000] bg-[#FFFFFF] p-4 pt-1 font-anaheim">
 
   <Header/>
   <div class="flex-1 w-full flex flex-col">
