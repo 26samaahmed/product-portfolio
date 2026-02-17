@@ -7,7 +7,7 @@
   {#each projects as project}
     <div class="mb-10">
       
-      <div class="flex gap-6 items-center mb-2">
+      <div class="flex flex-col md:flex-row gap-6 items-start md:items-center mb-2">
         <a
           href={project.caseStudyUrl}
           target="_blank"
@@ -24,7 +24,7 @@
 
         <div>
           {#each project.tags as tag}
-            <span class="text-sm text-gray-500 mr-2 border border-[#105C42] px-2 md:px-4 py-1 rounded-full shadow-sm">{tag}</span>
+            <span class="text-xs md:text-sm text-gray-500 mr-2 border border-[#105C42] px-2 md:px-4 py-1 rounded-full shadow-sm">{tag}</span>
           {/each}
         </div>
 

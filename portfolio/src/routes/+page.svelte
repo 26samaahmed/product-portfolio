@@ -38,7 +38,7 @@
   <Header/>
   <div class="flex-1 w-full flex flex-col">
 
-    <div class="w-full max-w-4xl m-auto text-center">
+    <div class="w-full max-w-3xl md:max-w-4xl m-auto text-center">
       <h1 class="text-3xl md:text-4xl md:mb-2">
         Welcome, I'm
         <span class="relative inline-block px-2">

@@ -7,7 +7,7 @@
 <main class="min-h-screen flex flex-col text-[#000000] bg-[#FFFFFF] p-4 font-anaheim">
 
   <Header />
-  <div class="w-full max-w-4xl m-auto">
+  <div class="w-full max-w-4xl m-auto pt-10 pb-10">
       <p class="text-3xl font-anaheim mb-5 font-semibold">About Me</p>
       <p class="font-anaheim text-lg md:text-xl">
         I’m a senior at Cal State Fullerton majoring in Computer Science, where I’ve led 
