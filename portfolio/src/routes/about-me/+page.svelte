@@ -1,12 +1,14 @@
 <script>
   import AboutMeImage from '$lib/assets/about-me.png';
+  import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
 </script>
 
 <main class="min-h-screen flex flex-col text-[#000000] bg-[#FFFFFF] p-4 font-anaheim">
 
+  <Header />
   <div class="w-full max-w-4xl m-auto">
-      <p class="text-3xl font-anaheim mb-5">About Me</p>
+      <p class="text-3xl font-anaheim mb-5 font-semibold">About Me</p>
       <p class="font-anaheim text-lg md:text-xl">
         I’m a senior at Cal State Fullerton majoring in Computer Science, where I’ve had the opportunity to lead teams, 
         co-direct FullyHacks 2025, and serve as web lead for FullyBeyond 2024, our first student-run designathon. Beyond school, 

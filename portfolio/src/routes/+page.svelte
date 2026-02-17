@@ -11,6 +11,7 @@
 
 <script lang="ts">
   import { onMount } from "svelte";
+  import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
 
   const fullText = "I build user-centered products by aligning engineering, design, and strategy 𐔌՞ ܸ.ˬ.ܸ՞𐦯";
@@ -34,6 +35,7 @@
 
 <main class="min-h-screen flex flex-col text-[#000000] bg-[#FFFFFF] p-4 font-anaheim">
 
+  <Header/>
   <div class="flex-1 w-full flex flex-col">
 
     <div class="w-full max-w-4xl m-auto text-center">
