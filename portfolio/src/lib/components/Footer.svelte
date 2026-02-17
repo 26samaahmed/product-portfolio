@@ -1,29 +1,26 @@
 <script lang="ts">
   export let paths: Button[] = [];
   const linkClasses = `
-    text-xl sm:text-md inline-block relative 
+    tracking-wide text-base sm:text-sm inline-block relative 
+    text-black/60 hover:text-black transition-colors
     after:content-[''] after:absolute after:w-full after:h-0.5 
     after:bottom-0 after:left-0 after:scale-x-0 after:origin-bottom-right 
-    after:transition-transform after:duration-[250ms] after:ease-out after:bg-[#105C42]
+    after:transition-transform after:duration-[350ms] after:ease-out after:bg-[#105C42]
     hover:after:scale-x-100 hover:after:origin-bottom-left
   `;
 </script>
 
-<div class="w-full flex justify-center mb-10">
-  <div class="flex space-x-10 md:space-x-24">
+<div class="w-full flex justify-center py-6">
+  <div class="flex space-x-10 md:space-x-36">
     {#each paths as path}
-        {#if path.name === 'Email'}
-          <a href="mailto:{path.link}" class={linkClasses} target="_blank">
-            {path.name}
-          </a>
-        {:else}
-          <a
-            href={path.link}
-            class={linkClasses}
-            target="_blank"
-          >
-            {path.name}
-          </a>
+      {#if path.name === 'Email'}
+        <a href="mailto:{path.link}" class={linkClasses} target="_blank">
+          {path.name}
+        </a>
+      {:else}
+        <a href={path.link} class={linkClasses} target="_blank">
+          {path.name}
+        </a>
       {/if}
     {/each}
   </div>

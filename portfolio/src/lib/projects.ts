@@ -1,1 +1,0 @@
-//move projects from +page.svelte to this file for better organization

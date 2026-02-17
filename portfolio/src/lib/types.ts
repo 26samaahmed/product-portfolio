@@ -11,12 +11,3 @@ export type Button = {
   name: string;
   link: string;
 }
-
-export type CaseStudy = {
-  duration: string;
-  role: string;
-  title: string;
-  tags: string[];
-  introduction: string;
-  problem_statement: string;
-}
