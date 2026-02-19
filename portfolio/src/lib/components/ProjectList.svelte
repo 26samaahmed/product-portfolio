@@ -36,7 +36,7 @@
           <span>{project.duration}</span>
       </div>
 
-      <p class="text-gray-700 mt-2"><i>{project.preview}</i></p>
+      <p class="text-gray-700 mt-2">{project.preview}</p>
     </div>
   {/each}
 

@@ -7,7 +7,7 @@
     { name: 'Email', link: 'ssama5336@gmail.com' },
     { name: 'Linkedin', link: 'https://www.linkedin.com/in/sama-ahmedd/' },
     { name: 'Github', link: 'https://github.com/26samaahmed' },
-    { name: 'Gallery', link: 'https://design-gallery.samahmed.info/'}
+    { name: 'Design Gallery', link: 'https://design-gallery.samahmed.info/'}
   ];
 
   const linkClasses = `
@@ -21,14 +21,14 @@
 </script>
 
 <p class="text-sm text-black/60 text-center mb-6">
-  Designed and developed by Sama Ahmed ©2026
+  Designed and developed by Sama Ahmed © 2026
 </p>
 
 <div class="w-full max-w-4xl md:max-w-5xl mx-auto mb-1">
   <div class="h-px bg-black/10"></div>
 </div>
 
-<div class="w-full flex justify-center py-6 space-x-8 md:space-x-36">
+<div class="w-full flex justify-center py-6 space-x-8 md:space-x-32">
     {#each paths as path}
       {#if path.name === 'Email'}
         <a href="mailto:{path.link}" class={linkClasses} target="_blank">
