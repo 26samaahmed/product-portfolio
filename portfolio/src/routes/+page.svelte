@@ -14,7 +14,7 @@
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
 
-  const fullText = "I build user-centered products by aligning engineering, design, and strategy 𐔌՞ ܸ.ˬ.ܸ՞𐦯";
+  const fullText = "I’m an aspiring product manager who builds user-centered products at the intersection of engineering, design, and strategy.";
 
   let displayedText = "";
   let index = 0;
@@ -54,7 +54,7 @@
       </h1>
       
 
-      <p class="text-xl/8 md:text-3xl mb-8 min-h-[3rem]">
+      <p class="text-lg/6 md:text-3xl mb-8 min-h-[3rem]">
         {displayedText}
         <span class="animate-pulse">|</span>
       </p>
