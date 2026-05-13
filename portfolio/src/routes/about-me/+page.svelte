@@ -1,10 +1,9 @@
 <script>
-  import AboutMeImage from '$lib/assets/about-me.png';
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
 </script>
 
-<main class="min-h-screen flex flex-col text-[#000000] bg-[#FFFFFF] p-4 pt-1 font-anaheim">
+<main class="min-h-screen flex flex-col text-[#000000] bg-[#FAFAF8] p-4 pt-1 font-anaheim">
 
   <Header />
   <div class="w-full max-w-4xl m-auto pt-10 pb-10">

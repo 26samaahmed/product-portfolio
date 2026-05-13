@@ -6,8 +6,10 @@
 <div>
   {#each projects as project}
     <div class="mb-10">
-      
-      <div class="flex flex-col md:flex-row gap-6 items-start md:items-center mb-2">
+
+      <!-- TITLE + TAGS -->
+      <div class="flex flex-col md:flex-row gap-4 md:items-center mb-2">
+
         <a
           href={project.caseStudyUrl}
           target="_blank"
@@ -22,22 +24,20 @@
           </span>
         </a>
 
-        <div>
-          {#each project.tags as tag}
-            <span class="text-xs md:text-sm text-gray-500 mr-2 border border-[#black] px-2 md:px-4 py-1 rounded-full shadow-sm">{tag}</span>
-          {/each}
-        </div>
-
       </div>
 
-      <div class="mt-2 text-md text-gray-600 flex gap-4">
-          <span>{project.role}</span>
-          <span>•</span>
-          <span>{project.duration}</span>
+      <!-- ROLE + TIME -->
+      <div class="text-sm text-neutral-500 flex gap-3">
+        <span>{project.role}</span>
+        <span>•</span>
+        <span>{project.duration}</span>
       </div>
 
-      <p class="text-gray-700 mt-2">{project.preview}</p>
+      <!-- DESCRIPTION -->
+      <p class="text-neutral-600 mt-2 max-w-2xl">
+        {project.preview}
+      </p>
+
     </div>
   {/each}
-
 </div>
