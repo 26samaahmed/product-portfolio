@@ -34,7 +34,7 @@
       </div>
 
       <!-- DESCRIPTION -->
-      <p class="text-neutral-600 mt-2 max-w-2xl">
+      <p class="text-neutral-600 mt-2 max-w-4xl">
         {project.preview}
       </p>
 

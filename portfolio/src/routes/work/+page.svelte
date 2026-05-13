@@ -1,67 +1,61 @@
 <script lang="ts">
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import ProjectList from '$lib/components/ProjectList.svelte';
+	import ProjectList from '$lib/components/WorkList.svelte';
 	import type { Project } from '$lib/types';
 
 	const projects: (Project & { category: string })[] = [
 		{
-			title: 'UX Research at LPL Financial',
+			title: 'LPL Financial',
 			duration: '10 Weeks',
-			role: 'Intern',
-			impact: 'Impact 1',
+			role: 'UX Research Intern',
 			preview:
-				'How might we improve the usability of a communication platform for financial advisors by identifying pain points and streamlining client interactions?',
+				'How might we simplify communication workflows for financial advisors while making client interactions more intuitive and efficient?',
 			category: 'experience',
 			caseStudyUrl: '/projects'
 		},
 		{
-			title: 'Web Design Intern at Titan Radio',
+			title: 'Titan Radio',
 			duration: '5 Months',
-			role: 'Intern',
-			impact: 'Impact 1',
+			role: 'Web Design Intern',
 			preview:
-				'How might we improve the usability of a communication platform for financial advisors by identifying pain points and streamlining client interactions?',
+				'How might we redesign Titan Radio’s digital presence to better engage students and improve content discoverability?',
 			category: 'experience',
+			caseStudyUrl: '/projects'
+		},
+		{
+			title: 'Figma',
+			duration: '5 Months',
+			role: 'Campus Leader',
+			preview:
+				'How might we make design education and community-building more accessible to students interested in product design?',
+			category: 'leadership',
 			caseStudyUrl: '/projects'
 		},
 		{
 			title: 'FullyHacks 2025',
-			duration: '9 months',
+			duration: '9 Months',
 			role: 'Director',
-			impact: 'Impact 2',
 			preview:
-				'How might we design a hackathon that feels welcoming to beginners while still offering advanced challenges, workshops, and mentorship?',
+				'How might we create a beginner-friendly hackathon experience while still supporting technical growth and innovation?',
+			category: 'leadership',
+			caseStudyUrl: '/projects'
+		},
+		{
+			title: 'ACM at CSUF',
+			duration: '12 Months',
+			role: 'Webmaster',
+			preview:
+				'How might we improve ACM’s online presence to better support students, events, and technical resources?',
 			category: 'leadership',
 			caseStudyUrl: '/projects'
 		},
 		{
 			title: 'FullyBeyond 2024',
-			duration: '7 months',
+			duration: '7 Months',
 			role: 'Web Development Lead',
-			impact: 'Impact 3',
 			preview:
-				'How might we build a responsive, user-friendly website that communicates event details clearly while attracting participants and sponsors?',
-			category: 'leadership',
-			caseStudyUrl: '/projects'
-		},
-		{
-			title: 'Titan Radio Segments',
-			duration: '5 Months',
-			role: 'Host',
-			impact: 'Audio Content',
-			preview:
-				'Recorded radio segments with friends covering campus life, interviews, and casual conversations.',
-			category: 'audio',
-			caseStudyUrl: '/projects'
-		},
-		{
-			title: 'Figma Campus Leader',
-			duration: '5 Months',
-			role: 'Leader',
-			impact: 'Impact 4',
-			preview:
-				'Hosted workshops and created resources to help students build confidence in design.',
+				'How might we design a responsive event website that clearly communicates schedules, speakers, and registration details?',
 			category: 'leadership',
 			caseStudyUrl: '/projects'
 		},
@@ -69,29 +63,17 @@
 			title: 'Fliq.',
 			duration: 'Ongoing',
 			role: 'Team Lead + Frontend Dev',
-			impact: 'Impact 5',
 			preview:
-				'Passion projects where I explore design challenges and create solutions for fun and learning.',
+				'How might we recreate the nostalgic photo booth experience through real-time collaboration and playful interaction?',
 			category: 'technical',
 			caseStudyUrl: '/projects'
-		},
-		{
-			title: 'Design Gallery',
-			duration: 'Ongoing',
-			role: 'Creator',
-			impact: 'Impact 6',
-			preview:
-				'An online collection of my design work, including case studies, UI experiments, and more.',
-			category: 'design',
-			caseStudyUrl: 'https://design-gallery.samahmed.info/'
 		},
 		{
 			title: 'Aura',
 			duration: '24 Hours',
 			role: 'Designer',
-			impact: 'Top 15 Finalists in CreateSC 2024',
 			preview:
-				'A mobile app that uses AI to generate personalized mindfulness exercises based on user input and preferences.',
+				'A mobile app that reimagines how deaf individuals experience music through visuals inspired by people with color synesthesia.',
 			category: 'design',
 			caseStudyUrl: '/projects'
 		},
@@ -99,9 +81,8 @@
 			title: 'Fish Tank',
 			duration: '24 Hours',
 			role: 'Designer',
-			impact: 'Impact',
 			preview:
-				'A mobile app that uses AI to generate personalized mindfulness exercises based on user input and preferences.',
+				'An AI-powered app that curates local events based on user interests and prompts to foster connection and well-being among college students.',
 			category: 'design',
 			caseStudyUrl: '/projects'
 		},
@@ -109,20 +90,18 @@
 			title: 'E-GO',
 			duration: '6 Hours',
 			role: 'Designer',
-			impact: 'Impact',
 			preview:
-				'A mobile app that uses AI to generate personalized mindfulness exercises based on user input and preferences.',
+				'A mobile app that helps students find affordable, convenient transportation by integrating public transit options and rewarding sustainable travel.',
 			category: 'design',
 			caseStudyUrl: '/projects'
 		},
 		{
-			title: 'Webmaster',
-			duration: '12 months',
-			role: 'Website Maintainer',
-			impact: 'Impact',
+			title: 'Titan Radio Segments',
+			duration: '5 Months',
+			role: 'Host',
 			preview:
-				'A mobile app that uses AI to generate personalized mindfulness exercises based on user input and preferences.',
-			category: 'leadership',
+				'Fun radio segments and conversations with my friends',
+			category: 'audio',
 			caseStudyUrl: '/projects'
 		}
 	];
@@ -133,35 +112,44 @@
 	$: filteredProjects = projects.filter((p) => p.category === activeCategory);
 </script>
 
-<main class="font-anaheim flex min-h-screen flex-col bg-[#FAFAF8] px-5 text-[#111111] md:px-10">
+<main class="font-anaheim flex min-h-screen flex-col bg-[#FAFAF8] p-4 pt-1 text-[#000000]">
 	<Header />
 
 	<div class="mx-auto w-full max-w-4xl flex-1 pt-10 pb-10">
 		<!-- TITLE -->
-		<p class="mb-6 text-3xl font-semibold">My Work</p>
-
-		<p class="mb-3 text-sm text-neutral-400">
-			Viewing <span class="font-medium text-black">{activeCategory}</span>
+		<h1 class="mb-2 text-3xl font-semibold tracking-tight">
+			My Work
+		</h1>
+	
+		<p class="mb-5 text-sm text-neutral-400">
+			Viewing
+			<span class="font-medium capitalize text-black">
+				{activeCategory}
+			</span>
 		</p>
+	
 		<!-- FILTERS -->
-		<div class="mb-8 flex flex-wrap gap-2">
+		<div class="mb-10 flex flex-wrap gap-8">
 			{#each categories as cat}
 				<button
 					on:click={() => (activeCategory = cat)}
-					class="relative px-4 py-2 text-sm transition-all duration-200
-{activeCategory === cat ? 'text-black' : 'text-neutral-500 hover:text-black'}"
+					class="relative pb-1 text-sm capitalize transition-all duration-200
+					{activeCategory === cat
+						? 'text-black'
+						: 'text-neutral-500 hover:text-black'}"
 				>
 					<span
-						class="absolute -bottom-1 left-0 h-[2px] w-full origin-left bg-black transition-transform duration-300 ease-out"
+						class="absolute left-0 -bottom-1 h-[1.5px] w-full origin-left bg-black transition-transform duration-300 ease-out"
 						class:scale-x-100={activeCategory === cat}
 						class:scale-x-0={activeCategory !== cat}
 					></span>
-
+	
 					{cat}
 				</button>
 			{/each}
 		</div>
-		<div class="opacity-100 transition-all duration-300">
+	
+		<div class="transition-all duration-300">
 			<ProjectList projects={filteredProjects} />
 		</div>
 	</div>
