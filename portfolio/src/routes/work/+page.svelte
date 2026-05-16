@@ -6,20 +6,20 @@
 
 	const projects: (Project & { category: string })[] = [
 		{
-			title: 'LPL Financial',
-			duration: '10 Weeks',
-			role: 'UX Research Intern',
-			preview:
-				'How might we simplify communication workflows for financial advisors while making client interactions more intuitive and efficient?',
-			category: 'experience',
-			caseStudyUrl: '/projects'
-		},
-		{
 			title: 'Titan Radio',
 			duration: '5 Months',
 			role: 'Web Design Intern',
 			preview:
 				'How might we redesign Titan Radio’s digital presence to better engage students and improve content discoverability?',
+			category: 'experience',
+			caseStudyUrl: '/projects'
+		},
+		{
+			title: 'LPL Financial',
+			duration: '10 Weeks',
+			role: 'UX Research Intern',
+			preview:
+				'How might we simplify communication workflows for financial advisors while making client interactions more intuitive and efficient?',
 			category: 'experience',
 			caseStudyUrl: '/projects'
 		},
@@ -61,7 +61,7 @@
 		},
 		{
 			title: 'Fliq.',
-			duration: 'Ongoing',
+			duration: '6 Months',
 			role: 'Team Lead + Frontend Dev',
 			preview:
 				'How might we recreate the nostalgic photo booth experience through real-time collaboration and playful interaction?',
