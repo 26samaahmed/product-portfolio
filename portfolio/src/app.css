@@ -1,8 +1,8 @@
 /* 1. Load your Google Fonts FIRST */
-@import url("https://fonts.googleapis.com/css2?family=Anaheim:wght@400..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anaheim:wght@400..800&display=swap');
 
 /* 2. Then load Tailwind */
-@import "tailwindcss";
+@import 'tailwindcss';
 
 .font-anaheim {
   font-family: 'Anaheim', sans-serif;

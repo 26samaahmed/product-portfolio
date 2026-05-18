@@ -1,13 +1,13 @@
 <script lang="ts">
   import Resume from '$lib/assets/Sama_Ahmed_Resume.pdf';
-  import type { Button} from '$lib/types';
+  import type { Button } from '$lib/types';
 
   const paths: Button[] = [
     { name: 'Resume', link: Resume },
     { name: 'Email', link: 'ssama5336@gmail.com' },
     { name: 'Linkedin', link: 'https://www.linkedin.com/in/sama-ahmedd/' },
     { name: 'Github', link: 'https://github.com/26samaahmed' },
-    { name: 'Design Gallery', link: 'https://design-gallery.samahmed.info/'}
+    { name: 'Design Gallery', link: 'https://design-gallery.samahmed.info/' },
   ];
 
   const linkClasses = `
@@ -29,15 +29,15 @@
 </div>
 
 <div class="w-full flex justify-center py-6 space-x-8 md:space-x-32">
-    {#each paths as path}
-      {#if path.name === 'Email'}
-        <a href="mailto:{path.link}" class={linkClasses} target="_blank">
-          {path.name}
-        </a>
-      {:else}
-        <a href={path.link} class={linkClasses} target="_blank">
-          {path.name}
-        </a>
-      {/if}
-    {/each}
+  {#each paths as path}
+    {#if path.name === 'Email'}
+      <a href="mailto:{path.link}" class={linkClasses} target="_blank">
+        {path.name}
+      </a>
+    {:else}
+      <a href={path.link} class={linkClasses} target="_blank">
+        {path.name}
+      </a>
+    {/if}
+  {/each}
 </div>

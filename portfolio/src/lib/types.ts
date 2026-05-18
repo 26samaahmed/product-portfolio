@@ -4,13 +4,12 @@ export type Project = {
   role: string;
   impact?: string;
   preview: string; // A brief description or highlight of the project
-  tags: string[];
   image?: string;
   caseStudyUrl: string;
+  category: string;
 };
-
 
 export type Button = {
   name: string;
   link: string;
-}
+};

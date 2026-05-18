@@ -1,84 +1,137 @@
-<svelte:head>
-  <title>Sama Ahmed's Portfolio</title>
-  <meta name="description" content="Sama Ahmed's Portfolio, 2026" />
-  <meta
-    name="keywords"
-    content="Sama Ahmed, Computer Science, Cal State Fullerton"
-  />
-  <meta name="author" content="Sama Ahmed" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</svelte:head>
-
 <script lang="ts">
-  import { onMount } from "svelte";
+  import { onMount } from 'svelte';
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
 
-  const fullText = "I’m an aspiring product manager who builds user-centered products at the intersection of engineering, design, and strategy.";
+  const phrases = [
+    'Building thoughtful digital experiences.',
+    'Research × design × engineering.',
+    'Creating products centered around people.',
+  ];
 
-  let displayedText = "";
-  let index = 0;
+  let displayedText = '';
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
 
   onMount(() => {
-    const interval = setInterval(() => {
-      displayedText += fullText[index];
-      index++;
+    let timeout: ReturnType<typeof setTimeout>;
 
-      if (index >= fullText.length) {
-        clearInterval(interval);
+    const type = () => {
+      const current = phrases[phraseIndex];
+
+      if (!deleting) {
+        if (charIndex < current.length) {
+          displayedText = current.slice(0, charIndex + 1);
+          charIndex++;
+
+          timeout = setTimeout(type, 55);
+        } else {
+          timeout = setTimeout(() => {
+            deleting = true;
+            type();
+          }, 1200);
+        }
+      } else {
+        if (charIndex > 0) {
+          displayedText = current.slice(0, charIndex - 1);
+          charIndex--;
+
+          timeout = setTimeout(type, 35);
+        } else {
+          deleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+
+          timeout = setTimeout(type, 400);
+        }
       }
-    }, 35); // typing speed (lower = faster)
+    };
 
-    return () => clearInterval(interval);
+    type();
+
+    return () => clearTimeout(timeout);
   });
 </script>
 
-<main class="min-h-screen flex flex-col text-[#000000] bg-[#FFFFFF] p-4 pt-1 font-anaheim">
+<svelte:head>
+  <title>Sama Ahmed's Portfolio</title>
 
-  <Header/>
-  <div class="flex-1 w-full flex flex-col">
+  <meta
+    name="description"
+    content="Sama Ahmed — UX researcher and builder creating thoughtful digital experiences."
+  />
 
-    <div class="w-full max-w-3xl md:max-w-4xl m-auto text-center">
-      <h1 class="text-3xl md:text-4xl md:mb-2">
-        Welcome, I'm
+  <meta name="author" content="Sama Ahmed" />
+</svelte:head>
+
+<main
+  class="font-anaheim flex min-h-screen flex-col bg-[#F7F6F2] p-4 pt-1 text-neutral-900"
+>
+  <Header />
+
+  <section
+    class="mx-auto flex w-full max-w-5xl flex-1 flex-col justify-start gap-12 pt-20 pb-20 md:flex-row md:items-center md:justify-between md:pt-28"
+  >
+    <div class="max-w-3xl flex-1">
+      <h1 class="text-3xl leading-tight tracking-tight md:text-5xl">
+        Hi, I'm
         <span class="relative inline-block px-2">
           <span class="relative z-10">Sama Ahmed</span>
-        
+
           <span
-            class="absolute -left-4 -right-4 top-1/2 -translate-y-1/2
-                   h-8 bg-[#CDE8DF]/80 -z-0
-                   rotate-[-2deg]
-                   rounded-[60%_40%_55%_45%/50%_60%_40%_60%]"
+            class="absolute top-1/2 -right-3 -left-3 -z-0 h-10 -translate-y-1/2 rotate-[-2deg] rounded-[60%_40%_55%_45%/50%_60%_40%_60%] bg-[#CDE8DF]/80"
           ></span>
         </span>
       </h1>
-      
 
-      <p class="text-lg/6 md:text-3xl mb-8 min-h-[3rem]">
-        {displayedText}
-        <span class="animate-pulse">|</span>
-      </p>
-      
-      <div class="flex justify-center gap-6 mt-6">
-        <a
-          href="/about-me"
-          class="group flex items-center gap-2 px-4 py-2 border border-black rounded-sm hover:bg-black hover:text-white transition-all duration-300"
-        >
-          <span class="transition-transform group-hover:-translate-x-1">←</span>
-          About Me
-        </a>
-      
+      <div class="mt-8 space-y-3">
+        <p class="text-xl md:text-2xl">
+          Incoming UX Researcher at LPL Financial.
+        </p>
+
+        <p class="min-h-[2rem] text-lg opacity-75 md:text-xl">
+          {displayedText}
+          <span class="animate-pulse">|</span>
+        </p>
+      </div>
+
+      <div class="mt-10 flex flex-wrap gap-4">
         <a
           href="/work"
-          class="group flex items-center gap-2 px-4 py-2 border border-black rounded-sm hover:bg-black hover:text-white transition-all duration-300"
+          class="group flex items-center gap-2 rounded-full border border-black px-5 py-2.5 text-sm transition hover:bg-black hover:text-white md:text-base"
         >
-          View My Work
+          <span class="transition-transform group-hover:-translate-x-1">←</span>
+          Selected Work
+        </a>
+
+        <a
+          href="/about-me"
+          class="group flex items-center gap-2 rounded-full border border-black px-5 py-2.5 text-sm transition hover:bg-black hover:text-white md:text-base"
+        >
+          About
           <span class="transition-transform group-hover:translate-x-1">→</span>
         </a>
       </div>
     </div>
-  </div>
-  
-  <Footer/>
 
+    <div
+      class="relative flex flex-col items-center gap-3 md:ml-auto md:items-end"
+    >
+      <div
+        class="absolute -inset-4 -z-10 rounded-2xl bg-[#CDE8DF]/25 blur-2xl"
+      ></div>
+
+      <img
+        src="/about-me.jpg"
+        alt="Sama Ahmed graduation"
+        class="w-[220px] rounded-2xl object-cover shadow-lg transition hover:scale-[1.02] md:w-[300px]"
+      />
+
+      <p class="text-xs tracking-wide text-neutral-500 italic">
+        based in irvine + san diego ✷
+      </p>
+    </div>
+  </section>
+
+  <Footer />
 </main>
