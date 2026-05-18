@@ -123,7 +123,7 @@
   <Header />
 
   <div class="mx-auto w-full max-w-4xl flex-1 pt-14 pb-14">
-    <h1 class="mb-2 text-4xl font-semibold tracking-tight md:text-5xl">
+    <h1 class="mb-2 text-4xl font-medium tracking-tight md:text-5xl">
       My Work
     </h1>
 

@@ -73,7 +73,7 @@
     class="mx-auto flex w-full max-w-5xl flex-1 flex-col justify-start gap-12 pt-20 pb-20 md:flex-row md:items-center md:justify-between md:pt-28"
   >
     <div class="max-w-3xl flex-1">
-      <h1 class="text-3xl leading-tight tracking-tight md:text-5xl">
+      <h1 class="text-3xl leading-tight tracking-tight font-medium md:text-5xl">
         Hi, I'm
         <span class="relative inline-block px-2">
           <span class="relative z-10">Sama Ahmed</span>

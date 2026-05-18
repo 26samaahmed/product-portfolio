@@ -9,7 +9,7 @@
   <Header />
 
   <div class="mx-auto w-full max-w-3xl flex-1 pt-14 pb-14">
-    <h1 class="mb-8 text-4xl font-semibold tracking-tight md:text-5xl">
+    <h1 class="mb-8 text-4xl font-medium tracking-tight md:text-5xl">
       About Me
     </h1>
     <div class="space-y-6 text-lg leading-relaxed text-neutral-800 md:text-xl">
