@@ -42,24 +42,6 @@
       caseStudyUrl: '/projects/fullyhacks',
     },
     {
-      title: 'ACM at CSUF',
-      duration: '1 year',
-      role: 'Webmaster',
-      preview:
-        'How might we improve ACM’s online presence to better support students, events, and technical resources?',
-      category: 'leadership',
-      caseStudyUrl: '/projects/acm',
-    },
-    {
-      title: 'FullyBeyond 2024',
-      duration: '7 Months',
-      role: 'Web Development Lead',
-      preview:
-        'How might we design a responsive event website that clearly communicates schedules, speakers, and registration details?',
-      category: 'leadership',
-      caseStudyUrl: '/projects/fullybeyond',
-    },
-    {
       title: 'Fliq.',
       duration: '6 Months',
       role: 'Team Lead + Frontend Dev',
@@ -67,6 +49,24 @@
         'How might we recreate the nostalgic photo booth experience through real-time collaboration and playful interaction?',
       category: 'technical',
       caseStudyUrl: '/projects/fliq.',
+    },
+    {
+      title: 'acmcsuf.com',
+      duration: '1 year',
+      role: 'Webmaster',
+      preview:
+        'How might we improve ACM’s online presence to better support students, events, and technical resources?',
+      category: 'technical',
+      caseStudyUrl: '/projects/acm',
+    },
+    {
+      title: 'FullyBeyond',
+      duration: '7 Months',
+      role: 'Web Development Lead',
+      preview:
+        'How might we design a responsive event website that clearly communicates schedules, speakers, and registration details?',
+      category: 'technical',
+      caseStudyUrl: '/projects/fullybeyond',
     },
     {
       title: 'Aura',
