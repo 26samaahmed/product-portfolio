@@ -21,7 +21,7 @@
 </script>
 
 <p class="text-sm text-black/60 text-center mb-6">
-  Designed and developed by Sama Ahmed © 2026
+  © 2026 Sama Ahmed ⊹₊⟡⋆
 </p>
 
 <div class="w-full max-w-4xl md:max-w-5xl mx-auto mb-1">

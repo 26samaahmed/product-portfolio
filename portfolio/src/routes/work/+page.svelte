@@ -44,7 +44,7 @@
     {
       title: 'Fliq.',
       duration: '6 Months',
-      role: 'Team Lead + Frontend Dev',
+      role: 'Team Lead + Frontend Developer',
       preview:
         'How might we recreate the nostalgic photo booth experience through real-time collaboration and playful interaction?',
       category: 'technical',
