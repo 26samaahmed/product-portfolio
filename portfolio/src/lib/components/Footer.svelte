@@ -20,9 +20,7 @@
   `;
 </script>
 
-<p class="text-sm text-black/60 text-center mb-6">
-  © 2026 Sama Ahmed ⊹₊⟡⋆
-</p>
+<p class="text-sm text-black/60 text-center mb-6">© 2026 Sama Ahmed ⊹₊⟡⋆</p>
 
 <div class="w-full max-w-4xl md:max-w-5xl mx-auto mb-1">
   <div class="h-px bg-black/10"></div>
