@@ -129,7 +129,7 @@
 
     <p class="mb-5 text-base text-neutral-500">
       Viewing
-      <span class="font-medium text-black capitalize">
+      <span class="font-medium text-black">
         {activeCategory}
       </span>
     </p>
@@ -138,7 +138,7 @@
       {#each categories as cat}
         <button
           on:click={() => (activeCategory = cat)}
-          class="relative pb-1 text-base capitalize transition-all duration-200
+          class="relative pb-1 text-base transition-all duration-200
 					{activeCategory === cat ? 'text-black' : 'text-neutral-500 hover:text-black'}"
         >
           <span
