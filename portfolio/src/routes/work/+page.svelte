@@ -2,6 +2,8 @@
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import ProjectList from '$lib/components/WorkList.svelte';
+  import Tab from '$lib/components/Tab.svelte';
+
   import type { Project } from '$lib/types';
 
   const projects: (Project & { category: string })[] = [
@@ -106,12 +108,13 @@
   ];
 
   const categories = [
-    'experience',
-    'leadership',
-    'technical',
-    'design',
-    'audio',
-  ] as const;
+    { label: 'experience', value: 'experience' },
+    { label: 'leadership', value: 'leadership' },
+    { label: 'technical', value: 'technical' },
+    { label: 'design', value: 'design' },
+    { label: 'audio', value: 'audio' },
+  ];
+
   let activeCategory = 'experience';
 
   $: filteredProjects = projects.filter((p) => p.category === activeCategory);
@@ -123,32 +126,22 @@
   <Header />
 
   <div class="mx-auto w-full max-w-4xl flex-1 pt-14 pb-14">
-    <h1 class="mb-2 text-4xl font-medium tracking-tight md:text-5xl">
+    <h1 class="mb-6 text-4xl font-medium tracking-tight md:text-5xl">
       My Work
     </h1>
 
-    <p class="mb-5 text-base text-neutral-500">
+    <p class="mb-5 text-sm text-neutral-500">
       Viewing
-      <span class="font-medium text-black">
-        {activeCategory}
-      </span>
+      <span class="font-medium text-black">{activeCategory}</span>
     </p>
 
     <div class="mb-10 flex flex-wrap gap-8">
       {#each categories as cat}
-        <button
-          on:click={() => (activeCategory = cat)}
-          class="relative pb-1 text-base transition-all duration-200
-					{activeCategory === cat ? 'text-black' : 'text-neutral-500 hover:text-black'}"
-        >
-          <span
-            class="absolute -bottom-1 left-0 h-[1.5px] w-full origin-left bg-black transition-transform duration-300 ease-out"
-            class:scale-x-100={activeCategory === cat}
-            class:scale-x-0={activeCategory !== cat}
-          ></span>
-
-          {cat}
-        </button>
+        <Tab
+          label={cat.label}
+          active={activeCategory === cat.value}
+          onClick={() => (activeCategory = cat.value)}
+        />
       {/each}
     </div>
 

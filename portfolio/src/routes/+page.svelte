@@ -1,56 +1,6 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
-
-  const phrases = [
-    'Building thoughtful digital experiences.',
-    'Research × design × engineering.',
-    'Creating products centered around people.',
-  ];
-
-  let displayedText = '';
-  let phraseIndex = 0;
-  let charIndex = 0;
-  let deleting = false;
-
-  onMount(() => {
-    let timeout: ReturnType<typeof setTimeout>;
-
-    const type = () => {
-      const current = phrases[phraseIndex];
-
-      if (!deleting) {
-        if (charIndex < current.length) {
-          displayedText = current.slice(0, charIndex + 1);
-          charIndex++;
-
-          timeout = setTimeout(type, 55);
-        } else {
-          timeout = setTimeout(() => {
-            deleting = true;
-            type();
-          }, 1200);
-        }
-      } else {
-        if (charIndex > 0) {
-          displayedText = current.slice(0, charIndex - 1);
-          charIndex--;
-
-          timeout = setTimeout(type, 35);
-        } else {
-          deleting = false;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-
-          timeout = setTimeout(type, 400);
-        }
-      }
-    };
-
-    type();
-
-    return () => clearTimeout(timeout);
-  });
 </script>
 
 <svelte:head>
@@ -60,8 +10,6 @@
     name="description"
     content="Sama Ahmed — UX researcher and builder creating thoughtful digital experiences."
   />
-
-  <meta name="author" content="Sama Ahmed" />
 </svelte:head>
 
 <main
@@ -70,31 +18,26 @@
   <Header />
 
   <section
-    class="mx-auto flex w-full max-w-5xl flex-1 flex-col justify-start gap-12 pt-20 pb-20 md:flex-row md:items-center md:justify-between md:pt-28"
+    class="mx-auto flex w-full max-w-5xl flex-1 flex-col justify-center gap-12 pt-20 pb-20 md:flex-row md:items-center md:justify-between md:pt-28"
   >
+    <!-- LEFT -->
     <div class="max-w-3xl flex-1">
-      <h1 class="text-3xl leading-tight tracking-tight font-medium md:text-5xl">
+      <h1 class="text-3xl font-medium leading-tight tracking-tight md:text-5xl">
         Hi, I'm
-        <span class="relative inline-block px-2">
+        <span class="relative inline-block px-1">
           <span class="relative z-10">Sama Ahmed</span>
 
           <span
-            class="absolute top-1/2 -right-3 -left-3 -z-0 h-10 -translate-y-1/2 rotate-[-2deg] rounded-[60%_40%_55%_45%/50%_60%_40%_60%] bg-[#CDE8DF]/80"
+            class="absolute left-0 right-0 bottom-1 h-3 -z-0 rounded-md bg-black/5"
           ></span>
         </span>
       </h1>
 
-      <div class="mt-8 space-y-3">
-        <p class="text-xl md:text-2xl">
-          Incoming UX Researcher at LPL Financial.
-        </p>
+      <p class="mt-10 text-lg md:text-xl text-neutral-700">
+        UX Researcher at LPL Financial · turning insights into product direction
+      </p>
 
-        <p class="min-h-[2rem] text-lg opacity-75 md:text-xl">
-          {displayedText}
-          <span class="animate-pulse">|</span>
-        </p>
-      </div>
-
+      <!-- links -->
       <div class="mt-10 flex flex-wrap gap-4">
         <a
           href="/work"
@@ -114,6 +57,7 @@
       </div>
     </div>
 
+    <!-- RIGHT -->
     <div
       class="relative flex flex-col items-center gap-3 md:ml-auto md:items-end"
     >

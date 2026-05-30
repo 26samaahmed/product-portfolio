@@ -1,6 +1,7 @@
 <script lang="ts">
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import Tab from '$lib/components/Tab.svelte';
 
   let selected = 'career';
 </script>
@@ -11,80 +12,53 @@
   <Header />
 
   <div class="mx-auto w-full max-w-3xl flex-1 pt-14 pb-14">
-    <h1 class="mb-8 text-4xl font-medium tracking-tight md:text-5xl">About</h1>
+    <h1 class="mb-6 text-4xl font-medium tracking-tight md:text-5xl">About</h1>
 
+    <!-- tabs -->
     <div class="mb-10 flex flex-wrap gap-8">
-      <button
-        on:click={() => (selected = 'career')}
-        class="relative pb-1 text-base transition-all duration-200
-        {selected === 'career'
-          ? 'text-black'
-          : 'text-neutral-500 hover:text-black'}"
-      >
-        <span
-          class="absolute -bottom-1 left-0 h-[1.5px] w-full origin-left bg-black transition-transform duration-300 ease-out"
-          class:scale-x-100={selected === 'career'}
-          class:scale-x-0={selected !== 'career'}
-        ></span>
+      <Tab
+        label="career"
+        active={selected === 'career'}
+        onClick={() => (selected = 'career')}
+      />
 
-        career
-      </button>
+      <Tab
+        label="now"
+        active={selected === 'now'}
+        onClick={() => (selected = 'now')}
+      />
 
-      <button
-        on:click={() => (selected = 'now')}
-        class="relative pb-1 text-base transition-all duration-200
-        {selected === 'now'
-          ? 'text-black'
-          : 'text-neutral-500 hover:text-black'}"
-      >
-        <span
-          class="absolute -bottom-1 left-0 h-[1.5px] w-full origin-left bg-black transition-transform duration-300 ease-out"
-          class:scale-x-100={selected === 'now'}
-          class:scale-x-0={selected !== 'now'}
-        ></span>
-
-        now
-      </button>
-
-      <button
-        on:click={() => (selected = 'someday')}
-        class="relative pb-1 text-base transition-all duration-200
-        {selected === 'someday'
-          ? 'text-black'
-          : 'text-neutral-500 hover:text-black'}"
-      >
-        <span
-          class="absolute -bottom-1 left-0 h-[1.5px] w-full origin-left bg-black transition-transform duration-300 ease-out"
-          class:scale-x-100={selected === 'someday'}
-          class:scale-x-0={selected !== 'someday'}
-        ></span>
-
-        someday
-      </button>
+      <Tab
+        label="someday"
+        active={selected === 'someday'}
+        onClick={() => (selected = 'someday')}
+      />
     </div>
 
+    <!-- content -->
     <div
-      class="min-h-[360px] text-lg leading-relaxed text-neutral-800 md:text-xl"
+      class="min-h-[360px] space-y-6 text-base md:text-lg leading-relaxed text-neutral-700"
     >
       {#if selected === 'career'}
         <div class="space-y-6">
           <p>
             I recently graduated from Cal State Fullerton with a degree in
             Computer Science, where I led
-            <span class="font-semibold">cross-functional teams</span>,
-            co-directed FullyHacks 2025, and served as Web Lead for FullyBeyond
-            2024, our first student-run designathon.
+            <span class="font-medium text-neutral-900"
+              >cross-functional teams</span
+            >, co-directed FullyHacks 2025, and served as Web Lead for
+            FullyBeyond 2024, our first student-run designathon.
           </p>
 
           <p>
             In Summer 2025, I worked as a
-            <span class="font-semibold">
+            <span class="font-medium text-neutral-900">
               User Experience Researcher at LPL Financial
             </span>, where I explored how user insights can meaningfully shape
             product and design decisions. I'll be joining LPL Financial
             full-time in July as a
-            <span class="font-semibold">UX Researcher</span>, continuing to grow
-            in product thinking and user-centered design.
+            <span class="font-medium text-neutral-900">UX Researcher</span>,
+            continuing to grow in product thinking and user-centered design.
           </p>
 
           <p>
@@ -105,15 +79,14 @@
           </p>
 
           <p>
-            A lot of my daily life revolves around music I replay too much,
-            K-dramas I find through TikTok edits, and shows I randomly get
-            attached to for no reason.
+            A lot of my daily life revolves around music I replay too much, and
+            shows I randomly get attached to for no reason.
           </p>
 
           <p>
-            I’ve also somehow become a collector of all things Miffy. It started
-            with a small Miffy lamp and slowly turned into a collection of
-            things I definitely did not need but bought anyway.
+            I’ve somehow become a collector of all things Miffy. It started with
+            a small Miffy lamp and slowly turned into a collection of things I
+            definitely did not need but bought anyway.
           </p>
 
           <p>
@@ -139,17 +112,21 @@
           <p>
             I'd love to direct a movie someday despite knowing nothing about
             filmmaking. I’ve always been drawn to storytelling — even back in
-            high school when I used to read books, I would automatically “see”
-            them like movies in my head. I’d imagine faces for characters, build
-            scenes visually, and basically direct the story as I read. I always
-            thought that was fascinating.
+            high school when I used to read books, I would see them like movies
+            in my head. I’d imagine faces for characters, build scenes visually,
+            and basically direct the story as I read. I always thought that was
+            fascinating.
           </p>
 
           <p>
             I also hope to retire in my 30s. Is it realistic? Probably not. Am I
-            still going to try? Absolutely. I'd love to travel more, create
-            something that reaches millions of people, and maybe settle
-            somewhere in the countryside of Korea or Japan one day.
+            still going to try? Absolutely.
+          </p>
+
+          <p>
+            I'd love to travel more, create something that reaches millions of
+            people, and maybe settle somewhere in the countryside of Korea or
+            Japan one day.
           </p>
         </div>
       {/if}
