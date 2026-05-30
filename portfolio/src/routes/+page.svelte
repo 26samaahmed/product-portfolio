@@ -1,6 +1,7 @@
 <script lang="ts">
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import PrimaryLink from '$lib/components/PrimaryLink.svelte';
 </script>
 
 <svelte:head>
@@ -28,7 +29,7 @@
           <span class="relative z-10">Sama Ahmed</span>
 
           <span
-            class="absolute left-0 right-0 bottom-1 h-3 -z-0 rounded-md bg-black/5"
+            class="absolute left-0 right-0 bottom-1 h-3 -z-0 rounded-md bg-neutral-900/4"
           ></span>
         </span>
       </h1>
@@ -39,21 +40,19 @@
 
       <!-- links -->
       <div class="mt-10 flex flex-wrap gap-4">
-        <a
-          href="/work"
-          class="group flex items-center gap-2 rounded-full border border-black px-5 py-2.5 text-sm transition hover:bg-black hover:text-white md:text-base"
-        >
-          <span class="transition-transform group-hover:-translate-x-1">←</span>
-          Selected Work
-        </a>
+        <PrimaryLink href="/work" label="Selected Work">
+          <span
+            slot="icon-left"
+            class="transition-transform group-hover:-translate-x-1">←</span
+          >
+        </PrimaryLink>
 
-        <a
-          href="/about-me"
-          class="group flex items-center gap-2 rounded-full border border-black px-5 py-2.5 text-sm transition hover:bg-black hover:text-white md:text-base"
-        >
-          About
-          <span class="transition-transform group-hover:translate-x-1">→</span>
-        </a>
+        <PrimaryLink href="/about-me" label="About">
+          <span
+            slot="icon-right"
+            class="transition-transform group-hover:translate-x-1">→</span
+          >
+        </PrimaryLink>
       </div>
     </div>
 

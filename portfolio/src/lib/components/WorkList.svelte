@@ -9,7 +9,6 @@
       <div class="flex flex-col md:flex-row gap-4 md:items-center mb-2">
         <a
           href={project.caseStudyUrl}
-          target="_blank"
           class="text-2xl inline-flex items-center gap-2 group"
         >
           <span

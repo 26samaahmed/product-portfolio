@@ -37,7 +37,7 @@
 
     <!-- content -->
     <div
-      class="min-h-[360px] space-y-6 text-base md:text-lg leading-relaxed text-neutral-700"
+      class="min-h-[360px] space-y-6 text-base md:text-lg leading-relaxed text-neutral-800"
     >
       {#if selected === 'career'}
         <div class="space-y-6">
