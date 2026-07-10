@@ -55,8 +55,8 @@
             <span class="font-medium text-neutral-900">
               User Experience Researcher at LPL Financial
             </span>, where I explored how user insights can meaningfully shape
-            product and design decisions. I'll be joining LPL Financial
-            full-time in July as a
+            product and design decisions. I currently work at LPL Financial
+            as a
             <span class="font-medium text-neutral-900">UX Researcher</span>,
             continuing to grow in product thinking and user-centered design.
           </p>
