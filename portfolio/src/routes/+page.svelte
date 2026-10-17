@@ -72,9 +72,7 @@
     </div>
 
     <!-- RIGHT -->
-    <div
-      class="flex flex-col items-center gap-3 md:ml-auto md:items-end"
-    >
+    <div class="flex flex-col items-center gap-3 md:ml-auto md:items-end">
       <!-- Photo -->
       <img
         src="/about-me.jpg"

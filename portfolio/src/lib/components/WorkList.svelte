@@ -6,10 +6,7 @@
 
 <div>
   {#each projects as project, index}
-    <div
-      class="project-item mb-10"
-      style={`animation-delay: ${index * 70}ms`}
-    >
+    <div class="project-item mb-10" style={`animation-delay: ${index * 70}ms`}>
       <div class="mb-2 flex flex-col gap-4 md:flex-row md:items-center">
         <a
           href={`/projects/${project.slug}`}
@@ -35,7 +32,7 @@
         <span>{project.duration}</span>
       </div>
 
-      <p class="mt-2 max-w-4xl text-[#4F504A]">
+      <p class="mt-3 max-w-3xl leading-relaxed text-[#4F504A]">
         {project.preview}
       </p>
     </div>

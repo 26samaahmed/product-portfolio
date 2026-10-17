@@ -3,13 +3,24 @@
 
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import AudioPlayer from '$lib/components/AudioPlayer.svelte';
 
   import { projects } from '$lib/projects';
+  import { audioSegments } from '$lib/data/audioSegments';
 
   const slug = $derived(page.params.slug);
-  const project = $derived(
-    projects.find((item) => item.slug === slug)
-  );
+
+  const project = $derived(projects.find((item) => item.slug === slug));
+
+  let activeAudioElement: HTMLAudioElement | null = null;
+
+  function handleAudioPlay(audioElement: HTMLAudioElement) {
+    if (activeAudioElement && activeAudioElement !== audioElement) {
+      activeAudioElement.pause();
+    }
+
+    activeAudioElement = audioElement;
+  }
 </script>
 
 <svelte:head>
@@ -29,8 +40,9 @@
 
   {#if project}
     <div class="mx-auto w-full max-w-5xl flex-1 pt-14 pb-20">
-      <!-- Back -->
+      <!-- Project header -->
       <div class="page-reveal">
+        <!-- Back -->
         <a
           href="/work"
           class="group mb-8 inline-flex items-center gap-2 text-sm text-[#725747] transition-colors duration-200 hover:text-[#35483A]"
@@ -77,14 +89,42 @@
         </p>
       </div>
 
-      {#if project.figmaEmbedUrl}
+      <!-- AUDIO PROJECT -->
+      {#if project.type === 'audio'}
+        <div class="page-reveal delay-1 mt-12">
+          <!-- Audio section heading -->
+          <div class="mb-8 flex items-end justify-between gap-4">
+            <div>
+              <p class="text-xs uppercase tracking-[0.18em] text-[#783D46]">
+                The Feed
+              </p>
+
+              <p class="mt-2 text-sm italic text-[#725747]">
+                five conversations from behind the mic ✷
+              </p>
+            </div>
+
+            <p class="hidden text-xs text-[#77786F] sm:block">Titan Radio</p>
+          </div>
+
+          <!-- Audio episodes -->
+          <div>
+            {#each audioSegments as segment}
+              <AudioPlayer {segment} onPlay={handleAudioPlay} />
+            {/each}
+          </div>
+
+          <!-- Clean ending -->
+          <div class="border-t border-[#DEDDD4]"></div>
+        </div>
+
+        <!-- FIGMA CASE STUDY -->
+      {:else if project.figmaEmbedUrl}
         <!-- Presentation heading -->
         <div
           class="page-reveal delay-1 mt-12 mb-4 flex items-center justify-between gap-4"
         >
-          <p class="text-sm italic text-[#725747]">
-            the full story ↓
-          </p>
+          <p class="text-sm italic text-[#725747]">the full story ↓</p>
 
           {#if project.figmaUrl}
             <a
@@ -116,24 +156,9 @@
           ></iframe>
         </div>
 
-        <!-- Bottom navigation -->
-        <div
-          class="page-reveal delay-3 mt-8 flex flex-wrap items-center justify-between gap-4"
-        >
-          <a
-            href="/work"
-            class="group inline-flex items-center gap-2 text-sm text-[#725747] transition-colors duration-200 hover:text-[#35483A]"
-          >
-            <span
-              class="transition-transform duration-200 group-hover:-translate-x-1"
-            >
-              ←
-            </span>
-
-            all work
-          </a>
-
-          {#if project.figmaUrl}
+        <!-- Fullscreen link -->
+        {#if project.figmaUrl}
+          <div class="page-reveal delay-3 mt-8 flex justify-end">
             <a
               href={project.figmaUrl}
               target="_blank"
@@ -148,16 +173,13 @@
                 ↗
               </span>
             </a>
-          {/if}
-        </div>
+          </div>
+        {/if}
+
+        <!-- CASE STUDY COMING SOON -->
       {:else}
-        <!-- Case study not uploaded yet -->
-        <div
-          class="page-reveal delay-1 mt-12 border-t border-[#DEDDD4] pt-10"
-        >
-          <p class="text-sm italic text-[#725747]">
-            case study coming soon
-          </p>
+        <div class="page-reveal delay-1 mt-12 border-t border-[#DEDDD4] pt-10">
+          <p class="text-sm italic text-[#725747]">case study coming soon</p>
 
           <p
             class="mt-5 max-w-2xl text-base leading-relaxed text-[#4F504A] md:text-lg"
@@ -166,24 +188,12 @@
             Check back soon
             <span class="ml-1 text-[#783D46]">✷</span>
           </p>
-
-          <a
-            href="/work"
-            class="group mt-8 inline-flex items-center gap-2 text-sm text-[#725747] transition-colors duration-200 hover:text-[#35483A]"
-          >
-            <span
-              class="transition-transform duration-200 group-hover:-translate-x-1"
-            >
-              ←
-            </span>
-
-            back to work
-          </a>
         </div>
       {/if}
     </div>
+
+    <!-- INVALID SLUG -->
   {:else}
-    <!-- Invalid slug -->
     <div
       class="page-reveal mx-auto flex w-full max-w-3xl flex-1 flex-col justify-center py-20"
     >
@@ -195,9 +205,7 @@
         <span class="text-xl text-[#783D46]">✷</span>
       </h1>
 
-      <p class="mt-4 text-[#725747]">
-        Looks like this case study doesn't exist.
-      </p>
+      <p class="mt-4 text-[#725747]">Looks like this project doesn't exist.</p>
 
       <a
         href="/work"

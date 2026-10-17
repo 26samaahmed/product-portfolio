@@ -7,9 +7,7 @@
 <button
   on:click={onClick}
   class="relative pb-1 text-base transition-all duration-200
-    {active
-      ? 'text-[#35483A]'
-      : 'text-[#77786F] hover:text-[#35483A]'}"
+    {active ? 'text-[#35483A]' : 'text-[#77786F] hover:text-[#35483A]'}"
   aria-pressed={active}
 >
   <span

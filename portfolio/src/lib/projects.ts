@@ -2,25 +2,40 @@ import type { Project } from '$lib/types';
 
 export const projects: Project[] = [
   {
+    slug: 'lpl-financial-uxr',
+    title: 'LPL Financial',
+    duration: 'Present',
+    role: 'UX Researcher',
+    preview:
+      'Researching how financial advisors navigate complex product workflows, while exploring new ways to turn user needs into better experiences, tools, and product decisions.',
+    category: 'experience',
+    type: 'case-study',
+    figmaEmbedUrl: '',
+    figmaUrl: '',
+  },
+
+  {
     slug: 'titan-radio',
     title: 'Titan Radio',
     duration: '5 Months',
     role: 'Web Design Intern',
     preview:
-      'How might we redesign Titan Radio’s digital presence to better engage students and improve content discoverability?',
+      'Redesigning how students discover DJs, stories, and past content for CSUF’s student-run radio station, from rethinking key pages to building a semester archive.',
     category: 'experience',
-    figmaEmbedUrl: 'https://embed.figma.com/slides/TrpAZehNfITDfZBT1j3Sny/Untitled?node-id=1-887&embed-host=share',
+    type: 'case-study',
+    figmaEmbedUrl: '',
     figmaUrl: '',
   },
 
   {
-    slug: 'lpl-financial',
+    slug: 'lpl-financial-intern',
     title: 'LPL Financial',
     duration: '10 Weeks',
     role: 'UX Research Intern',
     preview:
-      'How might we simplify communication workflows for financial advisors while making client interactions more intuitive and efficient?',
+      'Turning usability friction into product direction for a platform serving 30,000+ financial advisors through heuristic evaluation, research synthesis, and cross-functional collaboration.',
     category: 'experience',
+    type: 'case-study',
     figmaEmbedUrl: '',
     figmaUrl: '',
   },
@@ -31,8 +46,9 @@ export const projects: Project[] = [
     duration: '5 Months',
     role: 'Campus Leader',
     preview:
-      'How might we make design education and community-building more accessible to students interested in product design?',
+      'Building a stronger design community at CSUF through hands-on Figma and FigJam workshops, events, and learning experiences that reached 100+ students.',
     category: 'leadership',
+    type: 'case-study',
     figmaEmbedUrl: '',
     figmaUrl: '',
   },
@@ -43,8 +59,9 @@ export const projects: Project[] = [
     duration: '3 Years',
     role: 'Director & UI/UX Designer',
     preview:
-      'How might we create a beginner-friendly hackathon experience while still supporting technical growth and innovation?',
+      'Growing from designer to co-director of CSUF’s annual hackathon, leading 50+ organizers across teams while shaping an experience that drove a 35% year-over-year increase in project submissions.',
     category: 'leadership',
+    type: 'case-study',
     figmaEmbedUrl: '',
     figmaUrl: '',
   },
@@ -55,8 +72,9 @@ export const projects: Project[] = [
     duration: '6 Months',
     role: 'Team Lead + Frontend Developer',
     preview:
-      'How might we recreate the nostalgic photo booth experience through real-time collaboration and playful interaction?',
+      'Reimagining the nostalgic photo booth as a collaborative digital experience, while leading the team and translating playful interactions into a working product.',
     category: 'technical',
+    type: 'case-study',
     figmaEmbedUrl: '',
     figmaUrl: '',
   },
@@ -67,8 +85,9 @@ export const projects: Project[] = [
     duration: '1 Year',
     role: 'Webmaster',
     preview:
-      'How might we improve ACM’s online presence to better support students, events, and technical resources?',
+      'Maintaining a student-built platform while supporting the community behind it, reviewing 40+ pull requests, helping 70+ open-source contributors, and teaching students how to build for the web.',
     category: 'technical',
+    type: 'case-study',
     figmaEmbedUrl: '',
     figmaUrl: '',
   },
@@ -79,8 +98,9 @@ export const projects: Project[] = [
     duration: '7 Months',
     role: 'Web Development Lead',
     preview:
-      'How might we design a responsive event website that clearly communicates schedules, speakers, and registration details?',
+      'Leading a five-person development team to turn CSUF’s first student-run designathon into a digital experience built for 100+ attendees.',
     category: 'technical',
+    type: 'case-study',
     figmaEmbedUrl: '',
     figmaUrl: '',
   },
@@ -91,8 +111,9 @@ export const projects: Project[] = [
     duration: '24 Hours',
     role: 'Designer',
     preview:
-      'A mobile app that reimagines how deaf individuals experience music through visuals inspired by people with color synesthesia.',
+      'Exploring a more visual way to experience music by translating sound into color-driven interactions inspired by synesthesia and designed with deaf users in mind.',
     category: 'design',
+    type: 'case-study',
     figmaEmbedUrl: '',
     figmaUrl: '',
   },
@@ -103,8 +124,9 @@ export const projects: Project[] = [
     duration: '24 Hours',
     role: 'Designer',
     preview:
-      'An AI-powered app that curates local events based on user interests and prompts to foster connection and well-being among college students.',
+      'Exploring how AI-powered recommendations could help college students move from wanting to go out more to actually finding local experiences that feel worth showing up for.',
     category: 'design',
+    type: 'case-study',
     figmaEmbedUrl: '',
     figmaUrl: '',
   },
@@ -115,8 +137,9 @@ export const projects: Project[] = [
     duration: '6 Hours',
     role: 'Designer',
     preview:
-      'A mobile app that helps students find affordable, convenient transportation by integrating public transit options and rewarding sustainable travel.',
+      'Rethinking student transportation around two everyday barriers, cost and convenience, by bringing transit options together and rewarding more sustainable choices.',
     category: 'design',
+    type: 'case-study',
     figmaEmbedUrl: '',
     figmaUrl: '',
   },
@@ -124,11 +147,11 @@ export const projects: Project[] = [
   {
     slug: 'titan-radio-segments',
     title: 'Titan Radio Segments',
-    duration: '5 Months',
-    role: 'Host',
-    preview: 'Fun radio segments and conversations with my friends',
+    duration: '5 Episodes',
+    role: 'The Feed Contributor',
+    preview:
+      'A collection of conversations I recorded for Titan Radio’s weekly Feed, featuring friends, college life, food debates, music, and a very necessary zombie apocalypse discussion.',
     category: 'audio',
-    figmaEmbedUrl: '',
-    figmaUrl: '',
+    type: 'audio',
   },
 ];

@@ -7,6 +7,9 @@ export type Project = {
   preview: string;
   image?: string;
   category: string;
+
+  type: 'case-study' | 'audio';
+
   figmaEmbedUrl?: string;
   figmaUrl?: string;
 };

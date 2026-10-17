@@ -39,12 +39,7 @@
         {path.name}
       </a>
     {:else}
-      <a
-        href={path.link}
-        class={linkClasses}
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a href={path.link} class={linkClasses} target="_blank" rel="noreferrer">
         {path.name}
       </a>
     {/if}

@@ -17,7 +17,7 @@
   let activeCategory = 'experience';
 
   $: filteredProjects = projects.filter(
-    (project) => project.category === activeCategory
+    (project) => project.category === activeCategory,
   );
 </script>
 

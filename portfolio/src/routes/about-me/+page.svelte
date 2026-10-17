@@ -66,8 +66,7 @@
                 Computer Science, where I led
                 <span class="font-medium text-[#35483A]">
                   cross-functional teams
-                </span>,
-                co-directed FullyHacks 2025, and served as Web Lead for
+                </span>, co-directed FullyHacks 2025, and served as Web Lead for
                 FullyBeyond 2024, our first student-run designathon.
               </p>
 
@@ -75,13 +74,10 @@
                 In Summer 2025, I worked as a
                 <span class="font-medium text-[#35483A]">
                   User Experience Researcher at LPL Financial
-                </span>,
-                where I explored how user insights can meaningfully shape
-                product and design decisions. I currently work at LPL Financial
-                as a
-                <span class="font-medium text-[#35483A]">
-                  UX Researcher
-                </span>,
+                </span>, where I explored how user insights can meaningfully
+                shape product and design decisions. I currently work at LPL
+                Financial as a
+                <span class="font-medium text-[#35483A]"> UX Researcher </span>,
                 continuing to grow in product thinking and user-centered design.
               </p>
 
