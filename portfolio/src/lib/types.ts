@@ -1,12 +1,14 @@
 export type Project = {
+  slug: string;
   title: string;
   duration: string;
   role: string;
   impact?: string;
-  preview: string; // A brief description or highlight of the project
+  preview: string;
   image?: string;
-  caseStudyUrl: string;
   category: string;
+  figmaEmbedUrl?: string;
+  figmaUrl?: string;
 };
 
 export type Button = {

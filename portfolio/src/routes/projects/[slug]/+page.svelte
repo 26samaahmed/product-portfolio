@@ -1,55 +1,218 @@
 <script lang="ts">
+  import { page } from '$app/state';
+
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
+
+  import { projects } from '$lib/projects';
+
+  const slug = $derived(page.params.slug);
+  const project = $derived(
+    projects.find((item) => item.slug === slug)
+  );
 </script>
+
+<svelte:head>
+  <title>
+    {project ? `${project.title} — Sama Ahmed` : 'Project — Sama Ahmed'}
+  </title>
+
+  {#if project}
+    <meta name="description" content={project.preview} />
+  {/if}
+</svelte:head>
 
 <main
   class="font-portfolio flex min-h-screen flex-col bg-[#F5F3ED] p-4 pt-1 text-[#292B27]"
 >
   <Header />
 
-  <div class="mx-auto w-full max-w-3xl flex-1 pt-14 pb-20">
-    <div class="page-reveal">
-      <p class="mb-3 text-sm tracking-wide text-[#725747]">
-        Project / Case Study
-      </p>
+  {#if project}
+    <div class="mx-auto w-full max-w-5xl flex-1 pt-14 pb-20">
+      <!-- Back -->
+      <div class="page-reveal">
+        <a
+          href="/work"
+          class="group mb-8 inline-flex items-center gap-2 text-sm text-[#725747] transition-colors duration-200 hover:text-[#35483A]"
+        >
+          <span
+            class="transition-transform duration-200 group-hover:-translate-x-1"
+          >
+            ←
+          </span>
 
+          back to work
+        </a>
+
+        <!-- Project title -->
+        <h1
+          class="flex items-center gap-2 text-4xl font-medium tracking-tight md:text-5xl"
+        >
+          {project.title}
+
+          <span
+            class="inline-flex text-lg text-[#783D46] md:text-xl"
+            aria-hidden="true"
+          >
+            ✷
+          </span>
+        </h1>
+
+        <!-- Role + duration -->
+        <div
+          class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-[#725747] md:text-base"
+        >
+          <span>{project.role}</span>
+
+          <span class="text-[#783D46]">•</span>
+
+          <span>{project.duration}</span>
+        </div>
+
+        <!-- Description -->
+        <p
+          class="mt-6 max-w-5xl text-base leading-relaxed text-[#4F504A] md:text-lg"
+        >
+          {project.preview}
+        </p>
+      </div>
+
+      {#if project.figmaEmbedUrl}
+        <!-- Presentation heading -->
+        <div
+          class="page-reveal delay-1 mt-12 mb-4 flex items-center justify-between gap-4"
+        >
+          <p class="text-sm italic text-[#725747]">
+            the full story ↓
+          </p>
+
+          {#if project.figmaUrl}
+            <a
+              href={project.figmaUrl}
+              target="_blank"
+              rel="noreferrer"
+              class="group inline-flex items-center gap-1 text-sm text-[#725747] transition-colors duration-200 hover:text-[#35483A]"
+            >
+              open presentation
+
+              <span
+                class="text-[#783D46] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              >
+                ↗
+              </span>
+            </a>
+          {/if}
+        </div>
+
+        <!-- Figma Slides -->
+        <div
+          class="page-reveal delay-2 overflow-hidden rounded-xl border border-[#DEDDD4] bg-white shadow-sm"
+        >
+          <iframe
+            src={project.figmaEmbedUrl}
+            title={`${project.title} Case Study`}
+            class="aspect-video w-full"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <!-- Bottom navigation -->
+        <div
+          class="page-reveal delay-3 mt-8 flex flex-wrap items-center justify-between gap-4"
+        >
+          <a
+            href="/work"
+            class="group inline-flex items-center gap-2 text-sm text-[#725747] transition-colors duration-200 hover:text-[#35483A]"
+          >
+            <span
+              class="transition-transform duration-200 group-hover:-translate-x-1"
+            >
+              ←
+            </span>
+
+            all work
+          </a>
+
+          {#if project.figmaUrl}
+            <a
+              href={project.figmaUrl}
+              target="_blank"
+              rel="noreferrer"
+              class="group inline-flex items-center gap-1 text-sm text-[#725747] transition-colors duration-200 hover:text-[#35483A]"
+            >
+              view fullscreen
+
+              <span
+                class="text-[#783D46] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              >
+                ↗
+              </span>
+            </a>
+          {/if}
+        </div>
+      {:else}
+        <!-- Case study not uploaded yet -->
+        <div
+          class="page-reveal delay-1 mt-12 border-t border-[#DEDDD4] pt-10"
+        >
+          <p class="text-sm italic text-[#725747]">
+            case study coming soon
+          </p>
+
+          <p
+            class="mt-5 max-w-2xl text-base leading-relaxed text-[#4F504A] md:text-lg"
+          >
+            I’m currently putting together the full story behind this project.
+            Check back soon
+            <span class="ml-1 text-[#783D46]">✷</span>
+          </p>
+
+          <a
+            href="/work"
+            class="group mt-8 inline-flex items-center gap-2 text-sm text-[#725747] transition-colors duration-200 hover:text-[#35483A]"
+          >
+            <span
+              class="transition-transform duration-200 group-hover:-translate-x-1"
+            >
+              ←
+            </span>
+
+            back to work
+          </a>
+        </div>
+      {/if}
+    </div>
+  {:else}
+    <!-- Invalid slug -->
+    <div
+      class="page-reveal mx-auto flex w-full max-w-3xl flex-1 flex-col justify-center py-20"
+    >
       <h1
         class="flex items-center gap-2 text-4xl font-medium tracking-tight md:text-5xl"
       >
-        Project
+        Project not found
 
-        <span
-          class="inline-flex text-lg text-[#783D46] md:text-xl"
-          aria-hidden="true"
-        >
-          ✷
-        </span>
+        <span class="text-xl text-[#783D46]">✷</span>
       </h1>
 
-      <p class="mt-2 text-sm italic text-[#725747] md:text-base">
-        case study coming soon
+      <p class="mt-4 text-[#725747]">
+        Looks like this case study doesn't exist.
       </p>
+
+      <a
+        href="/work"
+        class="group mt-8 inline-flex w-fit items-center gap-2 text-[#35483A]"
+      >
+        <span
+          class="transition-transform duration-200 group-hover:-translate-x-1"
+        >
+          ←
+        </span>
+
+        back to work
+      </a>
     </div>
-
-    <div
-      class="page-reveal delay-1 mt-10 h-px w-full bg-[#DEDDD4]"
-    ></div>
-
-    <div
-      class="page-reveal delay-2 mt-10 space-y-6 text-base leading-relaxed text-[#4F504A] md:text-lg"
-    >
-      <p>
-        This page is currently a work in progress. I’m in the process of
-        writing up the full case study for this project.
-      </p>
-
-      <p>
-        Check back soon
-        <span class="ml-1 text-[#783D46]">✷</span>
-      </p>
-    </div>
-  </div>
+  {/if}
 
   <Footer />
 </main>
@@ -78,6 +241,10 @@
 
   .delay-2 {
     animation-delay: 0.2s;
+  }
+
+  .delay-3 {
+    animation-delay: 0.3s;
   }
 
   @media (prefers-reduced-motion: reduce) {

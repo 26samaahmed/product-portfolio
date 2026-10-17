@@ -12,7 +12,7 @@
     >
       <div class="mb-2 flex flex-col gap-4 md:flex-row md:items-center">
         <a
-          href={project.caseStudyUrl}
+          href={`/projects/${project.slug}`}
           class="group inline-flex items-center gap-2 text-2xl text-[#292B27] transition-colors duration-200 hover:text-[#35483A]"
         >
           <span
