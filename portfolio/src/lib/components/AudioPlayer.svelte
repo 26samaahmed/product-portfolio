@@ -3,18 +3,17 @@
 
   export let segment: AudioSegment;
   export let onPlay: (audioElement: HTMLAudioElement) => void;
-  export let dark = false;
 
   let audioElement: HTMLAudioElement;
   let isPlaying = false;
   let currentTime = 0;
   let duration = 0;
-  let isSeeking = false;
 
   async function togglePlay() {
     if (!audioElement) return;
 
     if (audioElement.paused) {
+      // Parent pauses any other audio that is currently playing
       onPlay(audioElement);
 
       try {
@@ -28,31 +27,19 @@
   }
 
   function updateTime() {
-    if (!isSeeking) {
-      currentTime = audioElement.currentTime;
-    }
+    currentTime = audioElement.currentTime;
   }
 
   function updateDuration() {
     duration = audioElement.duration;
   }
 
-  function startSeeking() {
-    isSeeking = true;
-  }
-
   function seek(event: Event) {
-    const input = event.currentTarget as HTMLInputElement;
-    currentTime = Number(input.value);
-  }
-
-  function finishSeeking(event: Event) {
     const input = event.currentTarget as HTMLInputElement;
     const time = Number(input.value);
 
     audioElement.currentTime = time;
     currentTime = time;
-    isSeeking = false;
   }
 
   function formatTime(seconds: number) {
@@ -67,13 +54,10 @@
   }
 </script>
 
-<div
-  class="group border-t py-8 transition-colors duration-300
-    {dark ? 'border-[#6A5050]' : 'border-[#DEDDD4]'}"
->
+<div class="group py-7 transition-colors duration-300 md:py-8">
   <div class="flex gap-5 md:gap-8">
     <!-- Number -->
-    <p class="pt-1 text-sm {dark ? 'text-[#C4CBAF]' : 'text-[#783D46]'}">
+    <p class="pt-1 text-sm text-[#C4CBAF]">
       {segment.number}
     </p>
 
@@ -84,28 +68,24 @@
       >
         <div>
           <h2
-            class="text-xl font-medium tracking-tight md:text-2xl
-              {dark ? 'text-[#F5F3ED]' : 'text-[#292B27]'}"
+            class="text-xl font-medium tracking-tight text-[#F5F3ED] md:text-2xl"
           >
             {segment.title}
           </h2>
 
-          <p
-            class="mt-1 text-sm italic
-              {dark ? 'text-[#D4C0AD]' : 'text-[#725747]'}"
-          >
+          <p class="mt-1 text-sm italic text-[#D7C3B8]">
             {segment.guest}
           </p>
         </div>
 
-        <p class="text-sm {dark ? 'text-[#D4C0AD]' : 'text-[#77786F]'}">
+        <p class="text-sm text-[#D7C3B8]">
           {segment.duration}
         </p>
       </div>
 
+      <!-- Description -->
       <p
-        class="mt-4 max-w-2xl text-sm leading-relaxed md:text-base
-          {dark ? 'text-[#E9E3DA]' : 'text-[#4F504A]'}"
+        class="mt-4 max-w-2xl text-sm leading-relaxed text-[#E7E1DA] md:text-base"
       >
         {segment.description}
       </p>
@@ -118,46 +98,37 @@
           aria-label={isPlaying
             ? `Pause ${segment.title}`
             : `Play ${segment.title}`}
-          class="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full text-sm transition duration-200 hover:scale-105
-            {dark
-            ? 'bg-[#C4CBAF] text-[#422D2D] hover:bg-[#F5F3ED]'
-            : 'bg-[#35483A] text-[#F5F3ED] hover:bg-[#783D46]'}"
+          class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#C4CBAF] text-sm text-[#4B302E] transition duration-200 hover:scale-105 hover:bg-[#F5F3ED]"
         >
           {isPlaying ? 'Ⅱ' : '▶'}
         </button>
 
         <div class="flex min-w-0 flex-1 items-center gap-3">
-          <span
-            class="w-9 text-right text-xs
-              {dark ? 'text-[#D4C0AD]' : 'text-[#725747]'}"
-          >
+          <!-- Current time -->
+          <span class="w-9 text-right text-xs text-[#D7C3B8]">
             {formatTime(currentTime)}
           </span>
 
+          <!-- Progress bar -->
           <input
             type="range"
             min="0"
             max={duration || 0}
             value={currentTime}
             step="0.1"
-            on:pointerdown={startSeeking}
             on:input={seek}
-            on:change={finishSeeking}
-            on:pointerup={finishSeeking}
             aria-label={`Seek through ${segment.title}`}
-            class:dark-progress={dark}
             class="audio-progress min-w-0 flex-1"
           />
 
-          <span
-            class="w-9 text-xs
-              {dark ? 'text-[#D4C0AD]' : 'text-[#725747]'}"
-          >
+          <!-- Duration -->
+          <span class="w-9 text-xs text-[#D7C3B8]">
             {duration ? formatTime(duration) : segment.duration}
           </span>
         </div>
       </div>
 
+      <!-- Hidden audio element -->
       <audio
         bind:this={audioElement}
         src={segment.audio}
@@ -180,12 +151,8 @@
     appearance: none;
     height: 2px;
     border-radius: 999px;
-    background: #deddd4;
+    background: rgba(245, 243, 237, 0.22);
     cursor: pointer;
-  }
-
-  .audio-progress.dark-progress {
-    background: #6a5050;
   }
 
   .audio-progress::-webkit-slider-thumb {
@@ -193,13 +160,9 @@
     width: 10px;
     height: 10px;
     border-radius: 999px;
-    background: #35483a;
+    background: #c4cbaf;
     cursor: grab;
     transition: transform 0.2s ease;
-  }
-
-  .audio-progress.dark-progress::-webkit-slider-thumb {
-    background: #c4cbaf;
   }
 
   .audio-progress::-webkit-slider-thumb:hover {
@@ -208,7 +171,6 @@
 
   .audio-progress::-webkit-slider-thumb:active {
     cursor: grabbing;
-    transform: scale(1.35);
   }
 
   .audio-progress::-moz-range-thumb {
@@ -216,12 +178,8 @@
     height: 10px;
     border: none;
     border-radius: 999px;
-    background: #35483a;
-    cursor: grab;
-  }
-
-  .audio-progress.dark-progress::-moz-range-thumb {
     background: #c4cbaf;
+    cursor: grab;
   }
 
   .audio-progress::-moz-range-thumb:active {

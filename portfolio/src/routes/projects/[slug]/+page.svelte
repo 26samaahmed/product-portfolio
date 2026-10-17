@@ -10,12 +10,17 @@
 
   const slug = $derived(page.params.slug);
 
-  const project = $derived(projects.find((item) => item.slug === slug));
+  const project = $derived(
+    projects.find((item) => item.slug === slug)
+  );
 
   let activeAudioElement: HTMLAudioElement | null = null;
 
   function handleAudioPlay(audioElement: HTMLAudioElement) {
-    if (activeAudioElement && activeAudioElement !== audioElement) {
+    if (
+      activeAudioElement &&
+      activeAudioElement !== audioElement
+    ) {
       activeAudioElement.pause();
     }
 
@@ -34,7 +39,7 @@
 </svelte:head>
 
 <main
-  class="font-portfolio flex min-h-screen flex-col bg-[#422D2D] p-4 pt-1 text-[#F5F3ED]"
+  class="font-portfolio flex min-h-screen flex-col bg-[#4B302E] p-4 pt-1 text-[#F5F3ED]"
 >
   <Header dark />
 
@@ -45,7 +50,7 @@
         <!-- Back -->
         <a
           href="/work"
-          class="group mb-8 inline-flex items-center gap-2 text-sm text-[#D4C0AD] transition-colors duration-200 hover:text-[#C4CBAF]"
+          class="group mb-8 inline-flex items-center gap-2 text-sm text-[#D7C3B8] transition-colors duration-200 hover:text-[#C4CBAF]"
         >
           <span
             class="transition-transform duration-200 group-hover:-translate-x-1"
@@ -72,7 +77,7 @@
 
         <!-- Role + duration -->
         <div
-          class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-[#D4C0AD] md:text-base"
+          class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-[#D7C3B8] md:text-base"
         >
           <span>{project.role}</span>
 
@@ -83,7 +88,7 @@
 
         <!-- Description -->
         <p
-          class="mt-6 max-w-5xl text-base leading-relaxed text-[#E9E3DA] md:text-lg"
+          class="mt-6 max-w-5xl text-base leading-relaxed text-[#E7E1DA] md:text-lg"
         >
           {project.preview}
         </p>
@@ -91,43 +96,41 @@
 
       <!-- AUDIO PROJECT -->
       {#if project.type === 'audio'}
-        <div class="page-reveal delay-1 mt-12">
-          <div class="mb-8 flex items-end justify-between gap-4">
-            <div>
-              <p class="text-xs uppercase tracking-[0.18em] text-[#C4CBAF]">
-                The Feed
-              </p>
-
-              <p class="mt-2 text-sm italic text-[#D4C0AD]">
-                five conversations from behind the mic ✷
-              </p>
-            </div>
-
-            <p class="hidden text-xs text-[#D4C0AD] sm:block">Titan Radio</p>
-          </div>
-
+        <div class="page-reveal delay-1 mt-14">
+          <!-- Audio episodes -->
           <div>
-            {#each audioSegments as segment}
-              <AudioPlayer {segment} onPlay={handleAudioPlay} dark />
+            {#each audioSegments as segment, index}
+              <AudioPlayer
+                {segment}
+                onPlay={handleAudioPlay}
+              />
+
+              <!-- Divider only BETWEEN episodes -->
+              {#if index < audioSegments.length - 1}
+                <div
+                  class="ml-12 h-px bg-[#F5F3ED]/10 md:ml-16"
+                ></div>
+              {/if}
             {/each}
           </div>
-
-          <div class="border-t border-[#6A5050]"></div>
         </div>
 
-        <!-- FIGMA CASE STUDY -->
+      <!-- FIGMA CASE STUDY -->
       {:else if project.figmaEmbedUrl}
+        <!-- Presentation heading -->
         <div
           class="page-reveal delay-1 mt-12 mb-4 flex items-center justify-between gap-4"
         >
-          <p class="text-sm italic text-[#D4C0AD]">the full story ↓</p>
+          <p class="text-sm italic text-[#D7C3B8]">
+            the full story ↓
+          </p>
 
           {#if project.figmaUrl}
             <a
               href={project.figmaUrl}
               target="_blank"
               rel="noreferrer"
-              class="group inline-flex items-center gap-1 text-sm text-[#D4C0AD] transition-colors duration-200 hover:text-[#C4CBAF]"
+              class="group inline-flex items-center gap-1 text-sm text-[#D7C3B8] transition-colors duration-200 hover:text-[#C4CBAF]"
             >
               open presentation
 
@@ -142,7 +145,7 @@
 
         <!-- Figma Slides -->
         <div
-          class="page-reveal delay-2 overflow-hidden rounded-xl border border-[#6A5050] bg-white shadow-sm"
+          class="page-reveal delay-2 overflow-hidden rounded-xl border border-[#F5F3ED]/15 bg-white shadow-sm"
         >
           <iframe
             src={project.figmaEmbedUrl}
@@ -152,13 +155,14 @@
           ></iframe>
         </div>
 
+        <!-- Fullscreen link -->
         {#if project.figmaUrl}
           <div class="page-reveal delay-3 mt-8 flex justify-end">
             <a
               href={project.figmaUrl}
               target="_blank"
               rel="noreferrer"
-              class="group inline-flex items-center gap-1 text-sm text-[#D4C0AD] transition-colors duration-200 hover:text-[#C4CBAF]"
+              class="group inline-flex items-center gap-1 text-sm text-[#D7C3B8] transition-colors duration-200 hover:text-[#C4CBAF]"
             >
               view fullscreen
 
@@ -171,13 +175,17 @@
           </div>
         {/if}
 
-        <!-- CASE STUDY COMING SOON -->
+      <!-- CASE STUDY COMING SOON -->
       {:else}
-        <div class="page-reveal delay-1 mt-12 border-t border-[#6A5050] pt-10">
-          <p class="text-sm italic text-[#D4C0AD]">case study coming soon</p>
+        <div
+          class="page-reveal delay-1 mt-12 border-t border-[#F5F3ED]/10 pt-10"
+        >
+          <p class="text-sm italic text-[#D7C3B8]">
+            case study coming soon
+          </p>
 
           <p
-            class="mt-5 max-w-2xl text-base leading-relaxed text-[#E9E3DA] md:text-lg"
+            class="mt-5 max-w-2xl text-base leading-relaxed text-[#E7E1DA] md:text-lg"
           >
             I’m currently putting together the full story behind this project.
             Check back soon
@@ -187,7 +195,7 @@
       {/if}
     </div>
 
-    <!-- INVALID SLUG -->
+  <!-- INVALID SLUG -->
   {:else}
     <div
       class="page-reveal mx-auto flex w-full max-w-3xl flex-1 flex-col justify-center py-20"
@@ -200,7 +208,9 @@
         <span class="text-xl text-[#C4CBAF]">✷</span>
       </h1>
 
-      <p class="mt-4 text-[#D4C0AD]">Looks like this project doesn't exist.</p>
+      <p class="mt-4 text-[#D7C3B8]">
+        Looks like this project doesn't exist.
+      </p>
 
       <a
         href="/work"
