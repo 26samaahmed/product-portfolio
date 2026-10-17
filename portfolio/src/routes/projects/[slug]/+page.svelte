@@ -10,17 +10,12 @@
 
   const slug = $derived(page.params.slug);
 
-  const project = $derived(
-    projects.find((item) => item.slug === slug)
-  );
+  const project = $derived(projects.find((item) => item.slug === slug));
 
   let activeAudioElement: HTMLAudioElement | null = null;
 
   function handleAudioPlay(audioElement: HTMLAudioElement) {
-    if (
-      activeAudioElement &&
-      activeAudioElement !== audioElement
-    ) {
+    if (activeAudioElement && activeAudioElement !== audioElement) {
       activeAudioElement.pause();
     }
 
@@ -100,30 +95,23 @@
           <!-- Audio episodes -->
           <div>
             {#each audioSegments as segment, index}
-              <AudioPlayer
-                {segment}
-                onPlay={handleAudioPlay}
-              />
+              <AudioPlayer {segment} onPlay={handleAudioPlay} />
 
               <!-- Divider only BETWEEN episodes -->
               {#if index < audioSegments.length - 1}
-                <div
-                  class="ml-12 h-px bg-[#F5F3ED]/10 md:ml-16"
-                ></div>
+                <div class="ml-12 h-px bg-[#F5F3ED]/10 md:ml-16"></div>
               {/if}
             {/each}
           </div>
         </div>
 
-      <!-- FIGMA CASE STUDY -->
+        <!-- FIGMA CASE STUDY -->
       {:else if project.figmaEmbedUrl}
         <!-- Presentation heading -->
         <div
           class="page-reveal delay-1 mt-12 mb-4 flex items-center justify-between gap-4"
         >
-          <p class="text-sm italic text-[#D7C3B8]">
-            the full story ↓
-          </p>
+          <p class="text-sm italic text-[#D7C3B8]">the full story ↓</p>
 
           {#if project.figmaUrl}
             <a
@@ -175,14 +163,12 @@
           </div>
         {/if}
 
-      <!-- CASE STUDY COMING SOON -->
+        <!-- CASE STUDY COMING SOON -->
       {:else}
         <div
           class="page-reveal delay-1 mt-12 border-t border-[#F5F3ED]/10 pt-10"
         >
-          <p class="text-sm italic text-[#D7C3B8]">
-            case study coming soon
-          </p>
+          <p class="text-sm italic text-[#D7C3B8]">case study coming soon</p>
 
           <p
             class="mt-5 max-w-2xl text-base leading-relaxed text-[#E7E1DA] md:text-lg"
@@ -195,7 +181,7 @@
       {/if}
     </div>
 
-  <!-- INVALID SLUG -->
+    <!-- INVALID SLUG -->
   {:else}
     <div
       class="page-reveal mx-auto flex w-full max-w-3xl flex-1 flex-col justify-center py-20"
@@ -208,9 +194,7 @@
         <span class="text-xl text-[#C4CBAF]">✷</span>
       </h1>
 
-      <p class="mt-4 text-[#D7C3B8]">
-        Looks like this project doesn't exist.
-      </p>
+      <p class="mt-4 text-[#D7C3B8]">Looks like this project doesn't exist.</p>
 
       <a
         href="/work"
