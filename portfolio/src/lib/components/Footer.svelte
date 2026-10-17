@@ -11,29 +11,40 @@
   ];
 
   const linkClasses = `
-    tracking-wide text-xs sm:text-sm inline-block relative 
-    text-black/60 hover:text-black transition-colors
-    after:content-[''] after:absolute after:w-full after:h-0.5 
-    after:bottom-0 after:left-0 after:scale-x-0 after:origin-bottom-right 
-    after:transition-transform after:duration-[350ms] after:ease-out after:bg-[#105C42]
+    tracking-wide text-xs sm:text-sm inline-block relative
+    text-[#77786F] hover:text-[#35483A] transition-colors
+    after:content-[''] after:absolute after:w-full after:h-0.5
+    after:bottom-0 after:left-0 after:scale-x-0
+    after:origin-bottom-right after:transition-transform
+    after:duration-[350ms] after:ease-out after:bg-[#35483A]
     hover:after:scale-x-100 hover:after:origin-bottom-left
   `;
 </script>
 
-<p class="text-sm text-black/60 text-center mb-6">© 2026 Sama Ahmed ⊹₊⟡⋆</p>
+<p class="mb-6 text-center text-sm text-[#77786F]">
+  © 2026 Sama Ahmed
+  <span class="ml-1 text-[#783D46]">⊹₊⟡⋆</span>
+</p>
 
-<div class="w-full max-w-4xl md:max-w-5xl mx-auto mb-1">
-  <div class="h-px bg-black/10"></div>
+<div class="mx-auto mb-1 w-full max-w-4xl md:max-w-5xl">
+  <div class="h-px bg-[#DEDDD4]"></div>
 </div>
 
-<div class="w-full flex justify-center py-6 space-x-8 md:space-x-32">
+<div
+  class="flex w-full flex-wrap justify-center gap-x-8 gap-y-4 py-6 md:gap-x-32"
+>
   {#each paths as path}
     {#if path.name === 'Email'}
-      <a href="mailto:{path.link}" class={linkClasses} target="_blank">
+      <a href="mailto:{path.link}" class={linkClasses}>
         {path.name}
       </a>
     {:else}
-      <a href={path.link} class={linkClasses} target="_blank">
+      <a
+        href={path.link}
+        class={linkClasses}
+        target="_blank"
+        rel="noreferrer"
+      >
         {path.name}
       </a>
     {/if}

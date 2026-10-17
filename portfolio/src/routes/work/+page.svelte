@@ -117,25 +117,39 @@
 
   let activeCategory = 'experience';
 
-  $: filteredProjects = projects.filter((p) => p.category === activeCategory);
+  $: filteredProjects = projects.filter(
+    (project) => project.category === activeCategory
+  );
 </script>
 
 <main
-  class="font-anaheim flex min-h-screen flex-col bg-[#F7F6F2] p-4 pt-1 text-neutral-900"
+  class="font-portfolio flex min-h-screen flex-col bg-[#F5F3ED] p-4 pt-1 text-[#292B27]"
 >
   <Header />
 
   <div class="mx-auto w-full max-w-4xl flex-1 pt-14 pb-14">
-    <h1 class="mb-6 text-4xl font-medium tracking-tight md:text-5xl">
-      My Work
-    </h1>
+    <!-- Heading -->
+    <div class="page-reveal">
+      <h1
+        class="flex items-center gap-2 text-4xl font-medium tracking-tight md:text-5xl"
+      >
+        My Work
 
-    <p class="mb-5 text-sm text-neutral-500">
-      Viewing
-      <span class="font-medium text-black">{activeCategory}</span>
-    </p>
+        <span
+          class="inline-flex text-lg text-[#783D46] md:text-xl"
+          aria-hidden="true"
+        >
+          ✷
+        </span>
+      </h1>
 
-    <div class="mb-10 flex flex-wrap gap-8">
+      <p class="mt-2 text-sm italic text-[#725747] md:text-base">
+        a mix of research, leadership, design, and things I've built
+      </p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="page-reveal delay-1 mt-8 mb-10 flex flex-wrap gap-8">
       {#each categories as cat}
         <Tab
           label={cat.label}
@@ -145,10 +159,47 @@
       {/each}
     </div>
 
-    <div class="transition-all duration-300">
-      <ProjectList projects={filteredProjects} />
+    <!-- Projects -->
+    <div class="page-reveal delay-2">
+      {#key activeCategory}
+        <ProjectList projects={filteredProjects} />
+      {/key}
     </div>
   </div>
 
   <Footer />
 </main>
+
+<style>
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .page-reveal {
+    opacity: 0;
+    animation: fade-up 0.6s ease-out forwards;
+  }
+
+  .delay-1 {
+    animation-delay: 0.1s;
+  }
+
+  .delay-2 {
+    animation-delay: 0.2s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .page-reveal {
+      opacity: 1;
+      animation: none;
+    }
+  }
+</style>

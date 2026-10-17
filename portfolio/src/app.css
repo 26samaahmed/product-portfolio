@@ -4,6 +4,6 @@
 /* 2. Then load Tailwind */
 @import 'tailwindcss';
 
-.font-anaheim {
+.font-portfolio {
   font-family: 'Anaheim', sans-serif;
 }
