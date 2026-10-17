@@ -1,19 +1,15 @@
 <script lang="ts">
   import type { AudioSegment } from '$lib/data/audioSegments';
 
-  let {
-    segment,
-    onPlay,
-  }: {
-    segment: AudioSegment;
-    onPlay: (audioElement: HTMLAudioElement) => void;
-  } = $props();
+  export let segment: AudioSegment;
+  export let onPlay: (audioElement: HTMLAudioElement) => void;
+  export let dark = false;
 
   let audioElement: HTMLAudioElement;
-
-  let isPlaying = $state(false);
-  let currentTime = $state(0);
-  let duration = $state(0);
+  let isPlaying = false;
+  let currentTime = 0;
+  let duration = 0;
+  let isSeeking = false;
 
   async function togglePlay() {
     if (!audioElement) return;
@@ -32,40 +28,37 @@
   }
 
   function updateTime() {
-    currentTime = audioElement.currentTime;
-  }
-
-  function updateDuration() {
-    if (Number.isFinite(audioElement.duration)) {
-      duration = audioElement.duration;
+    if (!isSeeking) {
+      currentTime = audioElement.currentTime;
     }
   }
 
-  function seek() {
-    if (!audioElement) return;
-
-    audioElement.currentTime = currentTime;
+  function updateDuration() {
+    duration = audioElement.duration;
   }
 
-  function handlePlay() {
-    isPlaying = true;
+  function startSeeking() {
+    isSeeking = true;
   }
 
-  function handlePause() {
-    isPlaying = false;
+  function seek(event: Event) {
+    const input = event.currentTarget as HTMLInputElement;
+    currentTime = Number(input.value);
   }
 
-  function handleEnded() {
-    isPlaying = false;
-    currentTime = 0;
-    audioElement.currentTime = 0;
+  function finishSeeking(event: Event) {
+    const input = event.currentTarget as HTMLInputElement;
+    const time = Number(input.value);
+
+    audioElement.currentTime = time;
+    currentTime = time;
+    isSeeking = false;
   }
 
   function formatTime(seconds: number) {
     if (!Number.isFinite(seconds)) return '0:00';
 
     const minutes = Math.floor(seconds / 60);
-
     const remainingSeconds = Math.floor(seconds % 60)
       .toString()
       .padStart(2, '0');
@@ -75,11 +68,12 @@
 </script>
 
 <div
-  class="group border-t border-[#DEDDD4] py-8 transition-colors duration-300"
+  class="group border-t py-8 transition-colors duration-300
+    {dark ? 'border-[#6A5050]' : 'border-[#DEDDD4]'}"
 >
   <div class="flex gap-5 md:gap-8">
     <!-- Number -->
-    <p class="pt-1 text-sm text-[#783D46]">
+    <p class="pt-1 text-sm {dark ? 'text-[#C4CBAF]' : 'text-[#783D46]'}">
       {segment.number}
     </p>
 
@@ -90,79 +84,92 @@
       >
         <div>
           <h2
-            class="text-xl font-medium tracking-tight text-[#292B27] md:text-2xl"
+            class="text-xl font-medium tracking-tight md:text-2xl
+              {dark ? 'text-[#F5F3ED]' : 'text-[#292B27]'}"
           >
             {segment.title}
           </h2>
 
-          <p class="mt-1 text-sm italic text-[#725747]">
+          <p
+            class="mt-1 text-sm italic
+              {dark ? 'text-[#D4C0AD]' : 'text-[#725747]'}"
+          >
             {segment.guest}
           </p>
         </div>
 
-        <p class="text-sm text-[#77786F]">
+        <p class="text-sm {dark ? 'text-[#D4C0AD]' : 'text-[#77786F]'}">
           {segment.duration}
         </p>
       </div>
 
-      <!-- Description -->
       <p
-        class="mt-4 max-w-2xl text-sm leading-relaxed text-[#4F504A] md:text-base"
+        class="mt-4 max-w-2xl text-sm leading-relaxed md:text-base
+          {dark ? 'text-[#E9E3DA]' : 'text-[#4F504A]'}"
       >
         {segment.description}
       </p>
 
       <!-- Player -->
       <div class="mt-6 flex items-center gap-4">
-        <!-- Play / Pause -->
         <button
           type="button"
-          onclick={togglePlay}
+          on:click={togglePlay}
           aria-label={isPlaying
             ? `Pause ${segment.title}`
             : `Play ${segment.title}`}
-          class="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full bg-[#35483A] text-sm text-[#F5F3ED] transition duration-200 hover:scale-105 hover:bg-[#783D46]"
+          class="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full text-sm transition duration-200 hover:scale-105
+            {dark
+            ? 'bg-[#C4CBAF] text-[#422D2D] hover:bg-[#F5F3ED]'
+            : 'bg-[#35483A] text-[#F5F3ED] hover:bg-[#783D46]'}"
         >
           {isPlaying ? 'Ⅱ' : '▶'}
         </button>
 
-        <!-- Progress -->
         <div class="flex min-w-0 flex-1 items-center gap-3">
-          <span class="w-9 text-right text-xs text-[#725747]">
+          <span
+            class="w-9 text-right text-xs
+              {dark ? 'text-[#D4C0AD]' : 'text-[#725747]'}"
+          >
             {formatTime(currentTime)}
           </span>
 
           <input
             type="range"
             min="0"
-            max={duration}
+            max={duration || 0}
+            value={currentTime}
             step="0.1"
-            bind:value={currentTime}
-            oninput={seek}
+            on:pointerdown={startSeeking}
+            on:input={seek}
+            on:change={finishSeeking}
+            on:pointerup={finishSeeking}
             aria-label={`Seek through ${segment.title}`}
+            class:dark-progress={dark}
             class="audio-progress min-w-0 flex-1"
-            style={`--progress: ${
-              duration > 0 ? (currentTime / duration) * 100 : 0
-            }%`}
           />
 
-          <span class="w-9 text-xs text-[#725747]">
+          <span
+            class="w-9 text-xs
+              {dark ? 'text-[#D4C0AD]' : 'text-[#725747]'}"
+          >
             {duration ? formatTime(duration) : segment.duration}
           </span>
         </div>
       </div>
 
-      <!-- Actual audio -->
       <audio
         bind:this={audioElement}
         src={segment.audio}
-        preload="metadata"
-        ontimeupdate={updateTime}
-        onloadedmetadata={updateDuration}
-        ondurationchange={updateDuration}
-        onplay={handlePlay}
-        onpause={handlePause}
-        onended={handleEnded}
+        on:timeupdate={updateTime}
+        on:loadedmetadata={updateDuration}
+        on:play={() => (isPlaying = true)}
+        on:pause={() => (isPlaying = false)}
+        on:ended={() => {
+          isPlaying = false;
+          currentTime = 0;
+          audioElement.currentTime = 0;
+        }}
       ></audio>
     </div>
   </div>
@@ -171,42 +178,32 @@
 <style>
   .audio-progress {
     appearance: none;
-    -webkit-appearance: none;
-
-    height: 3px;
+    height: 2px;
     border-radius: 999px;
-
-    background: linear-gradient(
-      to right,
-      #35483a 0%,
-      #35483a var(--progress),
-      #deddd4 var(--progress),
-      #deddd4 100%
-    );
-
+    background: #deddd4;
     cursor: pointer;
+  }
+
+  .audio-progress.dark-progress {
+    background: #6a5050;
   }
 
   .audio-progress::-webkit-slider-thumb {
     appearance: none;
-    -webkit-appearance: none;
-
-    width: 12px;
-    height: 12px;
-
+    width: 10px;
+    height: 10px;
     border-radius: 999px;
     background: #35483a;
-
     cursor: grab;
+    transition: transform 0.2s ease;
+  }
 
-    transition:
-      transform 0.2s ease,
-      background 0.2s ease;
+  .audio-progress.dark-progress::-webkit-slider-thumb {
+    background: #c4cbaf;
   }
 
   .audio-progress::-webkit-slider-thumb:hover {
     transform: scale(1.25);
-    background: #783d46;
   }
 
   .audio-progress::-webkit-slider-thumb:active {
@@ -215,14 +212,16 @@
   }
 
   .audio-progress::-moz-range-thumb {
-    width: 12px;
-    height: 12px;
-
+    width: 10px;
+    height: 10px;
     border: none;
     border-radius: 999px;
-
     background: #35483a;
     cursor: grab;
+  }
+
+  .audio-progress.dark-progress::-moz-range-thumb {
+    background: #c4cbaf;
   }
 
   .audio-progress::-moz-range-thumb:active {

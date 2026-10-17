@@ -34,9 +34,9 @@
 </svelte:head>
 
 <main
-  class="font-portfolio flex min-h-screen flex-col bg-[#F5F3ED] p-4 pt-1 text-[#292B27]"
+  class="font-portfolio flex min-h-screen flex-col bg-[#422D2D] p-4 pt-1 text-[#F5F3ED]"
 >
-  <Header />
+  <Header dark />
 
   {#if project}
     <div class="mx-auto w-full max-w-5xl flex-1 pt-14 pb-20">
@@ -45,7 +45,7 @@
         <!-- Back -->
         <a
           href="/work"
-          class="group mb-8 inline-flex items-center gap-2 text-sm text-[#725747] transition-colors duration-200 hover:text-[#35483A]"
+          class="group mb-8 inline-flex items-center gap-2 text-sm text-[#D4C0AD] transition-colors duration-200 hover:text-[#C4CBAF]"
         >
           <span
             class="transition-transform duration-200 group-hover:-translate-x-1"
@@ -63,7 +63,7 @@
           {project.title}
 
           <span
-            class="inline-flex text-lg text-[#783D46] md:text-xl"
+            class="inline-flex text-lg text-[#C4CBAF] md:text-xl"
             aria-hidden="true"
           >
             ✷
@@ -72,18 +72,18 @@
 
         <!-- Role + duration -->
         <div
-          class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-[#725747] md:text-base"
+          class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-[#D4C0AD] md:text-base"
         >
           <span>{project.role}</span>
 
-          <span class="text-[#783D46]">•</span>
+          <span class="text-[#C4CBAF]">•</span>
 
           <span>{project.duration}</span>
         </div>
 
         <!-- Description -->
         <p
-          class="mt-6 max-w-5xl text-base leading-relaxed text-[#4F504A] md:text-lg"
+          class="mt-6 max-w-5xl text-base leading-relaxed text-[#E9E3DA] md:text-lg"
         >
           {project.preview}
         </p>
@@ -92,51 +92,47 @@
       <!-- AUDIO PROJECT -->
       {#if project.type === 'audio'}
         <div class="page-reveal delay-1 mt-12">
-          <!-- Audio section heading -->
           <div class="mb-8 flex items-end justify-between gap-4">
             <div>
-              <p class="text-xs uppercase tracking-[0.18em] text-[#783D46]">
+              <p class="text-xs uppercase tracking-[0.18em] text-[#C4CBAF]">
                 The Feed
               </p>
 
-              <p class="mt-2 text-sm italic text-[#725747]">
+              <p class="mt-2 text-sm italic text-[#D4C0AD]">
                 five conversations from behind the mic ✷
               </p>
             </div>
 
-            <p class="hidden text-xs text-[#77786F] sm:block">Titan Radio</p>
+            <p class="hidden text-xs text-[#D4C0AD] sm:block">Titan Radio</p>
           </div>
 
-          <!-- Audio episodes -->
           <div>
             {#each audioSegments as segment}
-              <AudioPlayer {segment} onPlay={handleAudioPlay} />
+              <AudioPlayer {segment} onPlay={handleAudioPlay} dark />
             {/each}
           </div>
 
-          <!-- Clean ending -->
-          <div class="border-t border-[#DEDDD4]"></div>
+          <div class="border-t border-[#6A5050]"></div>
         </div>
 
         <!-- FIGMA CASE STUDY -->
       {:else if project.figmaEmbedUrl}
-        <!-- Presentation heading -->
         <div
           class="page-reveal delay-1 mt-12 mb-4 flex items-center justify-between gap-4"
         >
-          <p class="text-sm italic text-[#725747]">the full story ↓</p>
+          <p class="text-sm italic text-[#D4C0AD]">the full story ↓</p>
 
           {#if project.figmaUrl}
             <a
               href={project.figmaUrl}
               target="_blank"
               rel="noreferrer"
-              class="group inline-flex items-center gap-1 text-sm text-[#725747] transition-colors duration-200 hover:text-[#35483A]"
+              class="group inline-flex items-center gap-1 text-sm text-[#D4C0AD] transition-colors duration-200 hover:text-[#C4CBAF]"
             >
               open presentation
 
               <span
-                class="text-[#783D46] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                class="text-[#C4CBAF] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               >
                 ↗
               </span>
@@ -146,7 +142,7 @@
 
         <!-- Figma Slides -->
         <div
-          class="page-reveal delay-2 overflow-hidden rounded-xl border border-[#DEDDD4] bg-white shadow-sm"
+          class="page-reveal delay-2 overflow-hidden rounded-xl border border-[#6A5050] bg-white shadow-sm"
         >
           <iframe
             src={project.figmaEmbedUrl}
@@ -156,19 +152,18 @@
           ></iframe>
         </div>
 
-        <!-- Fullscreen link -->
         {#if project.figmaUrl}
           <div class="page-reveal delay-3 mt-8 flex justify-end">
             <a
               href={project.figmaUrl}
               target="_blank"
               rel="noreferrer"
-              class="group inline-flex items-center gap-1 text-sm text-[#725747] transition-colors duration-200 hover:text-[#35483A]"
+              class="group inline-flex items-center gap-1 text-sm text-[#D4C0AD] transition-colors duration-200 hover:text-[#C4CBAF]"
             >
               view fullscreen
 
               <span
-                class="text-[#783D46] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                class="text-[#C4CBAF] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               >
                 ↗
               </span>
@@ -178,15 +173,15 @@
 
         <!-- CASE STUDY COMING SOON -->
       {:else}
-        <div class="page-reveal delay-1 mt-12 border-t border-[#DEDDD4] pt-10">
-          <p class="text-sm italic text-[#725747]">case study coming soon</p>
+        <div class="page-reveal delay-1 mt-12 border-t border-[#6A5050] pt-10">
+          <p class="text-sm italic text-[#D4C0AD]">case study coming soon</p>
 
           <p
-            class="mt-5 max-w-2xl text-base leading-relaxed text-[#4F504A] md:text-lg"
+            class="mt-5 max-w-2xl text-base leading-relaxed text-[#E9E3DA] md:text-lg"
           >
             I’m currently putting together the full story behind this project.
             Check back soon
-            <span class="ml-1 text-[#783D46]">✷</span>
+            <span class="ml-1 text-[#C4CBAF]">✷</span>
           </p>
         </div>
       {/if}
@@ -202,14 +197,14 @@
       >
         Project not found
 
-        <span class="text-xl text-[#783D46]">✷</span>
+        <span class="text-xl text-[#C4CBAF]">✷</span>
       </h1>
 
-      <p class="mt-4 text-[#725747]">Looks like this project doesn't exist.</p>
+      <p class="mt-4 text-[#D4C0AD]">Looks like this project doesn't exist.</p>
 
       <a
         href="/work"
-        class="group mt-8 inline-flex w-fit items-center gap-2 text-[#35483A]"
+        class="group mt-8 inline-flex w-fit items-center gap-2 text-[#C4CBAF]"
       >
         <span
           class="transition-transform duration-200 group-hover:-translate-x-1"
@@ -222,7 +217,7 @@
     </div>
   {/if}
 
-  <Footer />
+  <Footer dark />
 </main>
 
 <style>

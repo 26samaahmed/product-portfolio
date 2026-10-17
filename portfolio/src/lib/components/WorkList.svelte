@@ -2,15 +2,19 @@
   import type { Project } from '$lib/types';
 
   export let projects: Project[] = [];
+  export let dark = false;
 </script>
 
 <div>
-  {#each projects as project, index}
-    <div class="project-item mb-10" style={`animation-delay: ${index * 70}ms`}>
+  {#each projects as project}
+    <div class="mb-10">
       <div class="mb-2 flex flex-col gap-4 md:flex-row md:items-center">
         <a
           href={`/projects/${project.slug}`}
-          class="group inline-flex items-center gap-2 text-2xl text-[#292B27] transition-colors duration-200 hover:text-[#35483A]"
+          class="group inline-flex w-fit items-center gap-2 text-2xl transition-colors duration-200
+            {dark
+            ? 'text-[#F5F3ED] hover:text-[#C4CBAF]'
+            : 'text-[#292B27] hover:text-[#35483A]'}"
         >
           <span
             class="transition-transform duration-200 group-hover:translate-x-1"
@@ -19,48 +23,29 @@
           </span>
 
           <span
-            class="text-lg text-[#783D46] opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100"
+            class="text-lg opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100
+            {dark ? 'text-[#D4C0AD]' : 'text-[#783D46]'}"
           >
             ↗
           </span>
         </a>
       </div>
 
-      <div class="flex gap-3 text-sm text-[#725747]">
+      <div
+        class="flex gap-3 text-sm
+          {dark ? 'text-[#D4C0AD]' : 'text-[#725747]'}"
+      >
         <span>{project.role}</span>
-        <span class="text-[#783D46]">•</span>
+        <span>•</span>
         <span>{project.duration}</span>
       </div>
 
-      <p class="mt-3 max-w-3xl leading-relaxed text-[#4F504A]">
+      <p
+        class="mt-2 max-w-4xl leading-relaxed
+          {dark ? 'text-[#E9E3DA]' : 'text-[#4F504A]'}"
+      >
         {project.preview}
       </p>
     </div>
   {/each}
 </div>
-
-<style>
-  @keyframes project-reveal {
-    from {
-      opacity: 0;
-      transform: translateY(8px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .project-item {
-    opacity: 0;
-    animation: project-reveal 0.5s ease-out forwards;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .project-item {
-      opacity: 1;
-      animation: none;
-    }
-  }
-</style>

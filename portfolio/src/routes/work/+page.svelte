@@ -22,9 +22,9 @@
 </script>
 
 <main
-  class="font-portfolio flex min-h-screen flex-col bg-[#F5F3ED] p-4 pt-1 text-[#292B27]"
+  class="font-portfolio flex min-h-screen flex-col bg-[#422D2D] p-4 pt-1 text-[#F5F3ED]"
 >
-  <Header />
+  <Header dark />
 
   <div class="mx-auto w-full max-w-4xl flex-1 pt-14 pb-14">
     <!-- Heading -->
@@ -35,14 +35,14 @@
         My Work
 
         <span
-          class="inline-flex text-lg text-[#783D46] md:text-xl"
+          class="inline-flex text-lg text-[#C4CBAF] md:text-xl"
           aria-hidden="true"
         >
           ✷
         </span>
       </h1>
 
-      <p class="mt-2 text-sm italic text-[#725747] md:text-base">
+      <p class="mt-2 text-sm italic text-[#D4C0AD] md:text-base">
         a mix of research, leadership, design, and things I've built
       </p>
     </div>
@@ -54,6 +54,7 @@
           label={cat.label}
           active={activeCategory === cat.value}
           onClick={() => (activeCategory = cat.value)}
+          dark
         />
       {/each}
     </div>
@@ -61,12 +62,12 @@
     <!-- Projects -->
     <div class="page-reveal delay-2">
       {#key activeCategory}
-        <ProjectList projects={filteredProjects} />
+        <ProjectList projects={filteredProjects} dark={true} />
       {/key}
     </div>
   </div>
 
-  <Footer />
+  <Footer dark />
 </main>
 
 <style>

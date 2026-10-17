@@ -14,9 +14,9 @@
 </svelte:head>
 
 <main
-  class="font-portfolio flex min-h-screen flex-col bg-[#F5F3ED] p-4 pt-1 text-[#292B27]"
+  class="font-portfolio flex min-h-screen flex-col bg-[#422D2D] p-4 pt-1 text-[#F5F3ED]"
 >
-  <Header />
+  <Header dark />
 
   <section
     class="mx-auto flex w-full max-w-5xl flex-1 flex-col justify-center gap-12 pt-20 pb-20 md:flex-row md:items-center md:justify-between md:pt-28"
@@ -30,7 +30,7 @@
         <span>Hi, I'm Sama Ahmed</span>
 
         <span
-          class="inline-flex translate-y-[1px] items-center text-xl text-[#783D46] transition-transform duration-300 group-hover:rotate-45 group-hover:scale-110 md:text-2xl"
+          class="inline-flex translate-y-[1px] items-center text-xl text-[#C4CBAF] transition-transform duration-300 group-hover:rotate-45 group-hover:scale-110 md:text-2xl"
           aria-hidden="true"
         >
           ✷
@@ -39,19 +39,19 @@
 
       <!-- Bio -->
       <div class="reveal delay-2 mt-9 max-w-2xl">
-        <p class="text-lg text-[#4F504A] md:text-xl">
+        <p class="text-lg text-[#E9E3DA] md:text-xl">
           UX Researcher at
-          <span class="font-medium text-[#35483A]">LPL Financial</span>
+          <span class="font-medium text-[#C4CBAF]"> LPL Financial </span>
         </p>
 
-        <p class="mt-1.5 text-base italic text-[#725747] md:text-lg">
+        <p class="mt-1.5 text-base italic text-[#D4C0AD] md:text-lg">
           exploring the space between people, products, and technology
         </p>
       </div>
 
       <!-- Links -->
       <div class="reveal delay-3 mt-10 flex flex-wrap gap-4">
-        <PrimaryLink href="/work" label="Selected Work">
+        <PrimaryLink href="/work" label="Selected Work" dark>
           <span
             slot="icon-left"
             class="transition-transform duration-200 group-hover:-translate-x-1"
@@ -60,7 +60,7 @@
           </span>
         </PrimaryLink>
 
-        <PrimaryLink href="/about-me" label="About">
+        <PrimaryLink href="/about-me" label="About" dark>
           <span
             slot="icon-right"
             class="transition-transform duration-200 group-hover:translate-x-1"
@@ -82,22 +82,21 @@
 
       <!-- Location -->
       <div class="reveal delay-4 flex items-center gap-2">
-        <span class="h-px w-5 bg-[#783D46]"></span>
+        <span class="h-px w-5 bg-[#C4CBAF]"></span>
 
-        <p class="text-xs tracking-wide text-[#725747] italic">
+        <p class="text-xs tracking-wide text-[#D4C0AD] italic">
           based in irvine + san diego
         </p>
 
-        <span class="text-xs text-[#783D46]">✷</span>
+        <span class="text-xs text-[#C4CBAF]">✷</span>
       </div>
     </div>
   </section>
 
-  <Footer />
+  <Footer dark />
 </main>
 
 <style>
-  /* Main entrance animation */
   @keyframes fade-up {
     from {
       opacity: 0;
@@ -110,7 +109,6 @@
     }
   }
 
-  /* Softer animation for the photo */
   @keyframes fade-photo {
     from {
       opacity: 0;
@@ -133,7 +131,6 @@
     animation: fade-photo 0.8s ease-out forwards;
   }
 
-  /* Staggered timing */
   .delay-1 {
     animation-delay: 0.05s;
   }
@@ -154,7 +151,6 @@
     animation-delay: 0.4s;
   }
 
-  /* Accessibility */
   @media (prefers-reduced-motion: reduce) {
     .reveal,
     .reveal-photo {
