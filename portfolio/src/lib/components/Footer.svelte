@@ -1,17 +1,33 @@
 <script lang="ts">
   import Resume from '$lib/assets/Sama_Ahmed_Resume.pdf';
-  import type { Button } from '$lib/types';
 
   export let dark = false;
 
-  const paths: Button[] = [
-    { name: 'Resume', link: Resume },
-    { name: 'Email', link: 'ssama5336@gmail.com' },
-    { name: 'Linkedin', link: 'https://www.linkedin.com/in/sama-ahmedd/' },
-    { name: 'Github', link: 'https://github.com/26samaahmed' },
+  const paths = [
+    {
+      name: 'Resume',
+      link: Resume,
+      external: true,
+    },
+    {
+      name: 'Email',
+      link: 'mailto:ssama5336@gmail.com',
+      external: false,
+    },
+    {
+      name: 'Linkedin',
+      link: 'https://www.linkedin.com/in/sama-ahmedd/',
+      external: true,
+    },
+    {
+      name: 'Github',
+      link: 'https://github.com/26samaahmed',
+      external: true,
+    },
     {
       name: 'Design Gallery',
-      link: 'https://design-gallery.samahmed.info/',
+      link: '/design-gallery',
+      external: false,
     },
   ];
 
@@ -39,7 +55,7 @@
 <p
   class="mb-6 text-center text-sm {dark ? 'text-[#D4C0AD]' : 'text-[#77786F]'}"
 >
-  © 2026 Sama Ahmed ⊹₊⟡⋆
+  © 2026 Sama Ahmed ☁︎
 </p>
 
 <div class="mx-auto mb-1 w-full max-w-4xl md:max-w-5xl">
@@ -50,14 +66,13 @@
   class="flex w-full flex-wrap justify-center gap-x-8 gap-y-4 py-6 md:gap-x-32"
 >
   {#each paths as path}
-    {#if path.name === 'Email'}
-      <a href="mailto:{path.link}" class={linkClasses}>
-        {path.name}
-      </a>
-    {:else}
-      <a href={path.link} class={linkClasses} target="_blank" rel="noreferrer">
-        {path.name}
-      </a>
-    {/if}
+    <a
+      href={path.link}
+      class={linkClasses}
+      target={path.external ? '_blank' : undefined}
+      rel={path.external ? 'noreferrer' : undefined}
+    >
+      {path.name}
+    </a>
   {/each}
 </div>
