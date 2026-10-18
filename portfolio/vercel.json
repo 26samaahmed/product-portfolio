@@ -4,11 +4,6 @@
       "source": "/old/:path*",
       "destination": "https://old.samahmed.info/:path*",
       "permanent": true
-    },
-    {
-      "source": "/design-gallery/:path*",
-      "destination": "https://design-gallery.samahmed.info/:path*",
-      "permanent": true
     }
   ]
 }
