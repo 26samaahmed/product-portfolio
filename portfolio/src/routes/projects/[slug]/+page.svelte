@@ -5,7 +5,7 @@
   import Footer from '$lib/components/Footer.svelte';
   import AudioPlayer from '$lib/components/AudioPlayer.svelte';
 
-  import { projects } from '$lib/projects';
+  import { projects } from '$lib/data/projects';
   import { audioSegments } from '$lib/data/audioSegments';
 
   const slug = $derived(page.params.slug);

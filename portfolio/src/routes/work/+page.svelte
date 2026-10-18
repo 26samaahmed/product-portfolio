@@ -4,7 +4,7 @@
   import ProjectList from '$lib/components/WorkList.svelte';
   import Tab from '$lib/components/Tab.svelte';
 
-  import { projects } from '$lib/projects';
+  import { projects } from '$lib/data/projects';
 
   const categories = [
     { label: 'experience', value: 'experience' },

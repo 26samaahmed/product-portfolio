@@ -33,24 +33,6 @@
       title: 'Design 05',
       type: 'interface concept',
     },
-    {
-      src: '/design-gallery/image6.png',
-      alt: 'Design 6',
-      title: 'Design 06',
-      type: 'web concept',
-    },
-    {
-      src: '/design-gallery/image7.png',
-      alt: 'Design 7',
-      title: 'Design 07',
-      type: 'visual concept',
-    },
-    {
-      src: '/design-gallery/image8.png',
-      alt: 'Design 8',
-      title: 'Design 08',
-      type: 'web concept',
-    },
   ];
 
   let selectedDesign: (typeof designs)[number] | null = null;
