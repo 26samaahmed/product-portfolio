@@ -15,6 +15,11 @@
       external: false,
     },
     {
+      name: 'Gallery',
+      link: '/gallery',
+      external: false,
+    },
+    {
       name: 'Linkedin',
       link: 'https://www.linkedin.com/in/sama-ahmedd/',
       external: true,
@@ -23,11 +28,6 @@
       name: 'Github',
       link: 'https://github.com/26samaahmed',
       external: true,
-    },
-    {
-      name: 'Design Gallery',
-      link: '/design-gallery',
-      external: false,
     },
   ];
 
