@@ -1,3 +1,4 @@
+
 <script lang="ts">
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
@@ -6,19 +7,31 @@
   let selected = 'career';
 </script>
 
+<svelte:head>
+  <title>About — Sama Ahmed</title>
+
+  <meta
+    name="description"
+    content="A little more about Sama Ahmed, her career, creative interests, and things she hopes to do someday."
+  />
+</svelte:head>
+
 <main
   class="font-portfolio flex min-h-screen flex-col bg-[#4B302E] p-4 pt-1 text-[#F5F3ED]"
 >
   <Header dark />
 
   <div class="mx-auto w-full max-w-3xl flex-1 pt-14 pb-14">
+    <!-- Heading -->
     <div class="page-reveal">
       <h1
         class="flex items-center gap-2 text-4xl font-medium tracking-tight md:text-5xl"
       >
         About
 
-        <span class="text-xl text-[#C4CBAF]" aria-hidden="true"> ✷ </span>
+        <span class="text-xl text-[#C4CBAF]" aria-hidden="true">
+          ✷
+        </span>
       </h1>
 
       <!-- Tabs -->
@@ -48,7 +61,7 @@
 
     <!-- Content -->
     <div
-      class="page-reveal delay-1 min-h-[360px] space-y-6 text-base leading-relaxed text-[#E9E3DA] md:text-lg"
+      class="page-reveal delay-1 space-y-6 text-base leading-relaxed text-[#E9E3DA] md:text-lg"
     >
       {#if selected === 'career'}
         <div class="space-y-6">
@@ -67,8 +80,10 @@
               User Experience Researcher at LPL Financial
             </span>, where I explored how user insights can meaningfully shape
             product and design decisions. I currently work at LPL Financial as a
-            <span class="font-medium text-[#C4CBAF]"> UX Researcher </span>,
-            continuing to grow in product thinking and user-centered design.
+            <span class="font-medium text-[#C4CBAF]">
+              UX Researcher
+            </span>, continuing to grow in product thinking and user-centered
+            design.
           </p>
 
           <p>

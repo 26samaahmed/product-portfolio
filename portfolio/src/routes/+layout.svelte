@@ -1,5 +1,6 @@
 <script lang="ts">
   import '../app.css';
+  import CustomCursor from '$lib/components/CustomCursor.svelte';
 
   let { children } = $props();
 </script>
@@ -14,4 +15,5 @@
   />
 </svelte:head>
 
+<CustomCursor />
 {@render children?.()}
