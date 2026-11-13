@@ -1,4 +1,3 @@
-
 <script lang="ts">
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
@@ -29,9 +28,7 @@
       >
         About
 
-        <span class="text-xl text-[#C4CBAF]" aria-hidden="true">
-          ✷
-        </span>
+        <span class="text-xl text-[#C4CBAF]" aria-hidden="true"> ✷ </span>
       </h1>
 
       <!-- Tabs -->
@@ -80,10 +77,8 @@
               User Experience Researcher at LPL Financial
             </span>, where I explored how user insights can meaningfully shape
             product and design decisions. I currently work at LPL Financial as a
-            <span class="font-medium text-[#C4CBAF]">
-              UX Researcher
-            </span>, continuing to grow in product thinking and user-centered
-            design.
+            <span class="font-medium text-[#C4CBAF]"> UX Researcher </span>,
+            continuing to grow in product thinking and user-centered design.
           </p>
 
           <p>

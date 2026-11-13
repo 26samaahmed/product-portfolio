@@ -1,4 +1,3 @@
-
 <script lang="ts">
   import { onMount } from 'svelte';
 
@@ -29,13 +28,9 @@
   ];
 
   onMount(() => {
-    const pointer = window.matchMedia(
-      '(hover: hover) and (pointer: fine)'
-    );
+    const pointer = window.matchMedia('(hover: hover) and (pointer: fine)');
 
-    const reducedMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    );
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     if (!pointer.matches || reducedMotion.matches) return;
 
@@ -56,13 +51,9 @@
       let current: Element | null = element;
 
       while (current) {
-        const background = window.getComputedStyle(
-          current
-        ).backgroundColor;
+        const background = window.getComputedStyle(current).backgroundColor;
 
-        const match = background.match(
-          /rgba?\(([^)]+)\)/
-        );
+        const match = background.match(/rgba?\(([^)]+)\)/);
 
         if (match) {
           const values = match[1]
@@ -74,8 +65,7 @@
           const alpha = values[3] ?? 1;
 
           if (alpha > 0.5) {
-            const brightness =
-              (r * 299 + g * 587 + b * 114) / 1000;
+            const brightness = (r * 299 + g * 587 + b * 114) / 1000;
 
             return brightness > 150;
           }
@@ -96,15 +86,11 @@
         return;
       }
 
-      const clickable = target.closest(
-        clickableSelector
-      );
+      const clickable = target.closest(clickableSelector);
 
       hovering = Boolean(clickable);
 
-      overLight = clickable
-        ? isLightBackground(clickable)
-        : false;
+      overLight = clickable ? isLightBackground(clickable) : false;
     }
 
     function moveCursor(event: MouseEvent) {
@@ -114,8 +100,7 @@
       visible = true;
 
       if (cursor) {
-        cursor.style.transform =
-          `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+        cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
       }
 
       updateHover(event);
@@ -126,13 +111,10 @@
       ringY += (mouseY - ringY) * 0.2;
 
       if (ring) {
-        ring.style.transform =
-          `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+        ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
       }
 
-      animationFrame = requestAnimationFrame(
-        animateRing
-      );
+      animationFrame = requestAnimationFrame(animateRing);
     }
 
     function createParticles(event: MouseEvent) {
@@ -149,9 +131,7 @@
       ];
 
       const timeout = window.setTimeout(() => {
-        particles = particles.filter(
-          (particle) => particle.id !== id
-        );
+        particles = particles.filter((particle) => particle.id !== id);
 
         timeouts.delete(timeout);
       }, 600);
@@ -165,40 +145,20 @@
       overLight = false;
     }
 
-    window.addEventListener(
-      'mousemove',
-      moveCursor
-    );
+    window.addEventListener('mousemove', moveCursor);
 
-    window.addEventListener(
-      'mousedown',
-      createParticles
-    );
+    window.addEventListener('mousedown', createParticles);
 
-    document.addEventListener(
-      'mouseleave',
-      hideCursor
-    );
+    document.addEventListener('mouseleave', hideCursor);
 
-    animationFrame = requestAnimationFrame(
-      animateRing
-    );
+    animationFrame = requestAnimationFrame(animateRing);
 
     return () => {
-      window.removeEventListener(
-        'mousemove',
-        moveCursor
-      );
+      window.removeEventListener('mousemove', moveCursor);
 
-      window.removeEventListener(
-        'mousedown',
-        createParticles
-      );
+      window.removeEventListener('mousedown', createParticles);
 
-      document.removeEventListener(
-        'mouseleave',
-        hideCursor
-      );
+      document.removeEventListener('mouseleave', hideCursor);
 
       cancelAnimationFrame(animationFrame);
 
@@ -339,13 +299,9 @@
     border-radius: 50%;
     background: currentColor;
 
-    transform: translate(
-      var(--x),
-      var(--y)
-    );
+    transform: translate(var(--x), var(--y));
 
-    animation: dust-twinkle 1.8s
-      ease-in-out infinite;
+    animation: dust-twinkle 1.8s ease-in-out infinite;
 
     animation-delay: var(--delay);
   }
@@ -386,17 +342,13 @@
 
     opacity: 0;
 
-    animation: particle-pop 0.6s
-      ease-out forwards;
+    animation: particle-pop 0.6s ease-out forwards;
   }
 
   @keyframes particle-pop {
     0% {
       opacity: 0;
-      transform:
-        rotate(var(--angle))
-        translateX(0)
-        scale(0.5);
+      transform: rotate(var(--angle)) translateX(0) scale(0.5);
     }
 
     25% {
@@ -405,10 +357,7 @@
 
     100% {
       opacity: 0;
-      transform:
-        rotate(var(--angle))
-        translateX(var(--distance))
-        scale(0.3);
+      transform: rotate(var(--angle)) translateX(var(--distance)) scale(0.3);
     }
   }
 

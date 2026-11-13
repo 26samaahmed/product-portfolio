@@ -52,15 +52,12 @@
       <div class="reveal delay-2 mt-9 max-w-2xl">
         <p class="text-lg text-[#E9E3DA] md:text-xl">
           UX Researcher at
-          <span class="font-medium text-[#C4CBAF]">
-            LPL Financial
-          </span>
+          <span class="font-medium text-[#C4CBAF]"> LPL Financial </span>
         </p>
 
         <p class="mt-1.5 text-base italic text-[#D4C0AD] md:text-lg">
           collecting miffy things & watching way too many k-dramas
         </p>
-        
       </div>
 
       <!-- Main Links -->
@@ -105,34 +102,32 @@
         <span class="text-xs text-[#C4CBAF]">✷</span>
       </div>
 
+      <!-- Personal Links -->
+      <div class="reveal delay-4 mt-5 w-full max-w-[300px]">
+        <!-- Divider -->
+        <div class="h-px w-full bg-[#F5F3ED]/15"></div>
 
-<!-- Personal Links -->
-<div class="reveal delay-4 mt-5 w-full max-w-[300px]">
-  <!-- Divider -->
-  <div class="h-px w-full bg-[#F5F3ED]/15"></div>
+        <!-- Social Links -->
+        <div class="mt-4 flex items-center justify-center gap-7 md:justify-end">
+          {#each socials as social}
+            <a
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group inline-flex items-center gap-1.5 text-sm text-[#E9E3DA] transition-colors duration-200 hover:text-[#C4CBAF]"
+            >
+              {social.name}
 
-  <!-- Social Links -->
-  <div class="mt-4 flex items-center justify-center gap-7 md:justify-end">
-    {#each socials as social}
-      <a
-        href={social.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group inline-flex items-center gap-1.5 text-sm text-[#E9E3DA] transition-colors duration-200 hover:text-[#C4CBAF]"
-      >
-        {social.name}
-
-        <span
-          class="text-[#C4CBAF] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-          aria-hidden="true"
-        >
-          ↗
-        </span>
-      </a>
-    {/each}
-  </div>
-</div>
-
+              <span
+                class="text-[#C4CBAF] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                aria-hidden="true"
+              >
+                ↗
+              </span>
+            </a>
+          {/each}
+        </div>
+      </div>
     </div>
   </section>
 
